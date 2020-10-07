@@ -73,6 +73,111 @@ a {
 
 }
 
+// Start Angular Material Custem Style
+.mat-flat-button{
+    background: $orangeColor !important;
+    border: 0 !important;
+    padding: 3px 0 !important;
+    border-radius: 5px !important;
+    color: #fff !important;
+    box-shadow: 8px 7px 9px -7px $orangeColorBoxShadow !important;
+    outline: none !important;
+    font-family: $Font_lato;
+    width: 300px !important;
+    display: block !important;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .mat-stroked-button  {
+    width: 300px !important;
+    display: block !important;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 3px 0 !important;
+    color: $orangeColor !important;
+    outline: none !important;
+  }
+
+  .mat-form-field-flex,
+  .mat-form-field {
+    font-family:$Font_lato !important;
+    width: 300px !important;
+  }
+
+
+//Input
+
+.mat-form-field.mat-focused .mat-form-field-label, //This Placeholder Style
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: $orangeColor !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline:focus {
+    color: $orangeColor !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 10px 0 10px 0 !important;
+}
+.mat-input-element {
+    color: rgba( $blackColor, .7 ) !important;
+    font-size: 17px !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgba( $blackColor, .5 ) !important;
+    top: 0 !important;
+}
+
+.mat-form-field-label-wrapper {
+    overflow: visible !important;
+    top: -20px !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 14px 0 0 0!important;
+}
+.mat-form-field-wrapper {
+    padding-bottom: 17px !important;
+}
+.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:$orangeColor !important;
+}
+
+/* check Box */
+.form-check {
+    padding-left: 0 !important;
+}
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent
+.mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent
+.mat-ripple-element {
+background:  $orangeColor !important;
+}
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+background: $orangeColor !important;
+}
+
+.text-orange {
+  color: #f56c2f;
+}
+
+/* Radio Box */
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+border-color:  $orangeColor !important;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent
+.mat-radio-ripple
+.mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color:  $orangeColor !important;
+}
+
+
+// End Angular Material Custem Style
+
+
+
+
 ._text_center {
     text-align: center;
 }
@@ -174,10 +279,6 @@ header {
         .contactUs {
            text-align: right;
 
-           span {
-
-           }
-
         }
 
         .contactUs {
@@ -195,7 +296,7 @@ header {
         }
         .nav_bar_menu {
             display: flex;
-
+            justify-content: space-between;
             .logo {
                 width: 100px;
                 height: 30px;
@@ -208,7 +309,7 @@ header {
             }
         }
         .menu_siblings {
-            margin-left: 150px;
+            margin-left: -180px;
             ul {
                 display: flex;
                 justify-content: flex-start;
@@ -242,8 +343,8 @@ header {
 
         .Shopping_user_avatar_name{
             display: flex;
-            position: absolute;
-            right: 0;
+            // position: absolute;
+            // right: 0;
             align-items: center;
 
 
@@ -298,6 +399,216 @@ header {
     }
 }// End Header Style
 
+.bs_Nav {
+    //background-color: $blackColor !important;
+    // color: rgba( $whiteColor, 1) !important;
+    position: relative;
+    z-index: 999999;
+
+    .contact_info {
+        padding: 10px 0;
+        float: right;
+        a {
+            color: rgba( $whiteColor, .8);
+            font-size: 12px;
+            margin-right: 10px !important;
+            display: inline-block;
+
+
+            i {
+                font-size: 10px;
+                margin-right: 2px !important;
+            }
+        }
+    }
+    .navbar-nav {
+        margin-left: 60px;
+        li {
+            margin-right: 22px;
+            position: relative;
+
+            &:hover .nav-link::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 20px;
+                height: 2px;
+                margin: 0 auto;
+                background-color: $orangeColor;
+            }
+        }
+    }
+    .bg-dark {
+        background-color: $blackColor !important;
+    }
+
+    .bg_transparent {
+        background-color: transparent !important;
+    }
+        a.navbar-brand {
+            font-weight: 500;
+            font-family: LogoFont, sans-serif !important;
+            letter-spacing: 3px;
+        }
+
+        .shopping_cart_user_profile {
+
+
+            button {
+                outline: none;
+                background: transparent;
+
+                border: none;
+                i {
+                    color: $orangeColor;
+                    margin-right: 5px;
+                    display: inline-block;
+                }
+                span {
+                    color: rgba( $whiteColor, .8);
+
+                }
+            }
+
+            .nav_user_profile {
+                display: flex;
+                align-items: center;
+                &_img {
+                    width: 30px;
+                    height: 30px;
+                    overflow: hidden;
+                    border-radius: 50%;
+                    margin: 0 10px 0 15px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &_name {
+                    color: rgba( $whiteColor, .8);
+
+                }
+
+            }
+
+        }
+        .dropdown-menu {
+
+            h4 {
+                padding: .25rem 1.5rem !important;
+                font-size: 14px;
+                font-weight: 600;
+                color: $orangeColor;
+            }
+        }
+        .dropdown-menu.show {
+            width: 563px;
+            z-index: 9999999;
+            min-height: 300px;
+            overflow: auto;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+
+
+            div {
+                margin-bottom: 27px;
+                display: flex;
+                flex-direction: column;
+
+                .dropdown-item:focus, .dropdown-item:hover,
+                .dropdown-item.active, .dropdown-item:active {
+                    color: rgba($orangeColor,.7) !important;
+                    text-decoration: none;
+                    background-color: transparent !important;
+                }
+
+            }
+
+        }
+
+        // Extra large devices (large desktops, 1200px and up)
+        @media (max-width: 1200px) {
+
+         }
+
+
+          // Large devices (desktops, 992px and up)
+        @media (max-width: 992px) {
+            .bs_Nav .dropdown-menu.show {
+                width: 100%;
+
+                div {
+                    width: 30%;
+                }
+            }
+
+            .navbar-nav {
+                margin-left: auto;
+                li {
+                    margin-right: auto;
+                }
+            }
+            .bg_transparent {
+                background-color: $blackColor !important;
+            }
+        }
+
+        // Medium devices (tablets, 768px and up)
+        @media (max-width: 768px) {
+            .dropdown.show {
+                width: 100% !important;
+
+                div {
+                    width: 50%;
+                }
+            }
+
+            .navbar-nav {
+                margin-left: auto;
+                li {
+                    margin-right: auto;
+                }
+            }
+            .bg_transparent {
+                background-color: $blackColor !important;
+            }
+        }
+
+         // Small devices (landscape phones, 576px and up)
+        @media (max-width: 576px) {
+            .bs_Nav .dropdown-menu.show {
+                width: 100%;
+
+                div {
+                    width: 100%;
+                }
+            }
+
+            .navbar-nav {
+                margin-left: auto;
+                li {
+                    margin-right: auto;
+                }
+            }
+
+         }
+
+}
+@media (max-width: 768px) {
+    .bg_transparent {
+        background-color: $blackColor !important;
+    }
+}
+@media (max-width: 576px) {
+    .bg_transparent {
+        background-color: $blackColor !important;
+    }
+}
+
 .search_find {
     background: #1f2836;
     margin: 0 !important;
@@ -335,9 +646,6 @@ line-height: 2.5;
             margin-top: 44px;
             margin-right: 15px;
 
-            img {
-
-            }
         }
     }
 }//End Trusted Section
@@ -648,8 +956,20 @@ line-height: 2.5;
     height: 100vh;
 
     .auth_heading {
-        margin: 5% 0 3%;
+        margin: 2% 0 2% !important;
         display: inline-block;
+        a {
+
+            color: $blackColor;
+            font-size: 30px;
+            margin-right: 13px;
+            margin-top: 11px;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                color: $orangeColor;
+            }
+        }
         h2 {
             font-size: 45px;
             text-transform: uppercase;
@@ -657,6 +977,9 @@ line-height: 2.5;
         }
         p {
             color: rgba( $blackColor, .5 );
+            margin-left: 43px !important;
+            display: block;
+
         }
     }
 
@@ -666,7 +989,7 @@ line-height: 2.5;
         width: 35%;
 
         .Btn_action {
-            margin-top: 60px;
+            margin-top: 0 !important;
             button {
                 text-transform: uppercase;
                 display: block;
@@ -676,6 +999,7 @@ line-height: 2.5;
 
             h6 {
                 text-transform: capitalize;
+                margin: 15px 12px!important;
                 a {
                     text-transform: uppercase;
                     color: $orangeColor !important;
@@ -690,7 +1014,7 @@ line-height: 2.5;
         z-index: -1;
         bottom: 0%;
         right: 0;
-        width: 60%;
+        width: 50%;
         overflow: hidden;
 
         img {
@@ -765,24 +1089,108 @@ line-height: 2.5;
             opacity: 1;
 
          }
-         a.active::after {
-            content: "\f00c";
-            position: absolute;
-            font-family: FontAwesome;
-            width: 30px;
-            height: 30px;
-            background-color: #EF8216;
-            color: #ffffff;
-            font-weight: bold;
-            text-align: center;
-            line-height: 30px;
-            border-radius: 50%;
-            font-size: 13px;
-            top: 79px;
-            left: -16px;
-         }
+        //  a.active::after {
+            // content: "\f00c";
+            // position: absolute;
+            // font-family: FontAwesome;
+            // width: 30px;
+            // height: 30px;
+            // background-color: #EF8216;
+            // color: #ffffff;
+            // font-weight: bold;
+            // text-align: center;
+            // line-height: 30px;
+            // border-radius: 50%;
+            // font-size: 13px;
+            // top: 79px;
+            // left: -16px;
+        //  }
      }
+
+
+
+     // Extra large devices (large desktops, 1200px and up)
+    @media (max-width: 1200px) {
+
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (max-width: 768px) {
+
+    }
+    // Small devices (landscape phones, 576px and up)
+    @media (max-width: 576px) {
+
+
+    }
+    @media (max-width: 768px) {
+        height: auto !important;
+        transition: all .9s ease-in-out;
+
+            .auth_heading {
+                margin: 7% 0 !important;
+                h2 {
+                    font-size: 24px !important;
+                }
+
+            }
+            .input_form {
+                width: 100% !important;
+                padding: 10px;
+                text-align: center;
+
+                .mat-form-field {
+                    display: block;
+                    margin: 0 auto;
+                }
+                .Btn_action button {
+                    margin: 0 auto 10px;
+                }
+
+
+            }
+
+            .auth_img {
+
+                width: 100% !important;
+                background-size: cover;
+            }
+    }
+    @media (max-width: 576px) {
+        transition: all .9s ease-in-out;
+        height: auto !important;
+
+            .auth_heading {
+                margin: 7% 0 !important;
+                h2 {
+                    font-size: 24px !important;
+                }
+
+            }
+            .input_form {
+                width: 100% !important;
+                padding: 10px;
+                text-align: center;
+
+                .Btn_action button {
+                    margin: 0 auto 10px;
+                }
+
+            }
+
+            .auth_img {
+
+                width: 100% !important;
+                background-size: cover;
+            }
+
+
+    }
 }
+
+
+
+
 
 .page_2 {
     .Btn_action {
@@ -1164,7 +1572,14 @@ background-color: #F6F7F8;
 
 
 // if you'd like to use it without importing all of bootstrap it requires
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
-@import '~ngx-toastr/toastr-bs4-alert';
+/* These Imports get Error
+Error: File "d:\WORK\Freelance Code\git\Vybes-Angular\Vybes-Angular\src\assets\style\bootstrap\scss\functions" not found
+        on line 1161 of sass/d:\WORK\Freelance Code\git\Vybes-Angular\Vybes-Angular\src\assets\style\styles.scss
+>> @import '~bootstrap/scss/functions';
+
+Because that I Comment
+*/
+// @import '~bootstrap/scss/functions';
+// @import '~bootstrap/scss/variables';
+// @import '~bootstrap/scss/mixins';
+// @import '~ngx-toastr/toastr-bs4-alert';
