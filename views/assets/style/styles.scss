@@ -73,6 +73,21 @@ a {
 
 }
 
+._bs_alert_danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 20px;
+    width: 300px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+._ddl_A {
+    a {
+        color: $blackColor;
+    }
+}
+
 // Start Angular Material Custem Style
 .mat-flat-button{
     background: $orangeColor !important;
@@ -80,7 +95,7 @@ a {
     padding: 3px 0 !important;
     border-radius: 5px !important;
     color: #fff !important;
-    box-shadow: 8px 7px 9px -7px $orangeColorBoxShadow !important;
+    // box-shadow: 8px 7px 9px -7px $orangeColorBoxShadow !important;
     outline: none !important;
     font-family: $Font_lato;
     width: 300px !important;
@@ -97,6 +112,21 @@ a {
     color: $orangeColor !important;
     outline: none !important;
   }
+  ._mat_btn_small {
+    display: inline-block;
+    margin: 20px 0 !important;
+    .mat-flat-button{
+        min-width: 95px!important;
+        width: auto !important;        
+        margin-right: 15px;
+      }
+      .mat-stroked-button  {
+        min-width: 95px!important;
+        width: auto !important;
+        margin-right: 15px;
+      }
+  }
+  
 
   .mat-form-field-flex,
   .mat-form-field {
@@ -157,6 +187,11 @@ background: $orangeColor !important;
 
 .text-orange {
   color: #f56c2f;
+  cursor: pointer !important;
+   &:hover {
+       color: #FFF;
+       cursor: pointer !important;
+   }
 }
 
 /* Radio Box */
@@ -218,6 +253,26 @@ border-color:  $orangeColor !important;
     margin: 100px auto;
 }
 
+._angular_tabs {
+    .mat-tab-header {
+        margin: 20px 0 !important;
+    }
+    .mat-tab-label-content {
+        font-family: $Font_lato !important;
+        font-weight: 500 !important;
+        border: transparent !important;
+      }
+    .mat-tab-label:focus:not(.mat-tab-disabled),
+      .mat-tab-label-active {
+        color: #fff !important;
+        background: $orangeColor;
+        opacity: 1 !important;
+        border: transparent;
+      }
+       .mat-ink-bar {
+        background: $orangeColor !important;
+      }
+}
 
 .form-control:focus {
     color: #495057;
@@ -421,6 +476,12 @@ header {
             }
         }
     }
+
+    .navbar-brand {
+        .logo {
+            width: 100px;
+        }
+    }
     .navbar-nav {
         margin-left: 60px;
         li {
@@ -530,6 +591,10 @@ header {
 
         }
 
+
+
+        
+
         // Extra large devices (large desktops, 1200px and up)
         @media (max-width: 1200px) {
 
@@ -598,6 +663,19 @@ header {
          }
 
 }
+
+.mat-menu-item {
+    outline: none !important;
+}
+mat-icon {
+    margin-bottom: 14px !important;
+
+    i {
+        font-size: 18px !important;
+    }
+    
+}
+
 @media (max-width: 768px) {
     .bg_transparent {
         background-color: $blackColor !important;
@@ -975,10 +1053,13 @@ line-height: 2.5;
             text-transform: uppercase;
             letter-spacing: 3px;
         }
-        p {
+        p, span {
             color: rgba( $blackColor, .5 );
-            margin-left: 43px !important;
             display: block;
+
+        }
+        span {
+            margin-left: 43px !important;
 
         }
     }
@@ -1564,6 +1645,8 @@ background-color: #F6F7F8;
         }
     }
 }
+
+
 
 
 
