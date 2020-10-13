@@ -19,7 +19,6 @@ body {
   padding: 0;
   font-family: 'Lato', sans-serif;
   line-height: 1.3;
-  background-color: #F6F7F8;
 }
 
 h1, h2, h3, h4, h5, h6, span, strong, p {
@@ -48,7 +47,6 @@ a {
   width: 100%;
 }
 
-<<<<<<< HEAD
 ._clear_fix {
   clear: both;
 }
@@ -169,8 +167,6 @@ a {
   color: #22262A;
 }
 
-=======
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
 ._main_button {
   background-color: #EF8216;
   border: 3px solid #EF8216;
@@ -738,7 +734,6 @@ header .header__contant button {
   display: inline-block;
 }
 
-<<<<<<< HEAD
 .bs_Nav .shopping_cart_user_profile .ddl_user .dropdown-content {
   min-width: 200px;
   max-width: 200px;
@@ -750,8 +745,6 @@ header .header__contant button {
   max-height: 20px;
 }
 
-=======
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
 .bs_Nav .dropdown-menu {
   width: 100%;
 }
@@ -938,10 +931,7 @@ mat-icon i {
 
 .search_find .input-group {
   width: 500px;
-<<<<<<< HEAD
   transition: all .5s;
-=======
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
 }
 
 .search_find .input-group input {
@@ -977,7 +967,6 @@ mat-icon i {
   height: 44px;
 }
 
-<<<<<<< HEAD
 @media (max-width: 768px) {
   .search_find ._D_Flex {
     flex-wrap: wrap;
@@ -1024,8 +1013,6 @@ mat-icon i {
   }
 }
 
-=======
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
 .input-group-append .btn-outline-secondary:not(:disabled):not(.disabled):active {
   color: #fff;
   background-color: #EF8216;
@@ -1748,7 +1735,6 @@ footer .Copyrights ._divider {
   color: #1F2836;
 }
 
-<<<<<<< HEAD
 .Search_Result_aside_left .price_box .ng5-slider .ng5-slider-pointer {
   background-color: #EF8216;
   outline: none;
@@ -1766,8 +1752,6 @@ footer .Copyrights ._divider {
   color: red;
 }
 
-=======
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
 .Search_Result_aside_left .Box_items ul {
   margin: 0;
 }
@@ -1825,17 +1809,6 @@ footer .Copyrights ._divider {
   opacity: 0;
 }
 
-.Search_Result_aside_left .color_box ul li span .mat-checkbox {
-  position: relative;
-  z-index: 9999999;
-}
-
-.Search_Result_aside_left .color_box ul li span .mat-checkbox .mat-checkbox-inner-container {
-  height: 0;
-  width: 0;
-  opacity: 0;
-}
-
 .Search_Result_aside_left .color_box ul li .BGblue {
   background-color: #006CFF;
 }
@@ -1863,7 +1836,6 @@ footer .Copyrights ._divider {
 .Search_Result_aside_left .color_box ul li .blueBorder, .Search_Result_aside_left .color_box ul li .redBorder, .Search_Result_aside_left .color_box ul li .blackBorder,
 .Search_Result_aside_left .color_box ul li .yellowBorder, .Search_Result_aside_left .color_box ul li .cyanBorder, .Search_Result_aside_left .color_box ul li .grayBorder {
   position: relative;
-<<<<<<< HEAD
 }
 
 .Search_Result_aside_left .color_box ul li .blueBorder:after, .Search_Result_aside_left .color_box ul li .redBorder:after, .Search_Result_aside_left .color_box ul li .blackBorder:after,
@@ -1989,50 +1961,12 @@ footer .Copyrights ._divider {
     width: 50px !important;
     display: block !important;
   }
-=======
-}
-
-.Search_Result_aside_left .color_box ul li .blueBorder:after, .Search_Result_aside_left .color_box ul li .redBorder:after, .Search_Result_aside_left .color_box ul li .blackBorder:after,
-.Search_Result_aside_left .color_box ul li .yellowBorder:after, .Search_Result_aside_left .color_box ul li .cyanBorder:after, .Search_Result_aside_left .color_box ul li .grayBorder:after {
-  position: absolute;
-  content: "";
-  top: -3px;
-  left: -3px;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-}
-
-.Search_Result_aside_left .color_box ul li .blueBorder:after {
-  border: 1px solid #006CFF;
-}
-
-.Search_Result_aside_left .color_box ul li .redBorder:after {
-  border: 1px solid #FC3E39;
-}
-
-.Search_Result_aside_left .color_box ul li .blackBorder:after {
-  border: 1px solid #171717;
-}
-
-.Search_Result_aside_left .color_box ul li .yellowBorder:after {
-  border: 1px solid #FFF600;
-}
-
-.Search_Result_aside_left .color_box ul li .cyanBorder:after {
-  border: 1px solid #FF00B4;
-}
-
-.Search_Result_aside_left .color_box ul li .grayBorder:after {
-  border: 1px solid #EFDFDF;
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
 }
 
 .Search_Result_aside_right {
   width: 80%;
 }
 
-<<<<<<< HEAD
 .Search_Result_aside_right .sort_search {
   display: flex;
   align-items: center;
@@ -2104,12 +2038,6 @@ footer .Copyrights ._divider {
   transition: all .3s;
   cursor: pointer;
   background-color: #FFF;
-=======
-.Search_Result_aside_right .card {
-  width: 215px;
-  margin-bottom: 16px;
-  border-radius: 9px;
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
 }
 
 .Search_Result_aside_right .section_Products_view > div .card_thum {
@@ -2135,12 +2063,7 @@ footer .Copyrights ._divider {
   overflow: hidden;
 }
 
-<<<<<<< HEAD
 .Search_Result_aside_right .section_Products_view > div .card_text .Product_Price {
-=======
-.Search_Result_aside_right .card-body .Product_Price {
-  font-size: 20px;
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
   font-weight: 600;
   color: #EF8216;
   float: left;
@@ -2150,15 +2073,9 @@ footer .Copyrights ._divider {
   float: right;
 }
 
-<<<<<<< HEAD
 .Search_Result_aside_right .section_Products_view > div .card_text .Product_rating h6 {
   font-size: 14px !important;
   color: #1F2836;
-=======
-.Search_Result_aside_right .card-body .Product_rating h6 {
-  color: #EF8216;
-  font-size: 12px;
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
 }
 
 .Search_Result_aside_right .section_Products_view > div .card_text .Product_rating h6 span {
@@ -2244,26 +2161,6 @@ footer .Copyrights ._divider {
     width: 84%;
     transition: all .9s ease-in-out;
   }
-}
-
-.Search_Result_aside_right .sort_search {
-  display: flex;
-  align-items: center;
-  padding: 10px 30px;
-  background-color: #FFF;
-  margin-bottom: 20px;
-  width: 100%;
-  border-radius: 4px;
-}
-
-.Search_Result_aside_right .sort_search_item {
-  display: flex;
-  align-items: center;
-  margin-right: 30PX;
-}
-
-.Search_Result_aside_right .sort_search_item .form-group {
-  margin: 0 0 0 10px !important;
 }
 
 .Thank_You_Fix_4 h2 {
@@ -2743,36 +2640,20 @@ footer .Copyrights ._divider {
   width: 100% !important;
 }
 
-<<<<<<< HEAD
 .All_Products_pg ._D_Flex {
   flex-wrap: wrap;
 }
 
 .All_Products_pg_Section_left {
-=======
-.Products_pg {
-  height: 1000px;
-}
-
-.Products_pg_Section_left {
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
   width: 69%;
   margin-right: 1%;
 }
 
-<<<<<<< HEAD
 .All_Products_pg_Section_left .section_header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .All_Products_pg_Section_left .section_header span {
-=======
-.Products_pg_Section_left .section_header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.Products_pg_Section_left .section_header span {
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
   padding: 9px !important;
   background-color: #EF8216;
   border-radius: 7px 7px 0 0;
@@ -2782,17 +2663,12 @@ footer .Copyrights ._divider {
   text-align: center;
 }
 
-<<<<<<< HEAD
 .All_Products_pg_Section_left .section_header hr {
-=======
-.Products_pg_Section_left .section_header hr {
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
   margin-top: 0rem !important;
   margin-bottom: 0rem !important;
   border-top: 2px solid #EF8216;
 }
 
-<<<<<<< HEAD
 .All_Products_pg_Section_left .section_Products_view {
   display: flex;
   flex-wrap: wrap;
@@ -2949,30 +2825,6 @@ footer .Copyrights ._divider {
 }
 
 .All_Products_pg_Section_right .section_header span {
-=======
-.Products_pg_Section_left .section_Products_view {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.Products_pg_Section_left .section_Products_view .Card_block {
-  flex: 1;
-  min-width: 230px;
-  margin: 0px 20px 20px 0px;
-  max-width: 230px;
-  height: 300px;
-}
-
-.Products_pg_Section_right {
-  width: 30%;
-}
-
-.Products_pg_Section_right .section_header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.Products_pg_Section_right .section_header span {
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
   padding: 9px !important;
   background-color: #EF8216;
   border-radius: 7px 7px 0 0;
@@ -2982,11 +2834,7 @@ footer .Copyrights ._divider {
   text-align: center;
 }
 
-<<<<<<< HEAD
 .All_Products_pg_Section_right .section_header hr {
-=======
-.Products_pg_Section_right .section_header hr {
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
   margin-top: 0rem !important;
   margin-bottom: 0rem !important;
   border-top: 2px solid #EF8216;
@@ -3080,7 +2928,6 @@ footer .Copyrights ._divider {
   font-weight: 600;
 }
 
-<<<<<<< HEAD
 .hero_slider {
   height: 100%;
   overflow: hidden;
@@ -3265,8 +3112,6 @@ footer .Copyrights ._divider {
   font-size: 13px;
 }
 
-=======
->>>>>>> 31795586243826fc67996fe2e8128722031f22d6
 /* These Imports get Error
 Error: File "d:\WORK\Freelance Code\git\Vybes-Angular\Vybes-Angular\src\assets\style\bootstrap\scss\functions" not found
         on line 1161 of sass/d:\WORK\Freelance Code\git\Vybes-Angular\Vybes-Angular\src\assets\style\styles.scss
