@@ -835,30 +835,12 @@ header {
 
     .header__img {
         width: 100%;
-<<<<<<< Updated upstream
-=======
         height: 100%;
->>>>>>> Stashed changes
         position: absolute;
         z-index: 1;
 
         img {
             width: 100%;
-<<<<<<< Updated upstream
-            position: relative;
-
-            &:after {
-                position: absolute;
-                content: "";
-                width: 100%;
-                height: 100%;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                background-color: rgba( $blackColor, .3 );
-            }
-=======
             height: 100%;
             position: relative;
         }
@@ -872,7 +854,6 @@ header {
             bottom: 0;
             background-color: rgba($color: #000000, $alpha: .8);
 
->>>>>>> Stashed changes
         }
     }
 
@@ -883,11 +864,7 @@ header {
         top: 19%;
 
         h2 {
-<<<<<<< Updated upstream
-            font-size: 56px;
-=======
             font-size: 46px;
->>>>>>> Stashed changes
             color: #FFF;
             font-weight: 900;
 
@@ -896,11 +873,7 @@ header {
             }
         }
         p{
-<<<<<<< Updated upstream
-            font-size: 32px;
-=======
             font-size: 28px;
->>>>>>> Stashed changes
             color: #FFFF;
             margin-top: 22px !important;
         }
@@ -909,10 +882,6 @@ header {
             margin-top: 79px;
             margin-right: 20px;
         }
-<<<<<<< Updated upstream
-    }
-
-=======
 
         .mat-stroked-button {
             border: 1px solid $orangeColor;
@@ -1000,7 +969,6 @@ header {
  
 
 
->>>>>>> Stashed changes
 }
 
 .mat-menu-item {
@@ -3584,13 +3552,7 @@ background-color: #F6F7F8;
 
 
 
-<<<<<<< Updated upstream
-.dropdown {
 
-  }
-=======
-
->>>>>>> Stashed changes
 
   .dropdown .dropbtn {
     font-size: 17px;
