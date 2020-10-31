@@ -4,6 +4,8 @@
 html {
     font-size: 100%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+
 }
 *, *::before, *::after {
     // box-sizing: border-box;
@@ -588,7 +590,7 @@ header {
 
     }
 
-    
+
 }// End Header Style
 
 .bs_Nav {
@@ -714,7 +716,7 @@ header {
                             max-height: 20px;
                         }
                     }
-                    
+
                 }
             }
 
@@ -877,7 +879,7 @@ header {
             color: #FFFF;
             margin-top: 22px !important;
         }
-        
+
         button{
             margin-top: 79px;
             margin-right: 20px;
@@ -903,7 +905,7 @@ header {
 
             h2 {
                 font-size: 38px;
-                
+
                 line-height: 46px;
 
                 span {
@@ -912,8 +914,8 @@ header {
             }
             p {
                 font-size: 21px;
-                
-                
+
+
             }
 
             ._D_Flex {
@@ -925,7 +927,7 @@ header {
                 }
             }
         }
-        
+
     }
     @media (max-width: 576px) {
         height: 534px;
@@ -942,7 +944,7 @@ header {
 
             h2 {
                 font-size: 38px;
-                
+
                 line-height: 46px;
 
                 span {
@@ -951,8 +953,8 @@ header {
             }
             p {
                 font-size: 21px;
-                
-                
+
+
             }
 
             ._D_Flex {
@@ -964,9 +966,9 @@ header {
                 }
             }
         }
-        
-    }    
- 
+
+    }
+
 
 
 }
@@ -1257,7 +1259,7 @@ line-height: 2.5;
         }
     }
     @media (max-width: 576px) {
-        ._D_Flex { 
+        ._D_Flex {
             .boxes {
                 margin-bottom: 20px;
                 align-items: flex-start;
@@ -1271,7 +1273,7 @@ line-height: 2.5;
             }
         }
     }
- 
+
 
 }//End Trusted Section
 
@@ -1285,7 +1287,7 @@ line-height: 2.5;
     height: 600px;
 
     .fixYourDevice_slecet {
-        
+
 
         ._D_Flex {
             display: flex;
@@ -1299,7 +1301,7 @@ line-height: 2.5;
         }
 
         }
-     
+
     }
     .device_images {
         position: absolute;
@@ -1312,10 +1314,10 @@ line-height: 2.5;
     }
 
     @media (max-width: 768px) {
-          
+
     }
     @media (max-width: 576px) {
-                 
+
         .device_images {
             left: 0;
             width: auto;
@@ -1324,11 +1326,11 @@ line-height: 2.5;
                 width: 100%;
             }
         }
-    
 
 
 
-    
+
+
 }//End fixYourDevice
 
 
@@ -1398,8 +1400,8 @@ line-height: 2.5;
                 }
             }
 
-            
-         
+
+
 
 
         }
@@ -1466,9 +1468,9 @@ line-height: 2.5;
                         line-height: 26px;
                         text-align: center;
                     }
-                    
+
                 }
-            }    
+            }
         }
     }
 
@@ -1487,11 +1489,11 @@ line-height: 2.5;
         ._D_Flex {
             flex-wrap: wrap;
             justify-content: space-between;
-        
+
             .footer_logo {
                 width: 78px;
                 overflow: hidden;
-                
+
                 img {
                     width: 100%;
                 }
@@ -1550,9 +1552,9 @@ line-height: 2.5;
                 }
             }
         }
-            
+
             .footer_newsLatter {
-            
+
                 h4 {
                     font-size: 20px;
                     font-weight: 600;
@@ -1598,7 +1600,7 @@ line-height: 2.5;
                             border: 1px solid #828d98;
                             color: $orangeColor;
                         }
-                        .btn-outline-secondary:focus, 
+                        .btn-outline-secondary:focus,
                         .btn-outline-secondary.focus {
                             box-shadow: none !important;
                             outline: none;
@@ -1606,20 +1608,20 @@ line-height: 2.5;
                     }
                 }
 
-            
+
             }
 
             @media (max-width: 768px) {
-              
+
             }
             @media (max-width: 576px) {
                  flex-direction: column;
-                 
+
                  .footer_links {
                     flex-direction: column;
                  }
             }
-         
+
         }
         .Copyrights {
             text-align: center;
@@ -1634,7 +1636,7 @@ line-height: 2.5;
         }
 
         @media (max-width: 768px) {
-              
+
         }
         @media (max-width: 576px) {
             padding-top: 50px;
@@ -1643,7 +1645,7 @@ line-height: 2.5;
                 margin-bottom: 50px;
             }
         }
-     
+
     }
 // End footer
 
@@ -3105,10 +3107,10 @@ background-color: #F6F7F8;
                width: 100% !important;
                margin-bottom: 20px;
 
-                
+
             }
         }
- 
+
     }
     @media (max-width: 576px) {
           .bs_breadcrumb {
@@ -3145,7 +3147,7 @@ background-color: #F6F7F8;
             }
         }
     }
- 
+
 
 }
 
@@ -3653,18 +3655,18 @@ background-color: #F6F7F8;
   }
 .company_form {
     width:60%;
-    
+
     @media (max-width: 1200px) {
             width:100% !important;
     }
     @media (max-width: 768px) {
-            width:100% !important;   
+            width:100% !important;
     }
     @media (max-width: 576px) {
-      
+
         .mat-form-field-flex, .mat-form-field {
           max-width: 286px !important;
-        }         
+        }
     }
 }
 
