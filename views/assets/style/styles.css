@@ -1,6 +1,7 @@
 html {
   font-size: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *, *::before, *::after {
@@ -715,7 +716,7 @@ header .nav_bar .Shopping_user_avatar_name .user_avatar_name .img_profile img {
 .bs_Nav .shopping_cart_user_profile .ddl_user .dropdown-content {
   min-width: 200px;
   max-width: 200px;
-  top: 33px;
+  top: 30px;
 }
 
 .bs_Nav .shopping_cart_user_profile .ddl_user .dropdown-content .cart_row .prod_img {
@@ -3412,7 +3413,7 @@ footer .Copyrights ._divider {
 .dropdown-content a {
   float: none;
   color: black;
-  padding: 12px 10px;
+  padding: 7px 10px;
   text-decoration: none;
   display: block;
   text-align: left;
@@ -3488,6 +3489,146 @@ footer .Copyrights ._divider {
   .company_form .mat-form-field-flex, .company_form .mat-form-field {
     max-width: 286px !important;
   }
+}
+
+.track_request .mat-step-header .mat-step-icon-selected,
+.track_request .mat-step-header .mat-step-icon-state-done,
+.track_request .mat-step-header .mat-step-icon-state-edit {
+  background-color: #EF8216 !important;
+}
+
+.track_request .mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.track_request .mat-form-field {
+  margin-top: 16px;
+}
+
+.track_request .table th, .track_request .table td {
+  border-right: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+  width: 150px;
+}
+
+.deliver_Address form {
+  margin-right: 100px;
+}
+
+.deliver_Address form ._textHead {
+  text-align: left;
+  padding: 20px 0;
+  display: flex;
+  max-height: 34px;
+  margin-bottom: 21px;
+}
+
+.deliver_Address form ._textHead h3 {
+  font-size: 18px;
+}
+
+.payment_Information ._textHead {
+  text-align: left;
+}
+
+.payment_Information ._textHead h3 {
+  font-size: 18px;
+}
+
+.payment_Information .payment_option ul {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 27px;
+}
+
+.payment_Information .payment_option ul li {
+  width: 100px;
+  overflow: hidden;
+  display: block;
+  margin-right: 50px;
+  opacity: .5;
+  cursor: pointer;
+}
+
+.payment_Information .payment_option ul li img {
+  width: 100%;
+}
+
+.payment_Information .payment_option ul li.active {
+  opacity: 1 !important;
+}
+
+.payment_Information .payment_option .payment_details .Item_row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 21px;
+}
+
+.payment_Information .payment_option .payment_details .Item_row span {
+  width: 121px;
+  text-transform: capitalize;
+}
+
+.payment_Information .payment_option .payment_details .Item_row .input-group {
+  width: 300px;
+}
+
+.payment_Information .payment_option .payment_details .Item_row .input-group.CVC {
+  width: 70px;
+}
+
+.payment_Information .payment_option .payment_details .Item_row .input-group.exp_date {
+  width: 100px;
+}
+
+.order_overview {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order_overview .s_style {
+  min-height: 300px;
+  margin-bottom: 30px;
+}
+
+.order_overview .s_style ._textHead {
+  text-align: left;
+}
+
+.order_overview .s_style ._textHead h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #767676;
+  text-transform: uppercase;
+}
+
+.order_overview .s_style span {
+  display: block;
+  margin-bottom: 8px !important;
+  padding: 10px !important;
+  background-color: #cecece1f;
+  border-radius: 5px;
+}
+
+.order_overview .s_style span strong {
+  color: #767676;
+  margin-right: 5px !important;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.order_overview .s_style span p {
+  display: inline-block;
+  margin-left: 5px !important;
+  font-weight: 500;
+}
+
+.order_overview .box-left {
+  width: 48%;
+}
+
+.order_overview .box-right {
+  width: 48%;
 }
 
 /* These Imports get Error

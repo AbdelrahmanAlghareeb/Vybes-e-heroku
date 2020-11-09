@@ -707,7 +707,7 @@ header {
                 .dropdown-content {
                     min-width: 200px;
                     max-width: 200px;
-                    top: 33px;
+                    top: 30px;
 
                     .cart_row {
 
@@ -3594,7 +3594,7 @@ background-color: #F6F7F8;
   .dropdown-content a {
     float: none;
     color: black;
-    padding: 12px 10px;
+    padding: 7px 10px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -3694,7 +3694,123 @@ background-color: #F6F7F8;
 
 }
 
+.deliver_Address {
 
+    form {
+        margin-right: 100px;
+
+        ._textHead {
+            text-align: left;
+            padding: 20px 0;
+            display: flex;
+            max-height: 34px;
+            margin-bottom: 21px;
+            h3 {
+                font-size: 18px;
+            }
+
+        }
+    }
+}
+.payment_Information {
+    ._textHead {
+        text-align: left;
+
+        h3 {
+            font-size: 18px;
+        }
+    }
+    .payment_option {
+        ul {
+            display: flex;
+            align-items: center;
+            margin: 20px 0 27px;
+            li {
+                width: 100px;
+                overflow: hidden;
+                display: block;
+                margin-right: 50px;
+                opacity: .5;
+                cursor: pointer;
+                img {
+                    width: 100%;
+                }
+                &.active {
+                    opacity: 1 !important;
+                }
+            }
+        }
+
+        .payment_details {
+
+            .Item_row {
+                display: flex;
+                align-items: center;
+                margin-bottom: 21px;
+                span {
+                    width: 121px;
+                    text-transform: capitalize;
+                }
+                .input-group {
+                    width: 300px;
+
+                    &.CVC {
+                        width: 70px;
+                    }
+                    &.exp_date {
+                        width: 100px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.order_overview {
+    display: flex;
+    justify-content: space-between;
+
+    .s_style {
+        min-height: 300px;
+        margin-bottom: 30px;
+        ._textHead {
+            text-align: left;
+            h3 {
+                font-size: 17px;
+                font-weight: 600;
+                color: #767676;
+                text-transform: uppercase;            }
+        }
+        span {
+            display: block;
+            margin-bottom: 8px !important;
+            padding: 10px !important;
+            background-color: #cecece1f;
+            border-radius: 5px;
+
+            strong {
+                color: #767676;
+                margin-right: 5px !important;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+            p {
+                display: inline-block;
+                margin-left: 5px !important;
+                font-weight: 500;
+            }
+        }
+        
+    }
+    .box-left {
+        width: 48%;
+    }
+    .box-right {
+        width: 48%;
+    }
+}
 
 
 // if you'd like to use it without importing all of bootstrap it requires
