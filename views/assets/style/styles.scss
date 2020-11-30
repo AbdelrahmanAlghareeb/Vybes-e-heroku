@@ -3677,6 +3677,8 @@ background-color: #F6F7F8;
     background-color:   $orangeColor !important;
   }
 
+
+
   .mat-stepper-horizontal {
     margin-top: 8px;
   }
@@ -3684,6 +3686,8 @@ background-color: #F6F7F8;
   .mat-form-field {
     margin-top: 16px;
   }
+
+
 
   .table th, .table td {
     border-right: 1px solid #dee2e6;
@@ -3802,7 +3806,7 @@ background-color: #F6F7F8;
                 font-weight: 500;
             }
         }
-        
+
     }
     .box-left {
         width: 48%;
@@ -3812,6 +3816,13 @@ background-color: #F6F7F8;
     }
 }
 
+.track_track
+  .mat-step-header
+  .mat-step-icon-selected,
+  .mat-step-header .mat-step-icon-state-done,
+  .mat-step-header .mat-step-icon-state-edit{
+      background-color:   $orangeColor !important;
+    }
 
 // if you'd like to use it without importing all of bootstrap it requires
 /* These Imports get Error
