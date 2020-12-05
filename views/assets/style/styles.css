@@ -3353,7 +3353,7 @@ footer .Copyrights ._divider {
   position: absolute;
   top: 38%;
   right: 15%;
-  z-index: 9999999;
+  z-index: 5;
 }
 
 .hero_slider .social_media_icon ul li {

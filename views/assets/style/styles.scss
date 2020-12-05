@@ -3523,25 +3523,23 @@ background-color: #F6F7F8;
     }
 
     .social_media_icon {
-        position: absolute;
-        top: 38%;
-        right: 15%;
-        z-index: 9999999;
-        ul {
-            li {
-                margin-bottom: 14px;
-
-
-                a {
-                    font-size: 18px;
-                    color: rgba( $whiteColor, .6 );
-                    transition: all .3s ease-in-out;
-                    &:hover {
-                        color: $orangeColor;
-                    }
-                }
+      position: absolute;
+      top: 38%;
+      right: 15%;
+      z-index: 5;
+      ul {
+        li {
+          margin-bottom: 14px;
+          a {
+            font-size: 18px;
+            color: rgba( $whiteColor, .6 );
+            transition: all .3s ease-in-out;
+            &:hover {
+                color: $orangeColor;
             }
+          }
         }
+      }
     }
 }
 
