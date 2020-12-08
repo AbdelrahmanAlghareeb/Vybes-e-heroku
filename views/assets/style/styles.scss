@@ -2684,15 +2684,23 @@ background-color: #F6F7F8;
 
 
 .Only_product_view {
-
+  .selected {
+    border: 1px solid #FF9800 !important;
+    background-color: #fae7ae;
+  }
     margin:30px auto ;
     .OPV_Left {
-
+      .description {
+        padding-left: 120px;
+      }
         .OPV_Slick {
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #1f2836;
+            background-color: transparent;
+            img {
+              height: 400px;
+            }
         }
         .OPV_Left_info {
 
