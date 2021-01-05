@@ -29781,7 +29781,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
     var _c0 = function _c0(a1) {
-      return ["/products/mobiles/", a1];
+      return ["/products/MobilePhone/", a1];
     };
 
     var _c1 = function _c1(a0) {
@@ -29859,7 +29859,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r7.addTo("cart", mobileData_r6);
+          return ctx_r7.addTo("cart", "mobile", mobileData_r6);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 57);
@@ -29879,7 +29879,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r9.addTo("favourite", mobileData_r6);
+          return ctx_r9.addTo("favourite", "mobile", mobileData_r6);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 59);
@@ -29904,7 +29904,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](5, _c0, mobileData_r6.versionId));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](6, _c0, mobileData_r6.versionId));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -29920,12 +29920,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](7, _c1, ctx_r0.checkIfAlreadyFavourite(mobileData_r6)));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r0.checkIfAlreadyFavourite(mobileData_r6) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](8, _c1, ctx_r0.checkIfAlreadyFavourite(mobileData_r6)));
       }
     }
 
     function AllProductsComponent_a_81_Template(rf, ctx) {
       if (rf & 1) {
+        var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 45);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 46);
@@ -29982,7 +29986,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 55);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 61);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 56);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_81_Template_div_click_21_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
+
+          var mobileData_r10 = ctx.$implicit;
+
+          var ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r11.addTo("cart", "mobile", mobileData_r10);
+        });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 57);
 
@@ -29992,11 +30006,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 62);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 58);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_81_Template_div_click_24_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
+
+          var mobileData_r10 = ctx.$implicit;
+
+          var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r13.addTo("favourite", "mobile", mobileData_r10);
+        });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 59);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "i", 63);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "i", 60);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -30012,9 +30036,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (rf & 2) {
         var mobileData_r10 = ctx.$implicit;
 
+        var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](4, _c0, mobileData_r10.versionId));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](6, _c0, mobileData_r10.versionId));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -30027,12 +30053,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$$", mobileData_r10.price, "");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r1.checkIfAlreadyFavourite(mobileData_r10) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](8, _c1, ctx_r1.checkIfAlreadyFavourite(mobileData_r10)));
       }
     }
 
+    var _c2 = function _c2(a1) {
+      return ["/products/Accessory/", a1];
+    };
+
     function AllProductsComponent_a_92_Template(rf, ctx) {
       if (rf & 1) {
-        var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 45);
 
@@ -30093,13 +30129,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 56);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_92_Template_div_click_21_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r16);
 
-          var accessoryData_r11 = ctx.$implicit;
+          var accessoryData_r14 = ctx.$implicit;
 
-          var ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r12.addTo("cart", accessoryData_r11);
+          return ctx_r15.addTo("cart", "accessory", accessoryData_r14);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 57);
@@ -30113,13 +30149,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 58);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_92_Template_div_click_24_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r16);
 
-          var accessoryData_r11 = ctx.$implicit;
+          var accessoryData_r14 = ctx.$implicit;
 
-          var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r14.addTo("favourite", accessoryData_r11);
+          return ctx_r17.addTo("favourite", "accessory", accessoryData_r14);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 59);
@@ -30138,34 +30174,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var accessoryData_r11 = ctx.$implicit;
+        var accessoryData_r14 = ctx.$implicit;
 
         var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](5, _c0, accessoryData_r11.versionId));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](6, _c2, accessoryData_r14.versionId));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", accessoryData_r11.productImage ? "data:image/PNG;base64," + accessoryData_r11.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", accessoryData_r14.productImage ? "data:image/PNG;base64," + accessoryData_r14.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](accessoryData_r11.name);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](accessoryData_r14.name);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$$", accessoryData_r11.price, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$$", accessoryData_r14.price, "");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](7, _c1, ctx_r2.checkIfAlreadyFavourite(accessoryData_r11)));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r2.checkIfAlreadyFavourite(accessoryData_r14) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](8, _c1, ctx_r2.checkIfAlreadyFavourite(accessoryData_r14)));
       }
     }
 
+    var _c3 = function _c3(a1) {
+      return ["/products/Accessory", a1];
+    };
+
     function AllProductsComponent_a_103_Template(rf, ctx) {
       if (rf & 1) {
+        var _r20 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 45);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 46);
@@ -30222,7 +30266,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 55);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 61);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 56);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_103_Template_div_click_21_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r20);
+
+          var accessoryData_r18 = ctx.$implicit;
+
+          var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r19.addTo("cart", "accessory", accessoryData_r18);
+        });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 57);
 
@@ -30232,11 +30286,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 62);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 58);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_103_Template_div_click_24_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r20);
+
+          var accessoryData_r18 = ctx.$implicit;
+
+          var ctx_r21 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r21.addTo("favourite", "accessory", accessoryData_r18);
+        });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 59);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "i", 63);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "i", 60);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -30250,29 +30314,41 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var accessoryData_r15 = ctx.$implicit;
+        var accessoryData_r18 = ctx.$implicit;
+
+        var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](4, _c0, accessoryData_r15.versionId));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](6, _c3, accessoryData_r18.versionId));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", accessoryData_r15.productImage ? "data:image/PNG;base64," + accessoryData_r15.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", accessoryData_r18.productImage ? "data:image/PNG;base64," + accessoryData_r18.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](accessoryData_r15.name);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](accessoryData_r18.name);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$$", accessoryData_r15.price, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$$", accessoryData_r18.price, "");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r3.checkIfAlreadyFavourite(accessoryData_r18) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](8, _c1, ctx_r3.checkIfAlreadyFavourite(accessoryData_r18)));
       }
     }
 
+    var _c4 = function _c4(a1) {
+      return ["/products/HardwarePart/", a1];
+    };
+
     function AllProductsComponent_a_114_Template(rf, ctx) {
       if (rf & 1) {
-        var _r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 45);
 
@@ -30333,13 +30409,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 56);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_114_Template_div_click_21_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
 
-          var hardwarePartData_r16 = ctx.$implicit;
+          var hardwarePartData_r22 = ctx.$implicit;
 
-          var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r17.addTo("cart", hardwarePartData_r16);
+          return ctx_r23.addTo("cart", "hardPart", hardwarePartData_r22);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 57);
@@ -30353,13 +30429,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 58);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_114_Template_div_click_24_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r24);
 
-          var hardwarePartData_r16 = ctx.$implicit;
+          var hardwarePartData_r22 = ctx.$implicit;
 
-          var ctx_r19 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r25 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r19.addTo("favourite", hardwarePartData_r16);
+          return ctx_r25.addTo("favourite", "hardPart", hardwarePartData_r22);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 59);
@@ -30378,34 +30454,38 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var hardwarePartData_r16 = ctx.$implicit;
+        var hardwarePartData_r22 = ctx.$implicit;
 
         var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](5, _c0, hardwarePartData_r16.versionId));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](6, _c4, hardwarePartData_r22.id));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", hardwarePartData_r16.productImage ? "data:image/PNG;base64," + hardwarePartData_r16.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", hardwarePartData_r22.productImage ? "data:image/PNG;base64," + hardwarePartData_r22.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](hardwarePartData_r16.name);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](hardwarePartData_r22.name);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$$", hardwarePartData_r16.price, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$$", hardwarePartData_r22.price, "");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](7, _c1, ctx_r4.checkIfAlreadyFavourite(hardwarePartData_r16)));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r4.checkIfAlreadyFavourite(hardwarePartData_r22) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](8, _c1, ctx_r4.checkIfAlreadyFavourite(hardwarePartData_r22)));
       }
     }
 
     function AllProductsComponent_a_125_Template(rf, ctx) {
       if (rf & 1) {
+        var _r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 45);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 46);
@@ -30462,7 +30542,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 55);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 61);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 56);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_125_Template_div_click_21_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
+
+          var hardwarePartData_r26 = ctx.$implicit;
+
+          var ctx_r27 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r27.addTo("cart", "hardPart", hardwarePartData_r26);
+        });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 57);
 
@@ -30472,11 +30562,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 62);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 58);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AllProductsComponent_a_125_Template_div_click_24_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r28);
+
+          var hardwarePartData_r26 = ctx.$implicit;
+
+          var ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r29.addTo("favourite", "hardPart", hardwarePartData_r26);
+        });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "a", 59);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "i", 63);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "i", 60);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -30490,36 +30590,44 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var hardwarePartData_r20 = ctx.$implicit;
+        var hardwarePartData_r26 = ctx.$implicit;
+
+        var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](4, _c0, hardwarePartData_r20.versionId));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](6, _c4, hardwarePartData_r26.id));
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", hardwarePartData_r20.productImage ? "data:image/PNG;base64," + hardwarePartData_r20.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", hardwarePartData_r26.productImage ? "data:image/PNG;base64," + hardwarePartData_r26.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](hardwarePartData_r20.name);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](hardwarePartData_r26.name);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$$", hardwarePartData_r20.price, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$$", hardwarePartData_r26.price, "");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r5.checkIfAlreadyFavourite(hardwarePartData_r26) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](8, _c1, ctx_r5.checkIfAlreadyFavourite(hardwarePartData_r26)));
       }
     }
 
-    var _c2 = function _c2() {
-      return ["./mobiles"];
+    var _c5 = function _c5() {
+      return ["/products/MobilePhone"];
     };
 
-    var _c3 = function _c3() {
-      return ["./accessory"];
+    var _c6 = function _c6() {
+      return ["/products/Accessory"];
     };
 
-    var _c4 = function _c4() {
-      return ["./hardware-part"];
+    var _c7 = function _c7() {
+      return ["/products/HardwarePart/"];
     };
 
     var AllProductsComponent = /*#__PURE__*/function () {
@@ -30606,45 +30714,70 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this._MobileService.getHotDealProducts("HardwarePart").subscribe(function (data) {
             _this29.hotDealsHardwarePart = data.data;
           });
-        }
+        } // {
+        //   "userId": "string",
+        //   "categoryId": 0,
+        //   "versionId": 0
+        // }
+
       }, {
         key: "addTo",
-        value: function addTo(type, mobile) {
+        value: function addTo(type, category, product) {
+          var productItemData = {
+            userId: localStorage.getItem('id'),
+            categoryId: 1,
+            versionId: 1
+          };
+
+          switch (category) {
+            case "mobile":
+              productItemData.categoryId = 1;
+              productItemData.versionId = product['versionId']; // this.addToFavourite(productItemData);
+
+              break;
+
+            case "accessory":
+              productItemData.categoryId = 2;
+              productItemData.versionId = product['versionId']; // this.addToFavourite(productItemData);
+
+              break;
+
+            case "hardPart":
+              productItemData.categoryId = 3;
+              productItemData.versionId = product['versionId']; // this.addToFavourite(productItemData);
+
+              break;
+          }
+
           if (type === "cart") {
-            this.addToCart(mobile);
+            this.addToCart(productItemData);
           } else if (type === "favourite") {
-            this.addToFavourite(mobile);
+            this.addToFavourite(productItemData);
           }
         }
       }, {
         key: "addToCart",
-        value: function addToCart(mobile) {
+        value: function addToCart(product) {
           var _this30 = this;
 
-          this.ProductCartService.addToCart(mobile).subscribe(function (data) {
-            _this30.ProductCartService.getAllCartItem().subscribe(function (res) {});
+          this.ProductCartService.addToCart(product).subscribe(function (data) {
+            _this30.alertService.success('Added to Cart');
           });
         }
       }, {
         key: "addToFavourite",
-        value: function addToFavourite(mobile) {
+        value: function addToFavourite(productItemData) {
           var _this31 = this;
 
-          if (this.checkIfAlreadyFavourite(mobile)) {
+          if (this.checkIfAlreadyFavourite(productItemData)) {
             var id = this.FavouriteService.favourites$value.filter(function (product) {
-              return product.productId === mobile['id'];
+              return product.versionId === productItemData['versionId'] && product.categoryId === productItemData['categoryId'];
             })[0].id;
             this.FavouriteService.removeFromFavourites(id).subscribe(function (data) {
-              _this31.alertService.success('Deleted From Favorites');
+              _this31.alertService.warning('Deleted From Favorites');
             });
           } else {
-            var mobileItemData = {
-              userId: localStorage.getItem('id'),
-              productId: mobile['id'],
-              mobileVersionId: mobile['versionID']
-            };
-            this.FavouriteService.addToFavourites(mobileItemData).subscribe(function (data) {
-              // this.FavouriteService.getUserFavourites();
+            this.FavouriteService.addToFavourites(productItemData).subscribe(function (data) {
               _this31.alertService.success('Added to Favorites');
             });
           }
@@ -30653,7 +30786,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "checkIfAlreadyFavourite",
         value: function checkIfAlreadyFavourite(item) {
           return this.FavouriteService.favourites$value.some(function (product) {
-            return product.productId === item['id'] && product['versionId'] === item['versionID'];
+            return product.versionId === item['versionId'] && product.categoryId === item['categoryId'];
           });
         }
       }]);
@@ -30670,7 +30803,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-all-products"]],
       decls: 209,
       vars: 12,
-      consts: [[1, "hero_slider"], ["id", "carouselExampleCaptions", "data-ride", "carousel", 1, "carousel", "slide"], [1, "carousel-indicators"], ["data-target", "#carouselExampleCaptions", "data-slide-to", "0", 1, "active"], ["data-target", "#carouselExampleCaptions", "data-slide-to", "1"], ["data-target", "#carouselExampleCaptions", "data-slide-to", "2"], [1, "carousel-inner"], [1, "carousel-item", "active"], ["src", "../../../../../assets/images/Slider/slide-2.jpeg", "alt", "", 1, "d-block", "w-100"], [1, "carousel-caption", "d-none", "d-md-block"], [1, "Btn_action"], ["mat-flat-button", "", "color", "primary"], [1, "carousel-item"], ["src", "../../../../../assets/images/Slider/Slide-1.jpg", "alt", "", 1, "d-block", "w-100"], [1, "fas", "fa-shopping-cart"], [1, "bg_overlay"], [1, "social_media_icon"], ["href", ""], [1, "fab", "fa-facebook"], [1, "fab", "fa-twitter"], [1, "fab", "fa-pinterest"], [1, "fab", "fa-linkedin-in"], [1, "fab", "fa-tumblr"], [1, "All_Products_pg"], [1, "container"], [1, "_D_Flex"], [1, "All_Products_pg_Section_left"], [1, "section_header"], [3, "routerLink"], [1, "section_Products_view", "justify-content-start", "grid-container-highlight"], ["class", "Card_block", "style", "width: 100%;", 4, "ngFor", "ngForOf"], [1, "_ADS_img_728"], ["src", "../../../../../assets/images/728x90.jpg", "alt", ""], [1, "All_Products_pg_Section_right", "All_Products_pg_Section_left"], [1, "section_Products_view", "grid-container-hot-deal"], [1, "_our_features"], [1, "img_Box_40"], ["src", "../../../../../assets/images/_our_features/1.png", "alt", ""], ["src", "../../../../../assets/images/_our_features/2.png", "alt", ""], ["src", "../../../../../assets/images/_our_features/3.png", "alt", ""], ["src", "../../../../../assets/images/_our_features/4.png", "alt", ""], [1, "_latest_news"], [1, "LN_img"], ["src", "../../../../../assets/images/Slider/Slide-1.jpg", "alt", ""], [1, "LN_text"], [1, "Card_block", 2, "width", "100%"], [1, "card_text"], [1, "card_thum"], ["alt", "Card image cap", 2, "width", "100%", 3, "src"], [1, "card-title"], [1, "Product_Price"], [1, "Product_rating"], [1, "fa", "fa-star", "checked"], [1, "fa", "fa-star"], [1, "_clear_fix"], [1, "Card_actions_icon"], [1, "_float_Left", 3, "click"], ["mat-icon-button", "", 1, "shopping_cart_icon"], [1, "_float_Right", 3, "click"], ["mat-icon-button", "", 1, "Love_icon"], [1, "fas", "fa-heart", 3, "ngClass"], [1, "_float_Left"], [1, "_float_Right"], [1, "fas", "fa-heart"]],
+      consts: [[1, "hero_slider"], ["id", "carouselExampleCaptions", "data-ride", "carousel", 1, "carousel", "slide"], [1, "carousel-indicators"], ["data-target", "#carouselExampleCaptions", "data-slide-to", "0", 1, "active"], ["data-target", "#carouselExampleCaptions", "data-slide-to", "1"], ["data-target", "#carouselExampleCaptions", "data-slide-to", "2"], [1, "carousel-inner"], [1, "carousel-item", "active"], ["src", "../../../../../assets/images/Slider/slide-2.jpeg", "alt", "", 1, "d-block", "w-100"], [1, "carousel-caption", "d-none", "d-md-block"], [1, "Btn_action"], ["mat-flat-button", "", "color", "primary"], [1, "carousel-item"], ["src", "../../../../../assets/images/Slider/Slide-1.jpg", "alt", "", 1, "d-block", "w-100"], [1, "fas", "fa-shopping-cart"], [1, "bg_overlay"], [1, "social_media_icon"], ["href", ""], [1, "fab", "fa-facebook"], [1, "fab", "fa-twitter"], [1, "fab", "fa-pinterest"], [1, "fab", "fa-linkedin-in"], [1, "fab", "fa-tumblr"], [1, "All_Products_pg"], [1, "container"], [1, "_D_Flex"], [1, "All_Products_pg_Section_left"], [1, "section_header"], [3, "routerLink"], [1, "section_Products_view", "justify-content-start", "grid-container-highlight"], ["class", "Card_block", "style", "width: 100%;", 4, "ngFor", "ngForOf"], [1, "_ADS_img_728"], ["src", "../../../../../assets/images/728x90.jpg", "alt", ""], [1, "All_Products_pg_Section_right", "All_Products_pg_Section_left"], [1, "section_Products_view", "grid-container-hot-deal"], [1, "_our_features"], [1, "img_Box_40"], ["src", "../../../../../assets/images/_our_features/1.png", "alt", ""], ["src", "../../../../../assets/images/_our_features/2.png", "alt", ""], ["src", "../../../../../assets/images/_our_features/3.png", "alt", ""], ["src", "../../../../../assets/images/_our_features/4.png", "alt", ""], [1, "_latest_news"], [1, "LN_img"], ["src", "../../../../../assets/images/Slider/Slide-1.jpg", "alt", ""], [1, "LN_text"], [1, "Card_block", 2, "width", "100%"], [1, "card_text"], [1, "card_thum"], ["alt", "Card image cap", 2, "width", "100%", 3, "src"], [1, "card-title"], [1, "Product_Price"], [1, "Product_rating"], [1, "fa", "fa-star", "checked"], [1, "fa", "fa-star"], [1, "_clear_fix"], [1, "Card_actions_icon"], [1, "_float_Left", 3, "click"], ["mat-icon-button", "", 1, "shopping_cart_icon"], [1, "_float_Right", 3, "click"], ["mat-icon-button", "", 1, "Love_icon"], [1, "fas", "fa-heart", 3, "title", "ngClass"]],
       template: function AllProductsComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
@@ -30889,7 +31022,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "div", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](70, AllProductsComponent_a_70_Template, 27, 9, "a", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](70, AllProductsComponent_a_70_Template, 27, 10, "a", 30);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -30925,7 +31058,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](81, AllProductsComponent_a_81_Template, 27, 6, "a", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](81, AllProductsComponent_a_81_Template, 27, 10, "a", 30);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -30963,7 +31096,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](91, "div", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](92, AllProductsComponent_a_92_Template, 27, 9, "a", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](92, AllProductsComponent_a_92_Template, 27, 10, "a", 30);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -30999,7 +31132,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](102, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](103, AllProductsComponent_a_103_Template, 27, 6, "a", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](103, AllProductsComponent_a_103_Template, 27, 10, "a", 30);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -31037,7 +31170,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](113, "div", 29);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](114, AllProductsComponent_a_114_Template, 27, 9, "a", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](114, AllProductsComponent_a_114_Template, 27, 10, "a", 30);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -31073,7 +31206,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](124, "div", 34);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](125, AllProductsComponent_a_125_Template, 27, 6, "a", 30);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](125, AllProductsComponent_a_125_Template, 27, 10, "a", 30);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -31363,7 +31496,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         if (rf & 2) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](65);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](9, _c2));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](9, _c5));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
@@ -31375,7 +31508,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c3));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](10, _c6));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
@@ -31387,7 +31520,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](11, _c4));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](11, _c7));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
@@ -31457,39 +31590,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _favourites_favourites_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../favourites/favourites.component */
+    "./src/app/modules/products/components/favourites/favourites.component.ts");
+    /* harmony import */
+
+
+    var _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ../../services/ProductCart.service */
     "./src/app/modules/products/services/ProductCart.service.ts");
     /* harmony import */
 
 
-    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/platform-browser */
-    "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
+    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
     /* harmony import */
 
 
-    var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/material/icon */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/icon.js");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
@@ -31502,10 +31635,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _shared_directves_number_character_directive__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ../../../../shared/directves/number-character.directive */
     "./src/app/shared/directves/number-character.directive.ts");
-
-    var _c0 = function _c0(a1) {
-      return ["/products/mobiles/", a1];
-    };
 
     function CheckoutComponent_ng_container_12_Template(rf, ctx) {
       if (rf & 1) {
@@ -31540,6 +31669,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 17);
 
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CheckoutComponent_ng_container_12_Template_div_click_6_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
+
+          var item_r1 = ctx.$implicit;
+
+          var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          return ctx_r5.goTo(item_r1);
+        });
+
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "img", 18);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -31567,9 +31706,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           var item_r1 = ctx.$implicit;
 
-          var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r5.quantity("mins", item_r1);
+          return ctx_r6.quantity("mins", item_r1);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "i", 20);
@@ -31594,9 +31733,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           var item_r1 = ctx.$implicit;
 
-          var ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r7.quantity("plus", item_r1);
+          return ctx_r8.quantity("plus", item_r1);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "i", 22);
@@ -31619,11 +31758,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (rf & 2) {
         var item_r1 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("routerLink", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](7, _c0, item_r1.mobileVersionId));
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", item_r1.productImage ? "data:image/PNG;base64," + item_r1.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 
@@ -31633,7 +31768,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", item_r1.versionPrice, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", item_r1["productPrice"], "");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
@@ -31643,16 +31778,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", item_r1.versionPrice * item_r1.quantity, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", item_r1["productPrice"] * item_r1.quantity, "");
       }
     }
 
     var CheckoutComponent = /*#__PURE__*/function () {
-      function CheckoutComponent(ProductCartService, sanitizer) {
+      function CheckoutComponent(ProductCartService, router) {
         _classCallCheck(this, CheckoutComponent);
 
         this.ProductCartService = ProductCartService;
-        this.sanitizer = sanitizer;
+        this.router = router;
         this.ShippingFee = 18;
         this.changeTap = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.productArr = [];
@@ -31668,37 +31803,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function deleteItem(item, index) {
           var _this32 = this;
 
-          // debugger;
-          // this.ProductCartService.productsTotalPrice =
-          //   this.ProductCartService.productsTotalPrice -
-          //   this.ProductCartService.productArr[index].versionPrice;
-          // this.ProductCartService.productArr.splice(index, 1);
           this.ProductCartService.deleteFromCart(item.id).subscribe(function (resp) {
-            console.log(resp, 'deleted');
-
             _this32.getAllCartItem();
           });
         }
       }, {
-        key: "checkPrice",
-        value: function checkPrice(e) {
-          console.log('price', e);
-        }
-      }, {
         key: "getAllCartItem",
         value: function getAllCartItem() {
-          this.ProductCartService.getAllCartItem().subscribe(function (res) {
-            console.log(res, 'all cart item');
-          });
+          this.ProductCartService.getAllCartItem();
         }
       }, {
         key: "quantity",
         value: function quantity(type, item) {
+          var _this33 = this;
+
           if (type === "mins") {
             item.quantity = item.quantity > 1 ? item.quantity - 1 : 1;
             this.ProductCartService.orderOverViewData$value['orderItem'].map(function (items) {
               if (items.id === item.id) {
-                items.quantity - 1;
+                items.quantity - 1; //update quantity 
+
+                var data = {
+                  id: items.id,
+                  quantity: items.quantity
+                };
+
+                _this33.ProductCartService.updateQuantity(data).subscribe(function (data) {});
               }
             });
           } else if (type === "plus") {
@@ -31706,6 +31836,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.ProductCartService.orderOverViewData$value['orderItem'].map(function (items) {
               if (items.id === item.id) {
                 items.quantity + 1;
+                var data = {
+                  id: items.id,
+                  quantity: items.quantity
+                };
+
+                _this33.ProductCartService.updateQuantity(data).subscribe(function (data) {});
               }
             });
           }
@@ -31717,13 +31853,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function goToDetails() {
           this.changeTap.emit('next'); // this.router.navigate(['/products/address-details'])
         }
+      }, {
+        key: "goTo",
+        value: function goTo(item) {
+          this.router.navigate(["products/".concat(_favourites_favourites_component__WEBPACK_IMPORTED_MODULE_1__["Type"][item['categoryName']], "/").concat(item['versionId'])]);
+        }
       }]);
 
       return CheckoutComponent;
     }();
 
     CheckoutComponent.ɵfac = function CheckoutComponent_Factory(t) {
-      return new (t || CheckoutComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_ProductCart_service__WEBPACK_IMPORTED_MODULE_1__["ProductCartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]));
+      return new (t || CheckoutComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_ProductCart_service__WEBPACK_IMPORTED_MODULE_2__["ProductCartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]));
     };
 
     CheckoutComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -31734,7 +31875,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       },
       decls: 43,
       vars: 4,
-      consts: [[1, "Check_Out_pg"], [1, "container"], [1, "Check_Out_product"], [1, "Check_Out_product_table_header"], [4, "ngFor", "ngForOf"], [1, "Vouchercode_box"], [1, "input-group"], ["type", "text", "placeholder", "Vouchercode box", "aria-label", "Recipient's username", "aria-describedby", "button-addon2", 1, "form-control"], [1, "input-group-append"], ["mat-flat-button", "", "type", "button", "id", "button-addon2", 1, "btn", "btn-outline-secondary"], [1, "solid"], [1, "cost_price"], ["mat-flat-button", "", "id", "button-addon2", 3, "click"], [1, "Check_Out_product_box"], [1, "product_inf"], ["mat-icon-button", "", "color", "warn", "aria-label", "Example icon button with a heart icon", 3, "click"], [1, "fas", "fa-times"], [1, "img", 3, "routerLink"], ["alt", "Card image cap", 3, "src"], [3, "click"], [1, "fa", "fa-minus"], ["appNumberCharacters", "", "constraint", "numbersonly", "type", "text", 3, "ngModel", "value", "ngModelChange"], [1, "fa", "fa-plus"]],
+      consts: [[1, "Check_Out_pg"], [1, "container"], [1, "Check_Out_product"], [1, "Check_Out_product_table_header"], [4, "ngFor", "ngForOf"], [1, "Vouchercode_box"], [1, "input-group"], ["type", "text", "placeholder", "Vouchercode box", "aria-label", "Recipient's username", "aria-describedby", "button-addon2", 1, "form-control"], [1, "input-group-append"], ["mat-flat-button", "", "type", "button", "id", "button-addon2", 1, "btn", "btn-outline-secondary"], [1, "solid"], [1, "cost_price"], ["mat-flat-button", "", "id", "button-addon2", 3, "click"], [1, "Check_Out_product_box"], [1, "product_inf"], ["mat-icon-button", "", "color", "warn", "aria-label", "Example icon button with a heart icon", 3, "click"], [1, "fas", "fa-times"], [1, "img", 2, "cursor", "pointer", 3, "click"], ["alt", "Card image cap", 3, "src"], [3, "click"], [1, "fa", "fa-minus"], ["appNumberCharacters", "", "constraint", "numbersonly", "type", "text", 3, "ngModel", "value", "ngModelChange"], [1, "fa", "fa-plus"]],
       template: function CheckoutComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
@@ -31771,7 +31912,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, CheckoutComponent_ng_container_12_Template, 20, 9, "ng-container", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](12, CheckoutComponent_ng_container_12_Template, 20, 6, "ng-container", 4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 5);
 
@@ -31898,7 +32039,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", ctx.ProductCartService.productsTotalPrice + ctx.ShippingFee, "");
         }
       },
-      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"], _angular_router__WEBPACK_IMPORTED_MODULE_6__["RouterLink"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["DefaultValueAccessor"], _shared_directves_number_character_directive__WEBPACK_IMPORTED_MODULE_8__["NumberCharacterDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NgModel"]],
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIcon"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["DefaultValueAccessor"], _shared_directves_number_character_directive__WEBPACK_IMPORTED_MODULE_8__["NumberCharacterDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_7__["NgModel"]],
       styles: ["input[_ngcontent-%COMP%] {\n  width: 50px;\n  height: 30px;\n  border: 1px solid #ef8216;\n  text-indent: 3px;\n  text-align: center;\n}\ninput[_ngcontent-%COMP%]:focus {\n  outline: none;\n  border: 1px solid #ef8216;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wcm9kdWN0cy9jb21wb25lbnRzL2NoZWNrb3V0L0M6XFxmcmVlbGFuY2VyXFxWeWJlc1xcVnliZXMtQW5ndWxhci9zcmNcXGFwcFxcbW9kdWxlc1xccHJvZHVjdHNcXGNvbXBvbmVudHNcXGNoZWNrb3V0XFxjaGVja291dC5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvbW9kdWxlcy9wcm9kdWN0cy9jb21wb25lbnRzL2NoZWNrb3V0L2NoZWNrb3V0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFDO0VBQ0MsV0FBQTtFQUNBLFlBQUE7RUFDQSx5QkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7QUNDRjtBREFFO0VBQ0UsYUFBQTtFQUNBLHlCQUFBO0FDRUoiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL3Byb2R1Y3RzL2NvbXBvbmVudHMvY2hlY2tvdXQvY2hlY2tvdXQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIgaW5wdXQge1xyXG4gIHdpZHRoOiA1MHB4O1xyXG4gIGhlaWdodDogMzBweDtcclxuICBib3JkZXI6IDFweCBzb2xpZCAjZWY4MjE2O1xyXG4gIHRleHQtaW5kZW50OiAzcHg7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICY6Zm9jdXMge1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICNlZjgyMTY7XHJcbiAgfVxyXG4gfVxyXG4iLCJpbnB1dCB7XG4gIHdpZHRoOiA1MHB4O1xuICBoZWlnaHQ6IDMwcHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICNlZjgyMTY7XG4gIHRleHQtaW5kZW50OiAzcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbmlucHV0OmZvY3VzIHtcbiAgb3V0bGluZTogbm9uZTtcbiAgYm9yZGVyOiAxcHggc29saWQgI2VmODIxNjtcbn0iXX0= */"]
     });
     /*@__PURE__*/
@@ -31913,9 +32054,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_1__["ProductCartService"]
+          type: _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_2__["ProductCartService"]
         }, {
-          type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["DomSanitizer"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
         }];
       }, {
         changeTap: [{
@@ -32225,39 +32366,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "saveAddress",
         value: function saveAddress() {
-          var _this33 = this;
+          var _this34 = this;
 
           if (this.sameData) {
             this.address_Serv.updateAddress(this.innvoiceForm.value).subscribe(function (res) {
               console.log(res);
-              var address = _this33.innvoiceForm.value;
+              var address = _this34.innvoiceForm.value;
               address['id'] = res.data;
 
-              _this33.ProductCartService.orderOverViewData$.next(Object.assign(_this33.ProductCartService.orderOverViewData$value, {
+              _this34.ProductCartService.orderOverViewData$.next(Object.assign(_this34.ProductCartService.orderOverViewData$value, {
                 invoiceAddress: address,
                 deliveryAddress: address
               }));
 
-              console.log(_this33.ProductCartService.orderOverViewData$value, 'after address');
+              console.log(_this34.ProductCartService.orderOverViewData$value, 'after address');
 
-              _this33.changeTap.emit('next');
+              _this34.changeTap.emit('next');
             });
           } else {
             var innvoiceReq = this.address_Serv.updateAddress(this.innvoiceForm.value);
             var deliveryReq = this.address_Serv.updateAddress(this.deliveryForm.value);
             Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])([innvoiceReq, deliveryReq]).subscribe(function (res) {
               console.log(res);
-              var innvoiceAddress = _this33.innvoiceForm.value;
+              var innvoiceAddress = _this34.innvoiceForm.value;
               innvoiceAddress['id'] = res[0].data;
-              var deliveryAddress = _this33.deliveryForm.value;
+              var deliveryAddress = _this34.deliveryForm.value;
               deliveryAddress['id'] = res[1].data;
 
-              _this33.ProductCartService.orderOverViewData$.next(Object.assign(_this33.ProductCartService.orderOverViewData$value, {
+              _this34.ProductCartService.orderOverViewData$.next(Object.assign(_this34.ProductCartService.orderOverViewData$value, {
                 invoiceAddress: innvoiceAddress,
                 deliveryAddress: deliveryAddress
               }));
 
-              _this33.changeTap.emit('next');
+              _this34.changeTap.emit('next');
             });
           }
         }
@@ -32666,295 +32807,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
-  "./src/app/modules/products/components/favourites/favourites.component.ts":
-  /*!********************************************************************************!*\
-    !*** ./src/app/modules/products/components/favourites/favourites.component.ts ***!
-    \********************************************************************************/
-
-  /*! exports provided: FavouritesComponent */
-
-  /***/
-  function srcAppModulesProductsComponentsFavouritesFavouritesComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "FavouritesComponent", function () {
-      return FavouritesComponent;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _services_favourite_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ../../services/favourite.service */
-    "./src/app/modules/products/services/favourite.service.ts");
-    /* harmony import */
-
-
-    var src_app_core_services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! src/app/core/services */
-    "./src/app/core/services/index.ts");
-    /* harmony import */
-
-
-    var _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ../../services/ProductCart.service */
-    "./src/app/modules/products/services/ProductCart.service.ts");
-    /* harmony import */
-
-
-    var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-    /* harmony import */
-
-
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @angular/material/button */
-    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
-    /* harmony import */
-
-
-    var _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! @angular/material/icon */
-    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/icon.js");
-
-    function FavouritesComponent_ng_container_8_Template(rf, ctx) {
-      if (rf & 1) {
-        var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "ul", 5);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "li", 6);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 7);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function FavouritesComponent_ng_container_8_Template_button_click_3_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
-
-          var item_r1 = ctx.$implicit;
-
-          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-          return ctx_r3.deleteItem(item_r1);
-        });
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-icon");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "i", 8);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 9);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "img", 10);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "p");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "li");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "li");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "a", 11);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function FavouritesComponent_ng_container_8_Template_a_click_13_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
-
-          var item_r1 = ctx.$implicit;
-
-          var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-
-          return ctx_r5.addToCart(item_r1);
-        });
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "i", 12);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
-      }
-
-      if (rf & 2) {
-        var item_r1 = ctx.$implicit;
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", item_r1.productImage ? "data:image/PNG;base64," + item_r1.productImage : "../../assets/images/Product/1.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", item_r1.productName, " ");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", item_r1.versionPrice, "");
-      }
-    }
-
-    var FavouritesComponent = /*#__PURE__*/function () {
-      function FavouritesComponent(favouriteSrvc, alertSrvc, ProductCartService) {
-        _classCallCheck(this, FavouritesComponent);
-
-        this.favouriteSrvc = favouriteSrvc;
-        this.alertSrvc = alertSrvc;
-        this.ProductCartService = ProductCartService;
-      }
-
-      _createClass(FavouritesComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.getAllFavourites();
-        }
-      }, {
-        key: "addToFavourites",
-        value: function addToFavourites(product) {
-          var _this34 = this;
-
-          this.favouriteSrvc.addToFavourites(product).subscribe(function (res) {
-            _this34.alertSrvc.success('Added successfully');
-          });
-        }
-      }, {
-        key: "getAllFavourites",
-        value: function getAllFavourites() {
-          this.favouriteSrvc.getUserFavourites();
-        }
-      }, {
-        key: "deleteItem",
-        value: function deleteItem(item) {
-          var _this35 = this;
-
-          this.favouriteSrvc.removeFromFavourites(item.id).subscribe(function (res) {
-            // this.getAllFavourites();
-            _this35.alertSrvc.success('Deleted successfully');
-          });
-        }
-      }, {
-        key: "addToCart",
-        value: function addToCart(item) {
-          var _this36 = this;
-
-          var mobile = {
-            id: item.productId,
-            versionID: item.versionId
-          };
-          this.ProductCartService.addToCart(mobile).subscribe(function (data) {
-            _this36.ProductCartService.getAllCartItem().subscribe(function (res) {});
-          });
-        }
-      }]);
-
-      return FavouritesComponent;
-    }();
-
-    FavouritesComponent.ɵfac = function FavouritesComponent_Factory(t) {
-      return new (t || FavouritesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_favourite_service__WEBPACK_IMPORTED_MODULE_1__["FavouriteService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_2__["AlertService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_ProductCart_service__WEBPACK_IMPORTED_MODULE_3__["ProductCartService"]));
-    };
-
-    FavouritesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: FavouritesComponent,
-      selectors: [["app-favourites"]],
-      decls: 10,
-      vars: 3,
-      consts: [[1, "Check_Out_pg"], [1, "container"], [1, "Check_Out_product"], [1, "Check_Out_product_table_header"], [4, "ngFor", "ngForOf"], [1, "Check_Out_product_box"], [1, "product_inf"], ["mat-icon-button", "", "color", "warn", "aria-label", "Example icon button with a heart icon", 3, "click"], [1, "fas", "fa-times"], [1, "img"], ["alt", "", 3, "src"], ["mat-icon-button", "", 1, "shopping_cart_icon", 3, "click"], [1, "fas", "fa-shopping-cart"]],
-      template: function FavouritesComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "ul", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "pRODUCT");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "PRICE");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, FavouritesComponent_ng_container_8_Template, 15, 3, "ng-container", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](9, "async");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](9, 1, ctx.favouriteSrvc.favourites$));
-        }
-      },
-      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIcon"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatAnchor"]],
-      pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["AsyncPipe"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcHJvZHVjdHMvY29tcG9uZW50cy9mYXZvdXJpdGVzL2Zhdm91cml0ZXMuY29tcG9uZW50LnNjc3MifQ== */"]
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FavouritesComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-          selector: 'app-favourites',
-          templateUrl: './favourites.component.html',
-          styleUrls: ['./favourites.component.scss']
-        }]
-      }], function () {
-        return [{
-          type: _services_favourite_service__WEBPACK_IMPORTED_MODULE_1__["FavouriteService"]
-        }, {
-          type: src_app_core_services__WEBPACK_IMPORTED_MODULE_2__["AlertService"]
-        }, {
-          type: _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_3__["ProductCartService"]
-        }];
-      }, null);
-    })();
-    /***/
-
-  },
-
-  /***/
   "./src/app/modules/products/components/only-product-view/only-product-view.component.ts":
   /*!**********************************************************************************************!*\
     !*** ./src/app/modules/products/components/only-product-view/only-product-view.component.ts ***!
@@ -33073,9 +32925,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (rf & 1) {
         var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 33);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 34);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OnlyProductViewComponent_div_0_div_49_Template_button_click_1_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10);
@@ -33111,9 +32963,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (rf & 1) {
         var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 33);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 33);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 34);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OnlyProductViewComponent_div_0_div_55_Template_button_click_1_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13);
@@ -33340,7 +33192,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           var ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r16.addToCart();
+          return ctx_r16.addMobileToCart();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](64, "i", 27);
@@ -33353,17 +33205,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "div", 28);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "button", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "button", 29);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OnlyProductViewComponent_div_0_Template_button_click_67_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r15);
 
           var ctx_r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r17.addToFavorite();
+          return ctx_r17.addToFavoriteDecsion();
         });
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](68, "i", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](68, "i", 30);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -33375,9 +33227,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "div", 30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "div", 31);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "h2", 31);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "h2", 32);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](71, "Description");
 
@@ -33417,7 +33269,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](26, 10, ctx_r0.price - ctx_r0.discountPrice, "EUR"), "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](26, 12, ctx_r0.price - ctx_r0.discountPrice, "EUR"), "");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -33443,7 +33295,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.storages);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r0.checkIfAlreadyFavourite(ctx_r0.mobileProduct) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r0.checkIfAlreadyFavourite(ctx_r0.mobileProduct) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.mobileProduct == null ? null : ctx_r0.mobileProduct.description);
       }
@@ -33477,9 +33337,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (rf & 1) {
         var _r23 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 32);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 33);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 35);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 36);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OnlyProductViewComponent_div_1_div_44_Template_button_click_1_listener($event) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r23);
@@ -33491,7 +33351,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 7);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 36);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 37);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -33631,7 +33491,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 34, 17);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 35, 17);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](44, OnlyProductViewComponent_div_1_div_44_Template, 4, 4, "div", 18);
 
@@ -33654,7 +33514,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           var ctx_r24 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r24.addToCart();
+          return ctx_r24.addAccessoryToCart();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](49, "i", 27);
@@ -33667,17 +33527,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "div", 28);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "button", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "button", 29);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OnlyProductViewComponent_div_1_Template_button_click_52_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r25);
 
           var ctx_r26 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r26.addToFavorite();
+          return ctx_r26.addToFavoriteDecsion();
         });
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](53, "i", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](53, "i", 30);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -33689,9 +33549,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "div", 30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "div", 31);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "h2", 31);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "h2", 32);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56, "Description");
 
@@ -33731,7 +33591,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](26, 8, ctx_r1.price - ctx_r1.discountPrice, "EUR"), "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](26, 10, ctx_r1.price - ctx_r1.discountPrice, "EUR"), "");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -33749,7 +33609,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r1.productVersions);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r1.checkIfAlreadyFavourite(ctx_r1.accessoryProduct) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r1.checkIfAlreadyFavourite(ctx_r1.accessoryProduct) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r1.accessoryProduct == null ? null : ctx_r1.accessoryProduct.description);
       }
@@ -33920,7 +33788,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           var ctx_r28 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r28.addToCart();
+          return ctx_r28.addHardWarePart();
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](48, "i", 27);
@@ -33933,17 +33801,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "div", 28);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "button", 26);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "button", 29);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OnlyProductViewComponent_div_2_Template_button_click_51_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r29);
 
           var ctx_r30 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r30.addToFavorite();
+          return ctx_r30.addToFavoriteDecsion();
         });
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](52, "i", 29);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](52, "i", 38);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -33955,9 +33823,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 30);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "div", 31);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "h2", 31);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "h2", 32);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "Description");
 
@@ -33997,7 +33865,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](26, 8, ctx_r2.price - ctx_r2.discountPrice, "EUR"), "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](26, 9, ctx_r2.price - ctx_r2.discountPrice, "EUR"), "");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -34015,7 +33883,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r2.HardwarePartProduct.mobileModelName);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx_r2.checkIfAlreadyFavourite(ctx_r2.HardwarePartProduct) ? "Already Favourite" : " Not Favourite");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r2.HardwarePartProduct == null ? null : ctx_r2.HardwarePartProduct.description);
       }
@@ -34053,6 +33925,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function getTypeAndId() {
           this.mobileVersionId = this._ActivatedRoute.snapshot.paramMap.get('id');
           this.type = this._ActivatedRoute.snapshot.paramMap.get('type');
+          this.data = {
+            userId: localStorage.getItem("id"),
+            versionId: Number(this.mobileVersionId)
+          };
         }
       }, {
         key: "getSingleProduct",
@@ -34077,55 +33953,61 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getMobileById",
         value: function getMobileById() {
-          var _this37 = this;
+          var _this35 = this;
 
           this._MobileService.getMobileByIdServer(this.mobileVersionId).subscribe(function (response) {
-            _this37.mobileProduct = response.data;
-            _this37.orignalPrice = response.data.price;
-            _this37.price = response.data.price;
-            _this37.discountPrice = response.data.discountPrice;
-            _this37.productVersions = response.data.mobilePhoneVersions;
-            _this37.colors = _toConsumableArray(new Set(_this37.productVersions.map(function (item) {
+            _this35.mobileProduct = response.data;
+            _this35.orignalPrice = response.data.price;
+            _this35.price = response.data.price;
+            _this35.discountPrice = response.data.discountPrice;
+            _this35.productVersions = response.data.mobilePhoneVersions;
+            _this35.colors = _toConsumableArray(new Set(_this35.productVersions.map(function (item) {
               return item.mobileColorName;
             })));
-            _this37.storages = _toConsumableArray(new Set(_this37.productVersions.map(function (item) {
+            _this35.storages = _toConsumableArray(new Set(_this35.productVersions.map(function (item) {
               return item.mobileStorageName;
             })));
-            _this37.color = _this37.colors[0];
-            _this37.storage = _this37.storages[0];
+            _this35.color = _this35.productVersions.filter(function (product) {
+              return product.id === Number(_this35.mobileVersionId);
+            })[0].mobileColorName;
+            _this35.storage = _this35.productVersions.filter(function (product) {
+              return product.id === Number(_this35.mobileVersionId);
+            })[0].mobileStorageName;
 
-            _this37.getPriceOfVersions();
+            _this35.getPriceOfVersions();
           });
         }
       }, {
         key: "getAccessoryById",
         value: function getAccessoryById() {
-          var _this38 = this;
+          var _this36 = this;
 
           this.AccessoryService.getAccessoryByIdServer(this.mobileVersionId).subscribe(function (response) {
-            _this38.accessoryProduct = response.data;
-            _this38.productVersions = response.data.accessoryVersions;
-            _this38.productImage = _this38.productVersions[0].productImage;
-            _this38.price = _this38.productVersions[0].price;
-            _this38.discountPrice = _this38.productVersions[0].discountPrice;
+            _this36.accessoryProduct = response.data;
+            _this36.productVersions = response.data.accessoryVersions;
+            _this36.version = _this36.productVersions[0];
+            _this36.productImage = _this36.productVersions[0].productImage;
+            _this36.price = _this36.productVersions[0].price;
+            _this36.discountPrice = _this36.productVersions[0].discountPrice;
           });
         }
       }, {
         key: "getHardwarePartById",
         value: function getHardwarePartById() {
-          var _this39 = this;
+          var _this37 = this;
 
           this.HardwarePartService.getHardwarePartByIdServer(this.mobileVersionId).subscribe(function (response) {
-            _this39.HardwarePartProduct = response.data;
-            _this39.productImage = _this39.HardwarePartProduct.productImage;
-            _this39.price = _this39.HardwarePartProduct.price;
-            _this39.discountPrice = _this39.HardwarePartProduct.discountPrice;
+            _this37.HardwarePartProduct = response.data;
+            _this37.version = _this37.HardwarePartProduct;
+            _this37.productImage = _this37.HardwarePartProduct.productImage;
+            _this37.price = _this37.HardwarePartProduct.price;
+            _this37.discountPrice = _this37.HardwarePartProduct.discountPrice;
           });
         }
       }, {
-        key: "addToCart",
-        value: function addToCart() {
-          var _this40 = this;
+        key: "addMobileToCart",
+        value: function addMobileToCart() {
+          var _this38 = this;
 
           if (!this.color) {
             return this.alertSrvc.error('Select Color of this version', true);
@@ -34135,28 +34017,87 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return this.alertSrvc.error('Select Storage of this version', true);
           }
 
-          var mobile = {
-            id: this.mobileProduct['id'],
-            versionID: this.version.Id
-          };
-          this.ProductCartService.addToCart(mobile).subscribe(function (data) {
-            _this40.ProductCartService.getAllCartItem().subscribe(function (res) {});
+          this.data.versionId = this.version['id'];
+          this.ProductCartService.addMobileToCart(this.data).subscribe(function (data) {
+            _this38.alertSrvc.success('Added successfully');
           });
         }
       }, {
+        key: "addAccessoryToCart",
+        value: function addAccessoryToCart() {
+          var _this39 = this;
+
+          this.data.versionId = this.version['id'];
+          this.ProductCartService.addAccessoryToCart(this.data).subscribe(function (data) {
+            _this39.alertSrvc.success('Added successfully');
+          });
+        }
+      }, {
+        key: "addHardWarePart",
+        value: function addHardWarePart() {
+          var _this40 = this;
+
+          this.ProductCartService.addHardWareToCart(this.data).subscribe(function (data) {
+            _this40.alertSrvc.success('Added successfully');
+          });
+        }
+      }, {
+        key: "addToFavoriteDecsion",
+        value: function addToFavoriteDecsion() {
+          var productItemData = {
+            userId: localStorage.getItem('id'),
+            categoryId: 1,
+            versionId: 1
+          };
+
+          switch (this.type) {
+            case "MobilePhone":
+              if (!this.color) {
+                return this.alertSrvc.error('Select Color of this version', true);
+              }
+
+              if (!this.storage) {
+                return this.alertSrvc.error('Select Storage of this version', true);
+              }
+
+              productItemData.categoryId = 1;
+              productItemData.versionId = this.version.id;
+              this.addToFavorite(productItemData);
+              break;
+
+            case "Accessory":
+              productItemData.categoryId = 2;
+              productItemData.versionId = this.version.id;
+              this.addToFavorite(productItemData);
+              break;
+
+            case "HardwarePart":
+              productItemData.categoryId = 3;
+              productItemData.versionId = this.version.id;
+              this.addToFavorite(productItemData);
+              break;
+
+            default:
+              break;
+          }
+        }
+      }, {
         key: "addToFavorite",
-        value: function addToFavorite() {
+        value: function addToFavorite(productItemData) {
           var _this41 = this;
 
-          var mobileItemData = {
-            userId: localStorage.getItem('id'),
-            productId: this.mobileProduct.id,
-            mobileVersionId: Number(this.mobileVersionId)
-          };
-          this.favouriteSrvc.addToFavourites(mobileItemData).subscribe(function (data) {
-            // this.favouriteSrvc.getUserFavourites();
-            _this41.alertSrvc.success('Added successfully');
-          });
+          if (this.checkIfAlreadyFavourite(productItemData)) {
+            var id = this.favouriteSrvc.favourites$value.filter(function (product) {
+              return product.versionId === _this41.version.id && product.categoryId === productItemData['categoryId'];
+            })[0].id;
+            this.favouriteSrvc.removeFromFavourites(id).subscribe(function (data) {
+              _this41.alertSrvc.warning('Deleted From Favorites');
+            });
+          } else {
+            this.favouriteSrvc.addToFavourites(productItemData).subscribe(function (data) {
+              _this41.alertSrvc.success('Added to Favorites');
+            });
+          }
         }
       }, {
         key: "selectColor",
@@ -34169,16 +34110,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return version.mobileColorName === _this42.color;
           });
           storageChildren.forEach(function (item) {
-            if (!_this42.storage || _this42.storage && _this42.color) {
-              var btnText = item['innerText'].trim();
+            var btnText = item['innerText'].trim();
 
-              if (!filteredProducts.some(function (item) {
-                return item.mobileStorageName == btnText;
-              })) {
-                item['children'][0].disabled = true;
-              } else {
-                item['children'][0].disabled = false;
-              }
+            if (filteredProducts.filter(function (p) {
+              return p.mobileStorageName === _this42.storage;
+            }).length === 0) {
+              _this42.storage = null;
+            }
+
+            if (!filteredProducts.some(function (item) {
+              return item.mobileStorageName == btnText;
+            })) {
+              item['children'][0].disabled = true;
+            } else {
+              item['children'][0].disabled = false;
             }
           });
           this.getPriceOfVersions();
@@ -34194,16 +34139,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return version.mobileStorageName === _this43.storage;
           });
           colorChildren.forEach(function (item) {
-            if (!_this43.color || _this43.color && _this43.storage) {
-              var btnText = item['innerText'].trim();
+            if (filteredProducts.filter(function (p) {
+              return p.mobileColorName === _this43.color;
+            }).length === 0) {
+              _this43.color = null;
+            }
 
-              if (!filteredProducts.some(function (item) {
-                return item.mobileColorName == btnText;
-              })) {
-                item['children'][0].disabled = true;
-              } else {
-                item['children'][0].disabled = false;
-              }
+            var btnText = item['innerText'].trim();
+
+            if (!filteredProducts.some(function (item) {
+              return item.mobileColorName == btnText;
+            })) {
+              item['children'][0].disabled = true;
+            } else {
+              item['children'][0].disabled = false;
             }
           });
           this.getPriceOfVersions();
@@ -34228,6 +34177,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "ifValueRest",
         value: function ifValueRest() {
+          var _this45 = this;
+
           var childrenAllStorage = Array.from(this.allStorage.nativeElement.children);
           var childrenAllColor = Array.from(this.allColor.nativeElement.children);
           childrenAllStorage.forEach(function (item) {
@@ -34236,13 +34187,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           childrenAllColor.forEach(function (item) {
             return item['children'][0].disabled = false;
           });
-          this.price = this.mobileProduct.price;
-          this.discountPrice = this.mobileProduct.discountPrice;
-          this.version = undefined;
-          this.color = "";
-          this.storage = "";
-          this.color = this.colors[0];
-          this.storage = this.storages[0];
+          this.color = this.productVersions.filter(function (product) {
+            return product.id === Number(_this45.mobileVersionId);
+          })[0].mobileColorName;
+          this.storage = this.productVersions.filter(function (product) {
+            return product.id === Number(_this45.mobileVersionId);
+          })[0].mobileStorageName;
           this.getPriceOfVersions();
         }
       }, {
@@ -34255,10 +34205,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           })[0];
 
           if (selectedAccessory) {
+            this.version = selectedAccessory;
             this.productImage = selectedAccessory.productImage;
             this.price = selectedAccessory.price;
             this.discountPrice = selectedAccessory.discountPrice;
           }
+        }
+      }, {
+        key: "checkIfAlreadyFavourite",
+        value: function checkIfAlreadyFavourite(item) {
+          var _this46 = this;
+
+          if (this.version) return this.favouriteSrvc.favourites$value.some(function (product) {
+            return product.versionId === _this46.version.id && product.categoryId === item['categoryId'];
+          });
         }
       }]);
 
@@ -34295,14 +34255,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_services_mobile_service__WEBPACK_IMPORTED_MODULE_1__["MobileService"]])],
       decls: 3,
       vars: 3,
-      consts: [["class", "Only_product_view", 4, "ngIf"], [1, "Only_product_view"], [1, "container", "pt-5", "pb-5"], [1, "row"], [1, "col-12", "col-md-9", "col-lg-9"], [1, "OPV_Left"], [1, "col-12", "col-md-6", "col-lg-6"], [1, "OPV_Slick"], [1, "card-img-top", 3, "src"], [1, "OPV_Left_info"], [1, "Product_rating"], [1, "fa", "fa-star", "checked"], [1, "fa", "fa-star"], [1, "Price_Offer"], [4, "ngIf"], [1, "_D_Flex"], [1, "color_box", 2, "display", "flex"], ["allColor", ""], ["style", "margin: 2px;", 4, "ngFor", "ngForOf"], [1, "storage_box", 2, "display", "flex"], ["allStorage", ""], [1, "bg-danger", "text-white", 2, "margin", "auto", "display", "flex", "align-items", "center", "justify-content", "center", "width", "fit-content", "border-radius", "10px"], ["mat-button", "", 3, "click"], [1, "solid"], [1, "but_product_action", "pb-md-4"], [1, "Btn_action"], ["mat-flat-button", "", "color", "primary", 3, "click"], [1, "fas", "fa-shopping-cart"], [1, "Btn_Fav"], [1, "fas", "fa-heart"], [1, "col-12", "col-md-8", "col-lg-6", "description"], [1, "mb-2"], [2, "margin", "2px"], [1, "btn", "btn-light", "border", 3, "ngClass", "click"], [1, "color_box", 2, "display", "flex", "width", "60px", "height", "60px"], [1, "btn", "btn-light", "border", 2, "display", "contents", 3, "ngClass", "click"], [1, "card-img-top", 2, "height", "100%", "width", "100%", 3, "src"]],
+      consts: [["class", "Only_product_view", 4, "ngIf"], [1, "Only_product_view"], [1, "container", "pt-5", "pb-5"], [1, "row"], [1, "col-12", "col-md-9", "col-lg-9"], [1, "OPV_Left"], [1, "col-12", "col-md-6", "col-lg-6"], [1, "OPV_Slick"], [1, "card-img-top", 3, "src"], [1, "OPV_Left_info"], [1, "Product_rating"], [1, "fa", "fa-star", "checked"], [1, "fa", "fa-star"], [1, "Price_Offer"], [4, "ngIf"], [1, "_D_Flex"], [1, "color_box", 2, "display", "flex"], ["allColor", ""], ["style", "margin: 2px;", 4, "ngFor", "ngForOf"], [1, "storage_box", 2, "display", "flex"], ["allStorage", ""], [1, "bg-danger", "text-white", 2, "margin", "auto", "display", "flex", "align-items", "center", "justify-content", "center", "width", "fit-content", "border-radius", "10px"], ["mat-button", "", 3, "click"], [1, "solid"], [1, "but_product_action", "pb-md-4"], [1, "Btn_action"], ["mat-flat-button", "", "color", "primary", 3, "click"], [1, "fas", "fa-shopping-cart"], [1, "Btn_Fav"], ["mat-flat-button", "", "color", "primary", 3, "title", "click"], [1, "fas", "fa-heart", 3, "title"], [1, "col-12", "col-md-8", "col-lg-6", "description"], [1, "mb-2"], [2, "margin", "2px"], [1, "btn", "btn-light", "border", 3, "ngClass", "click"], [1, "color_box", 2, "display", "flex", "width", "60px", "height", "60px"], [1, "btn", "btn-light", "border", 2, "display", "contents", 3, "ngClass", "click"], [1, "card-img-top", 2, "height", "100%", "width", "100%", 3, "src"], [1, "fas", "fa-heart"]],
       template: function OnlyProductViewComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, OnlyProductViewComponent_div_0_Template, 74, 13, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, OnlyProductViewComponent_div_0_Template, 74, 15, "div", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, OnlyProductViewComponent_div_1_Template, 59, 11, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, OnlyProductViewComponent_div_1_Template, 59, 13, "div", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, OnlyProductViewComponent_div_2_Template, 58, 11, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, OnlyProductViewComponent_div_2_Template, 58, 12, "div", 0);
         }
 
         if (rf & 2) {
@@ -34518,13 +34478,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(OrderOverviewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this45 = this;
+          var _this47 = this;
 
           this.ProductCartService.orderOverViewData$.subscribe(function (data) {
-            _this45.deliveryAddress = data['deliveryAddress'];
-            _this45.invoiceAddress = data['invoiceAddress'];
-            _this45.paymentMethod = data['pymentMethod'];
-            _this45.orderItem = data['orderItem'];
+            _this47.deliveryAddress = data['deliveryAddress'];
+            _this47.invoiceAddress = data['invoiceAddress'];
+            _this47.paymentMethod = data['pymentMethod'];
+            _this47.orderItem = data['orderItem'];
           });
         }
       }, {
@@ -34563,10 +34523,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkIfAllDateExist",
         value: function checkIfAllDateExist() {
-          var _this46 = this;
+          var _this48 = this;
 
           this.checkNotEmptyField = Object.keys(this.ProductCartService.orderOverViewData$value).every(function (value) {
-            return _this46.ProductCartService.orderOverViewData$value[value] !== "" || _this46.ProductCartService.orderOverViewData$value[value] !== 0;
+            return _this48.ProductCartService.orderOverViewData$value[value] !== "" || _this48.ProductCartService.orderOverViewData$value[value] !== 0;
           });
           this.checkIfProductExist = this.ProductCartService.orderOverViewData$value['orderItem'].length > 0;
           return this.checkNotEmptyField && this.checkIfProductExist;
@@ -34574,7 +34534,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "confirmOrder",
         value: function confirmOrder() {
-          var _this47 = this;
+          var _this49 = this;
 
           var _a, _b;
 
@@ -34588,7 +34548,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               status: 1
             };
             this.ProductCartService.addOrder(order).subscribe(function (data) {
-              _this47.router.navigate(['products/thank-you', {
+              _this49.router.navigate(['products/thank-you', {
                 orderId: data['data']
               }]);
             });
@@ -35291,12 +35251,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     };
 
     var ProductCardComponent = /*#__PURE__*/function () {
-      function ProductCardComponent(ProductCartService, alertSrvc, favouriteSrvc, router, ActivatedRoute) {
+      function ProductCardComponent(ProductCartService, alertSrvc, FavouriteService, router, ActivatedRoute) {
         _classCallCheck(this, ProductCardComponent);
 
         this.ProductCartService = ProductCartService;
         this.alertSrvc = alertSrvc;
-        this.favouriteSrvc = favouriteSrvc;
+        this.FavouriteService = FavouriteService;
         this.router = router;
         this.ActivatedRoute = ActivatedRoute;
       }
@@ -35309,43 +35269,67 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addToCart",
         value: function addToCart(mobileData) {
-          var _this48 = this;
+          var _this50 = this;
 
           this.ProductCartService.addToCart(mobileData).subscribe(function (res) {
-            console.log(res);
-
-            _this48.ProductCartService.getAllCartItem().subscribe(function (res) {});
+            _this50.alertSrvc.success('Added to Cart');
           });
         }
       }, {
-        key: "addToFavorite",
-        value: function addToFavorite(mobileData) {
-          var _this49 = this;
+        key: "addTo",
+        value: function addTo(addType, product) {
+          var productItemData = {
+            userId: localStorage.getItem('id'),
+            categoryId: 1,
+            versionId: 1
+          };
 
-          if (this.checkIfAlreadyFavourite(mobileData)) {
-            var id = this.favouriteSrvc.favourites$value.filter(function (product) {
-              return product.productId === mobileData['id'];
+          switch (this.type) {
+            case "MobilePhone":
+              productItemData.categoryId = 1;
+              productItemData.versionId = product['versionId'];
+              break;
+
+            case "Accessory":
+              productItemData.categoryId = 2;
+              productItemData.versionId = product['versionId'];
+              break;
+
+            case "HardwarePart":
+              productItemData.categoryId = 3;
+              productItemData.versionId = product['versionId'];
+              break;
+          }
+
+          if (addType === "cart") {
+            this.addToCart(productItemData);
+          } else if (addType === "favourite") {
+            this.addToFavourite(productItemData);
+          }
+        }
+      }, {
+        key: "addToFavourite",
+        value: function addToFavourite(productItemData) {
+          var _this51 = this;
+
+          if (this.checkIfAlreadyFavourite(productItemData)) {
+            var id = this.FavouriteService.favourites$value.filter(function (product) {
+              return product.versionId === productItemData['versionId'] && product.categoryId === productItemData['categoryId'];
             })[0].id;
-            this.favouriteSrvc.removeFromFavourites(id).subscribe(function (data) {
-              _this49.alertSrvc.success('Deleted From Favorites');
+            this.FavouriteService.removeFromFavourites(id).subscribe(function (data) {
+              _this51.alertSrvc.warning('Deleted From Favorites');
             });
           } else {
-            var mobileItemData = {
-              userId: localStorage.getItem('id'),
-              productId: mobileData['id'],
-              mobileVersionId: mobileData['versionID']
-            };
-            this.favouriteSrvc.addToFavourites(mobileItemData).subscribe(function (data) {
-              // this.FavouriteService.getUserFavourites();
-              _this49.alertSrvc.success('Added to Favorites');
+            this.FavouriteService.addToFavourites(productItemData).subscribe(function (data) {
+              _this51.alertSrvc.success('Added to Favorites');
             });
           }
         }
       }, {
         key: "checkIfAlreadyFavourite",
         value: function checkIfAlreadyFavourite(item) {
-          return this.favouriteSrvc.favourites$value.some(function (product) {
-            return product.productId === item['id'] && product['versionId'] === item['versionID'];
+          return this.FavouriteService.favourites$value.some(function (product) {
+            return product.versionId === item['versionId'] && product.categoryId === item['categoryId'];
           });
         }
       }, {
@@ -35369,44 +35353,45 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-product-card"]],
       inputs: {
         mobileData: "mobileData",
-        mobileID: "mobileID"
+        mobileID: "mobileID",
+        type: "type"
       },
       decls: 26,
-      vars: 6,
-      consts: [[1, "Card_block"], [1, "card_thum"], [3, "click"], ["alt", "Card image cap", 3, "src"], [1, "card_text"], [1, "card-title"], [1, "Product_Price"], [1, "Product_rating"], [1, "fa", "fa-star", "checked"], [1, "fa", "fa-star"], [1, "_clear_fix"], [1, "Card_actions_icon"], [1, "_float_Left"], ["mat-icon-button", "", 1, "shopping_cart_icon", 3, "click"], [1, "fas", "fa-shopping-cart"], [1, "_float_Right", 3, "click"], [1, "fas", "fa-heart", 3, "ngClass"]],
+      vars: 7,
+      consts: [[1, "Card_block"], [1, "card_thum", 3, "click"], ["alt", "Card image cap", 3, "src"], [1, "card_text"], [1, "card-title"], [1, "Product_Price"], [1, "Product_rating"], [1, "fa", "fa-star", "checked"], [1, "fa", "fa-star"], [1, "_clear_fix"], [1, "Card_actions_icon"], [1, "_float_Left"], ["mat-icon-button", "", 1, "shopping_cart_icon", 3, "click"], [1, "fas", "fa-shopping-cart"], [1, "_float_Right", 3, "click"], [1, "fas", "fa-heart", 3, "title", "ngClass"]],
       template: function ProductCardComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductCardComponent_Template_a_click_2_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductCardComponent_Template_div_click_1_listener() {
             return ctx.goTo();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h5", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h5", 4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "h6");
 
@@ -35420,43 +35405,43 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "span", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "span", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "span", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "span", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "span", 8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "span", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "span", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "span", 8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "span", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "span", 8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "div", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "div", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 11);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "a", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductCardComponent_Template_a_click_22_listener() {
-            return ctx.addToCart(ctx.mobileData);
+            return ctx.addTo("cart", ctx.mobileData);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "i", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](23, "i", 13);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 14);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ProductCardComponent_Template_div_click_24_listener() {
-            return ctx.addToFavorite(ctx.mobileData);
+            return ctx.addTo("favourite", ctx.mobileData);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "i", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "i", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -35482,7 +35467,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](4, _c0, ctx.checkIfAlreadyFavourite(ctx.mobileData)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("title", ctx.checkIfAlreadyFavourite(ctx.mobileData) ? "Already Favourite" : " Not Favourite");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](5, _c0, ctx.checkIfAlreadyFavourite(ctx.mobileData)));
         }
       },
       directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatAnchor"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgClass"]],
@@ -35515,6 +35502,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }],
         mobileID: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        type: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }]
       });
@@ -35579,9 +35569,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (rf & 2) {
         var mobile_r2 = ctx.$implicit;
 
+        var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("mobileData", mobile_r2)("mobileID", mobile_r2["versionId"] || mobile_r2["id"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("type", ctx_r0.type)("mobileData", mobile_r2)("mobileID", mobile_r2["versionId"] || mobile_r2["id"]);
       }
     }
 
@@ -35609,17 +35601,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       type: ProductViewComponent,
       selectors: [["app-product-view"]],
       inputs: {
-        mobiles: "mobiles"
+        mobiles: "mobiles",
+        type: "type"
       },
       features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([_services_mobile_service__WEBPACK_IMPORTED_MODULE_1__["MobileService"]])],
       decls: 3,
       vars: 2,
-      consts: [[1, "section_Products_view"], [4, "ngFor", "ngForOf"], ["class", "text-center p-5", 4, "ngIf"], [3, "mobileData", "mobileID"], [1, "text-center", "p-5"]],
+      consts: [[1, "section_Products_view"], [4, "ngFor", "ngForOf"], ["class", "text-center p-5", 4, "ngIf"], [3, "type", "mobileData", "mobileID"], [1, "text-center", "p-5"]],
       template: function ProductViewComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ProductViewComponent_div_1_Template, 2, 2, "div", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, ProductViewComponent_div_1_Template, 2, 3, "div", 1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -35656,6 +35649,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         mobiles: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"],
           args: ['mobiles']
+        }],
+        type: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }]
       });
     })();
@@ -36442,88 +36438,88 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getBrands",
         value: function getBrands() {
-          var _this50 = this;
+          var _this52 = this;
 
           this._FilterSer.getAllBrands().subscribe(function (response) {
-            _this50.brands = response.data;
+            _this52.brands = response.data;
           });
         }
       }, {
         key: "getSlots",
         value: function getSlots() {
-          var _this51 = this;
+          var _this53 = this;
 
           this._FilterSer.getAllSlots().subscribe(function (response) {
-            _this51.slots = response.data;
+            _this53.slots = response.data;
           });
         }
       }, {
         key: "getRams",
         value: function getRams() {
-          var _this52 = this;
+          var _this54 = this;
 
           this._FilterSer.getAllRams().subscribe(function (response) {
-            _this52.rams = response.data;
+            _this54.rams = response.data;
           });
         }
       }, {
         key: "getStorages",
         value: function getStorages() {
-          var _this53 = this;
+          var _this55 = this;
 
           this._FilterSer.getAllStorages().subscribe(function (response) {
-            _this53.storages = response.data;
+            _this55.storages = response.data;
           });
         }
       }, {
         key: "getConnectivity",
         value: function getConnectivity() {
-          var _this54 = this;
+          var _this56 = this;
 
           this._FilterSer.getAllConnectivity().subscribe(function (response) {
-            _this54.connectivities = response.data;
+            _this56.connectivities = response.data;
           });
         }
       }, {
         key: "getColours",
         value: function getColours() {
-          var _this55 = this;
+          var _this57 = this;
 
           this._FilterSer.getAllColours().subscribe(function (response) {
-            _this55.colorsArr = response.data;
+            _this57.colorsArr = response.data;
           });
         }
       }, {
         key: "getAccessoryType",
         value: function getAccessoryType() {
-          var _this56 = this;
+          var _this58 = this;
 
           this._FilterSer.getAllAccessoryType().subscribe(function (response) {
-            _this56.AccessoryTypeArr = response.data;
+            _this58.AccessoryTypeArr = response.data;
           });
         }
       }, {
         key: "getMobileModel",
         value: function getMobileModel() {
-          var _this57 = this;
+          var _this59 = this;
 
           this._FilterSer.getAllMobileModel().subscribe(function (response) {
-            _this57.MobileModelArr = response.data;
+            _this59.MobileModelArr = response.data;
           });
         }
       }, {
         key: "getHardwarePartType",
         value: function getHardwarePartType() {
-          var _this58 = this;
+          var _this60 = this;
 
           this._FilterSer.getAllHardwarePartType().subscribe(function (response) {
-            _this58.HardwarePartTypeArr = response.data;
+            _this60.HardwarePartTypeArr = response.data;
           });
         }
       }, {
         key: "checkPriceValue",
         value: function checkPriceValue() {
-          var _this59 = this;
+          var _this61 = this;
 
           var lowPrice = this.priceForm.controls.fromPrice.value;
           var highPrice = this.priceForm.controls.toPrice.value;
@@ -36541,7 +36537,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               this._MobileService.getAllProducts(this.type, this.filter).subscribe(function (response) {
                 console.log('iam here in sidebar', response.data);
 
-                _this59._FilterSer.getData(response.data);
+                _this61._FilterSer.getData(response.data);
               });
             } else if (lowPrice == '' && highPrice != '') {
               if (!this.filter.FilterRange.Price) {
@@ -36553,7 +36549,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               this._MobileService.getAllProducts(this.type, this.filter).subscribe(function (response) {
                 console.log('iam here in sidebar', response.data);
 
-                _this59._FilterSer.getData(response.data);
+                _this61._FilterSer.getData(response.data);
               });
             } else if (lowPrice != '' && highPrice != '') {
               if (!this.filter.FilterRange.Price) {
@@ -37336,8 +37332,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ThankYouOrderComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.orderId = this.activeRout.snapshot.paramMap.get('orderId');
-          this.productService.getAllCartItem().subscribe();
+          this.orderId = this.activeRout.snapshot.paramMap.get('orderId'); // this.productService.getAllCartItem().subscribe();
         }
       }]);
 
@@ -37580,15 +37575,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var routes = [{
       path: '',
       component: _components_all_products_all_products_component__WEBPACK_IMPORTED_MODULE_3__["AllProductsComponent"]
-    }, {
-      path: ':type',
-      children: [{
-        path: ':id',
-        component: _components_only_product_view_only_product_view_component__WEBPACK_IMPORTED_MODULE_7__["OnlyProductViewComponent"]
-      }, {
-        path: '',
-        component: _products_component__WEBPACK_IMPORTED_MODULE_9__["ProductsComponent"]
-      }]
     }, // {
     //   path: 'accessories', children: [
     //     { path: ':id', component: OnlyProductViewComponent },
@@ -37610,6 +37596,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       path: 'thank-you',
       component: _components_thank_you_order_thank_you_order_component__WEBPACK_IMPORTED_MODULE_8__["ThankYouOrderComponent"]
+    }, {
+      path: ':type',
+      children: [{
+        path: ':id',
+        component: _components_only_product_view_only_product_view_component__WEBPACK_IMPORTED_MODULE_7__["OnlyProductViewComponent"]
+      }, {
+        path: '',
+        component: _products_component__WEBPACK_IMPORTED_MODULE_9__["ProductsComponent"]
+      }]
     }];
 
     var ProductsRoutingModule = function ProductsRoutingModule() {
@@ -37856,10 +37851,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ProductsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this60 = this;
+          var _this62 = this;
 
           this.activeRoute.params.subscribe(function (data) {
-            _this60.type = data['type'];
+            _this62.type = data['type'];
           });
           this.getUserData();
           this.getProductData();
@@ -37892,10 +37887,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getUserData",
         value: function getUserData() {
-          var _this61 = this;
+          var _this63 = this;
 
           this.authSrvc.userData$.subscribe(function (data) {
-            if (data) _this61.userData = data;
+            if (data) _this63.userData = data;
           });
         }
       }, {
@@ -37925,28 +37920,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllMobiles",
         value: function getAllMobiles() {
-          var _this62 = this;
+          var _this64 = this;
 
           this.mobileService.getAllProducts("MobilePhone", this.filters, this.sort).subscribe(function (res) {
-            _this62.mobiles = res.data;
+            _this64.mobiles = res.data;
           });
         }
       }, {
         key: "getAllAccessories",
         value: function getAllAccessories() {
-          var _this63 = this;
+          var _this65 = this;
 
           this.mobileService.getAllProducts("Accessory", this.filters, this.sort).subscribe(function (res) {
-            _this63.mobiles = res.data;
+            _this65.mobiles = res.data;
           });
         }
       }, {
         key: "getAllHardwarePart",
         value: function getAllHardwarePart() {
-          var _this64 = this;
+          var _this66 = this;
 
           this.mobileService.getAllProducts("HardwarePart", this.filters, this.sort).subscribe(function (res) {
-            _this64.mobiles = res.data;
+            _this66.mobiles = res.data;
           });
         }
       }, {
@@ -38008,8 +38003,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       },
       decls: 52,
-      vars: 8,
-      consts: [[1, "search_find"], [1, "container"], [1, "_D_Flex"], [1, "bs_dropdown"], [1, "dropdown"], ["mat-flat-button", "", "color", "primary", 1, "dropdown-toggle"], [1, "fas", "fa-bars"], ["aria-labelledby", "dropdownMenuButton", 1, "dropdown-menu"], [1, "dropdown-item"], [1, "input-group"], ["type", "text", "placeholder", "", "aria-label", "Recipient's username", "aria-describedby", "button-addon2", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "input-group-append", 3, "click"], ["mat-flat-button", "", "type", "button", "id", "button-addon2"], [1, "fas", "fa-search"], [1, "Search_Result"], [1, "Search_Result_aside"], [1, "Search_Result_aside_left"], [1, "menu_side_BTn", 3, "click"], ["mat-flat-button", ""], [3, "ngClass"], [3, "type", "filterChange"], [1, "Search_Result_aside_right"], [1, "sort_search"], [1, "sort_search_item"], [1, "form-group"], ["id", "exampleFormControlSelect1", 1, "form-control", 3, "value", "change"], ["mySelect", ""], [3, "value", 4, "ngFor", "ngForOf"], ["id", "exampleFormControlSelect1", 1, "form-control", 3, "change"], ["sortBySelect", ""], ["value", "ID"], ["value", "1"], ["value", "2"], [3, "mobiles"], ["class", "_bs_pagination", 4, "ngIf"], [3, "value"], [1, "_bs_pagination"], ["aria-label", "Page navigation example"], [1, "pagination", "justify-content-center"], ["class", "page-item", 4, "ngFor", "ngForOf"], [1, "page-item"], [1, "page-link", 3, "ngClass", "click"]],
+      vars: 9,
+      consts: [[1, "search_find"], [1, "container"], [1, "_D_Flex"], [1, "bs_dropdown"], [1, "dropdown"], ["mat-flat-button", "", "color", "primary", 1, "dropdown-toggle"], [1, "fas", "fa-bars"], ["aria-labelledby", "dropdownMenuButton", 1, "dropdown-menu"], [1, "dropdown-item"], [1, "input-group"], ["type", "text", "placeholder", "", "aria-label", "Recipient's username", "aria-describedby", "button-addon2", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "input-group-append", 3, "click"], ["mat-flat-button", "", "type", "button", "id", "button-addon2"], [1, "fas", "fa-search"], [1, "Search_Result"], [1, "Search_Result_aside"], [1, "Search_Result_aside_left"], [1, "menu_side_BTn", 3, "click"], ["mat-flat-button", ""], [3, "ngClass"], [3, "type", "filterChange"], [1, "Search_Result_aside_right"], [1, "sort_search"], [1, "sort_search_item"], [1, "form-group"], ["id", "exampleFormControlSelect1", 1, "form-control", 3, "value", "change"], ["mySelect", ""], [3, "value", 4, "ngFor", "ngForOf"], ["id", "exampleFormControlSelect1", 1, "form-control", 3, "change"], ["sortBySelect", ""], ["value", "ID"], ["value", "1"], ["value", "2"], [3, "type", "mobiles"], ["class", "_bs_pagination", 4, "ngIf"], [3, "value"], [1, "_bs_pagination"], ["aria-label", "Page navigation example"], [1, "pagination", "justify-content-center"], ["class", "page-item", 4, "ngFor", "ngForOf"], [1, "page-item"], [1, "page-link", 3, "ngClass", "click"]],
       template: function ProductsComponent_Template(rf, ctx) {
         if (rf & 1) {
           var _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -38234,11 +38229,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](7, _c2));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction0"](8, _c2));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("mobiles", ctx.mobiles);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("type", ctx.type)("mobiles", ctx.mobiles);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
@@ -39003,7 +38998,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllProducts",
         value: function getAllProducts(type, filter, sort) {
-          var _this65 = this;
+          var _this67 = this;
 
           var searchParams = '';
           searchParams = "?pageSize=".concat(this.pageSize, "&PageNumber=").concat(this.pageNumber);
@@ -39048,14 +39043,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl).concat(type).concat(searchParams)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (res) {
               var count = res['count'];
 
-              _this65.setPagination(undefined, undefined, count);
+              _this67.setPagination(undefined, undefined, count);
             }));
           }
 
           return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl).concat(type, "/GetVersioned").concat(searchParams)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (res) {
             var count = res['count'];
 
-            _this65.setPagination(undefined, undefined, count);
+            _this67.setPagination(undefined, undefined, count);
           }));
         }
       }, {
