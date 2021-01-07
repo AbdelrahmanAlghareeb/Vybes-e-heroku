@@ -108,7 +108,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       loadChildren: function loadChildren() {
         return Promise.all(
         /*! import() | modules-auth-auth-module */
-        [__webpack_require__.e("default~modules-auth-auth-module~modules-fix-request-modules-fix-request-module~modules-products-pro~51c17185"), __webpack_require__.e("default~modules-auth-auth-module~modules-products-products-module~modules-profile-profile-module"), __webpack_require__.e("modules-auth-auth-module")]).then(__webpack_require__.bind(null,
+        [__webpack_require__.e("default~modules-auth-auth-module~modules-fix-request-modules-fix-request-module~modules-products-pro~51c17185"), __webpack_require__.e("default~modules-auth-auth-module~modules-products-products-module~modules-profile-profile-module"), __webpack_require__.e("common"), __webpack_require__.e("modules-auth-auth-module")]).then(__webpack_require__.bind(null,
         /*! ./modules/auth/auth.module */
         "./src/app/modules/auth/auth.module.ts")).then(function (m) {
           return m.AuthModule;
@@ -123,7 +123,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | modules-products-products-module */
-          [__webpack_require__.e("default~modules-auth-auth-module~modules-fix-request-modules-fix-request-module~modules-products-pro~51c17185"), __webpack_require__.e("default~modules-auth-auth-module~modules-products-products-module~modules-profile-profile-module"), __webpack_require__.e("modules-products-products-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~modules-auth-auth-module~modules-fix-request-modules-fix-request-module~modules-products-pro~51c17185"), __webpack_require__.e("default~modules-auth-auth-module~modules-products-products-module~modules-profile-profile-module"), __webpack_require__.e("common"), __webpack_require__.e("modules-products-products-module")]).then(__webpack_require__.bind(null,
           /*! ./modules/products/products.module */
           "./src/app/modules/products/products.module.ts")).then(function (m) {
             return m.ProductsModule;
@@ -134,7 +134,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | modules-profile-profile-module */
-          [__webpack_require__.e("default~modules-auth-auth-module~modules-fix-request-modules-fix-request-module~modules-products-pro~51c17185"), __webpack_require__.e("default~modules-auth-auth-module~modules-products-products-module~modules-profile-profile-module"), __webpack_require__.e("default~modules-fix-request-modules-fix-request-module~modules-profile-profile-module"), __webpack_require__.e("modules-profile-profile-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~modules-auth-auth-module~modules-fix-request-modules-fix-request-module~modules-products-pro~51c17185"), __webpack_require__.e("default~modules-auth-auth-module~modules-products-products-module~modules-profile-profile-module"), __webpack_require__.e("default~modules-fix-request-modules-fix-request-module~modules-profile-profile-module"), __webpack_require__.e("common"), __webpack_require__.e("modules-profile-profile-module")]).then(__webpack_require__.bind(null,
           /*! ./modules/profile/profile.module */
           "./src/app/modules/profile/profile.module.ts")).then(function (m) {
             return m.ProfileModule;
@@ -3350,7 +3350,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 32);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h5");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h5", 41);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
 
@@ -3382,7 +3382,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 37);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "i", 41);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "i", 42);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span");
 
@@ -3408,7 +3408,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 42);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 43);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_ng_container_45_Template_a_click_1_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
@@ -3430,7 +3430,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 32);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h5");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h5", 41);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
 
@@ -3460,15 +3460,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function HeaderComponent_button_55_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 43);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 44);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 44);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 45);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 45);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 46);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 46);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 47);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h6");
 
@@ -3510,15 +3510,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function HeaderComponent_div_84_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 47);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 48);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 48);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 49);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Register");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "a", 49);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "a", 50);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "login");
 
@@ -3638,7 +3638,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-header"]],
       decls: 85,
       vars: 51,
-      consts: [[1, "_bg_color"], [1, "container"], [1, "bs_Nav", "bg_transparent"], [1, "contact_info"], ["href", "mailto: info@company.com"], [1, "fas", "fa-envelope"], ["href", "tel:123-456-7890"], [1, "fas", "fa-phone-alt"], [1, "bs_Nav", "navbar", "navbar-expand-lg", "navbar-dark", "container"], [1, "navbar-brand", 3, "routerLink"], [1, "logo"], ["src", "../../../assets/images/SVG/Logo.svg", "alt", ""], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarSupportedContent", "aria-controls", "navbarSupportedContent", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarSupportedContent", 1, "collapse", "navbar-collapse"], [1, "navbar-nav", "mr-auto"], [1, "nav-item"], [1, "nav-link", 3, "routerLink"], [1, "sr-only"], [1, "form-inline", "my-2", "my-lg-0", "shopping_cart_user_profile"], [1, "dropdown"], ["class", "my-2 my-sm-0 dropbtn", 4, "ngIf"], [1, "dropdown-content"], [4, "ngFor", "ngForOf"], [1, "DDL_action"], ["mat-flat-button", "", 1, "btn", "btn-primary", 3, "routerLink"], [1, "dropdown", "ddl_user"], ["mat-button", "", "class", "mr-sm-2 nav_user_profile", 4, "ngIf"], [3, "routerLink"], [1, "cart_row"], [1, "prod_img"], [1, "fas", "fa-user-cog"], [1, "prod_name"], ["href", "javascript:void(0)", 3, "click"], [1, "fas", "fa-sign-out-alt"], [4, "ngIf"], ["class", "d-flex", 4, "ngIf"], [1, "my-2", "my-sm-0", "dropbtn"], [1, "fas", "fa-heart"], ["routerLinkActive", "active", 2, "cursor", "pointer", 3, "click"], ["alt", "", 3, "src"], [1, "fas", "fa-shopping-cart"], [2, "cursor", "pointer", 3, "click"], ["mat-button", "", 1, "mr-sm-2", "nav_user_profile"], [1, "nav_user_profile_img"], ["src", "../../../assets/images/Nav User Profile.jpg", "alt", ""], [1, "nav_user_profile_name"], [1, "d-flex"], [1, "text-orange", 3, "routerLink"], [1, "ml-2", "text-orange", 3, "routerLink"]],
+      consts: [[1, "_bg_color"], [1, "container"], [1, "bs_Nav", "bg_transparent"], [1, "contact_info"], ["href", "mailto: info@company.com"], [1, "fas", "fa-envelope"], ["href", "tel:123-456-7890"], [1, "fas", "fa-phone-alt"], [1, "bs_Nav", "navbar", "navbar-expand-lg", "navbar-dark", "container"], [1, "navbar-brand", 3, "routerLink"], [1, "logo"], ["src", "../../../assets/images/SVG/Logo.svg", "alt", ""], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarSupportedContent", "aria-controls", "navbarSupportedContent", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarSupportedContent", 1, "collapse", "navbar-collapse"], [1, "navbar-nav", "mr-auto"], [1, "nav-item"], [1, "nav-link", 3, "routerLink"], [1, "sr-only"], [1, "form-inline", "my-2", "my-lg-0", "shopping_cart_user_profile"], [1, "dropdown"], ["class", "my-2 my-sm-0 dropbtn", 4, "ngIf"], [1, "dropdown-content"], [4, "ngFor", "ngForOf"], [1, "DDL_action"], ["mat-flat-button", "", 1, "btn", "btn-primary", 3, "routerLink"], [1, "dropdown", "ddl_user"], ["mat-button", "", "class", "mr-sm-2 nav_user_profile", 4, "ngIf"], [3, "routerLink"], [1, "cart_row"], [1, "prod_img"], [1, "fas", "fa-user-cog"], [1, "prod_name"], ["href", "javascript:void(0)", 3, "click"], [1, "fas", "fa-sign-out-alt"], [4, "ngIf"], ["class", "d-flex", 4, "ngIf"], [1, "my-2", "my-sm-0", "dropbtn"], [1, "fas", "fa-heart"], ["routerLinkActive", "active", 2, "cursor", "pointer", 3, "click"], ["alt", "", 3, "src"], [2, "color", "black"], [1, "fas", "fa-shopping-cart"], [2, "cursor", "pointer", 3, "click"], ["mat-button", "", 1, "mr-sm-2", "nav_user_profile"], [1, "nav_user_profile_img"], ["src", "../../../assets/images/Nav User Profile.jpg", "alt", ""], [1, "nav_user_profile_name"], [1, "d-flex"], [1, "text-orange", 3, "routerLink"], [1, "ml-2", "text-orange", 3, "routerLink"]],
       template: function HeaderComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "header", 0);

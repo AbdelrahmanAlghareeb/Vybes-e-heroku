@@ -29486,57 +29486,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var src_app_modules_auth_services_api_auth_api_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! src/app/modules/auth/services/api/auth-api.service */
-    "./src/app/modules/auth/services/api/auth-api.service.ts");
-    /* harmony import */
-
-
-    var src_app_core_services_alert_alert_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! src/app/core/services/alert/alert.service */
-    "./src/app/core/services/alert/alert.service.ts");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @angular/router */
-    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-    /* harmony import */
-
-
-    var _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../checkout/checkout.component */
     "./src/app/modules/products/components/checkout/checkout.component.ts");
     /* harmony import */
 
 
-    var _payment_information_payment_information_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _payment_information_payment_information_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../payment-information/payment-information.component */
     "./src/app/modules/products/components/payment-information/payment-information.component.ts");
     /* harmony import */
 
 
-    var _order_overview_order_overview_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _order_overview_order_overview_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../order-overview/order-overview.component */
     "./src/app/modules/products/components/order-overview/order-overview.component.ts");
 
     var _c0 = ["tabgroup"];
 
     var AddressDetailsComponent = /*#__PURE__*/function () {
-      function AddressDetailsComponent(authService, alertSrvc, router) {
+      function AddressDetailsComponent() {
         _classCallCheck(this, AddressDetailsComponent);
-
-        this.authService = authService;
-        this.alertSrvc = alertSrvc;
-        this.router = router;
       }
 
       _createClass(AddressDetailsComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          this.tabgroup._handleClick = this.interceptTabChange.bind(this);
+        }
+      }, {
+        key: "interceptTabChange",
+        value: function interceptTabChange(tab, tabHeader, idx) {
+          return; // return MatTabGroup.prototype._handleClick.apply(this.tabgroup, arguments);
+        }
       }, {
         key: "checkTab",
-        value: function checkTab(e) {// console.log(e);
+        value: function checkTab(event) {// console.log(e);
         }
       }, {
         key: "changeTapF",
@@ -29548,25 +29533,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       }, {
         key: "saveAllData",
-        value: function saveAllData() {
-          // if(this.basicInfo.checkValidation()) {
-          var userData = {//   "address1": this.deliverAddress.saveData().address1,
-            //   "address2": this.deliverAddress.saveData().address2,
-            //   "postCode": this.deliverAddress.saveData().postCode,
-            //   "city": this.deliverAddress.saveData().city,
-            //   "country": this.deliverAddress.saveData().country,
-            // };
-            // console.log('userData', userData)
-            // this.authService.registerBusiness(userData).subscribe(
-            //   (res) => {
-            //     console.log('res from server', res)
-            //     this.alertSrvc.success('Registered Successfully')
-            //       this.router.navigate(['/login'])
-            //   }, (err) => {
-            //     this.alertSrvc.error('Registeration failed')
-            //   }
-            // )
-          }; // }
+        value: function saveAllData() {// if(this.basicInfo.checkValidation()) {
+          // }
         }
       }]);
 
@@ -29574,7 +29542,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     AddressDetailsComponent.ɵfac = function AddressDetailsComponent_Factory(t) {
-      return new (t || AddressDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_modules_auth_services_api_auth_api_service__WEBPACK_IMPORTED_MODULE_3__["AuthApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services_alert_alert_service__WEBPACK_IMPORTED_MODULE_4__["AlertService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]));
+      return new (t || AddressDetailsComponent)();
     };
 
     AddressDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -29584,7 +29552,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_deliver_address_deliver_address_component__WEBPACK_IMPORTED_MODULE_2__["DeliverAddressComponent"], true);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstaticViewQuery"](_c0, true);
         }
 
         if (rf & 2) {
@@ -29664,7 +29632,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       },
-      directives: [_angular_material_tabs__WEBPACK_IMPORTED_MODULE_1__["MatTabGroup"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_1__["MatTab"], _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_6__["CheckoutComponent"], _deliver_address_deliver_address_component__WEBPACK_IMPORTED_MODULE_2__["DeliverAddressComponent"], _payment_information_payment_information_component__WEBPACK_IMPORTED_MODULE_7__["PaymentInformationComponent"], _order_overview_order_overview_component__WEBPACK_IMPORTED_MODULE_8__["OrderOverviewComponent"]],
+      directives: [_angular_material_tabs__WEBPACK_IMPORTED_MODULE_1__["MatTabGroup"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_1__["MatTab"], _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_3__["CheckoutComponent"], _deliver_address_deliver_address_component__WEBPACK_IMPORTED_MODULE_2__["DeliverAddressComponent"], _payment_information_payment_information_component__WEBPACK_IMPORTED_MODULE_4__["PaymentInformationComponent"], _order_overview_order_overview_component__WEBPACK_IMPORTED_MODULE_5__["OrderOverviewComponent"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcHJvZHVjdHMvY29tcG9uZW50cy9hZGRyZXNzLWRldGFpbHMvYWRkcmVzcy1kZXRhaWxzLmNvbXBvbmVudC5zY3NzIn0= */"]
     });
     /*@__PURE__*/
@@ -29678,13 +29646,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           styleUrls: ['./address-details.component.scss']
         }]
       }], function () {
-        return [{
-          type: src_app_modules_auth_services_api_auth_api_service__WEBPACK_IMPORTED_MODULE_3__["AuthApiService"]
-        }, {
-          type: src_app_core_services_alert_alert_service__WEBPACK_IMPORTED_MODULE_4__["AlertService"]
-        }, {
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
-        }];
+        return [];
       }, {
         deliverAddress: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
@@ -29692,7 +29654,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }],
         tabgroup: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-          args: ['tabgroup']
+          args: ['tabgroup', {
+            "static": true
+          }]
         }]
       });
     })();
@@ -32102,65 +32066,74 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! rxjs */
-    "./node_modules/rxjs/_esm2015/index.js");
-    /* harmony import */
-
-
-    var _services_address_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _services_address_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! ../../services/address.service */
     "./src/app/modules/products/services/address.service.ts");
     /* harmony import */
 
 
-    var _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../services/ProductCart.service */
     "./src/app/modules/products/services/ProductCart.service.ts");
     /* harmony import */
 
 
-    var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @angular/material/form-field */
-    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
+    var src_app_modules_profile_services_profile_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/modules/profile/services/profile.service */
+    "./src/app/modules/profile/services/profile.service.ts");
     /* harmony import */
 
 
-    var _angular_material_Input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! @angular/material/Input */
-    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/input.js");
+    var src_app_core_services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! src/app/core/services */
+    "./src/app/core/services/index.ts");
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
-    /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-    /* harmony import */
-
-
-    var _angular_material_select__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
-    /*! @angular/material/select */
-    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/select.js");
-    /* harmony import */
-
-
-    var _angular_material_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
-    /*! @angular/material/core */
-    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/material/checkbox */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/checkbox.js");
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @angular/material/form-field */
+    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
+    /* harmony import */
+
+
+    var _angular_material_Input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! @angular/material/Input */
+    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/input.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _angular_material_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! @angular/material/select */
+    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/select.js");
+    /* harmony import */
+
+
+    var _angular_material_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! @angular/material/core */
+    "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
 
-    function DeliverAddressComponent_mat_error_11_Template(rf, ctx) {
+    var _c0 = ["defaultAddressCheckbox"];
+    var _c1 = ["sameDataCheckbox"];
+
+    function DeliverAddressComponent_mat_error_14_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -32170,7 +32143,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    function DeliverAddressComponent_mat_error_17_Template(rf, ctx) {
+    function DeliverAddressComponent_mat_error_20_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -32180,7 +32153,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    function DeliverAddressComponent_mat_error_28_Template(rf, ctx) {
+    function DeliverAddressComponent_mat_error_31_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -32190,7 +32163,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    function DeliverAddressComponent_mat_error_34_Template(rf, ctx) {
+    function DeliverAddressComponent_mat_error_37_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " phone is Required ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+    }
+
+    function DeliverAddressComponent_mat_error_43_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -32200,9 +32183,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    function DeliverAddressComponent_mat_option_40_Template(rf, ctx) {
+    function DeliverAddressComponent_mat_option_49_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 22);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -32210,17 +32193,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var lang_r12 = ctx.$implicit;
+        var lang_r10 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("value", lang_r12.id);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("value", lang_r10.id);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", lang_r12.name, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", lang_r10.name, " ");
       }
     }
 
-    function DeliverAddressComponent_mat_error_41_Template(rf, ctx) {
+    function DeliverAddressComponent_mat_error_50_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -32230,7 +32213,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    function DeliverAddressComponent_mat_error_54_Template(rf, ctx) {
+    function DeliverAddressComponent_form_51_mat_error_10_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -32240,7 +32223,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    function DeliverAddressComponent_mat_error_60_Template(rf, ctx) {
+    function DeliverAddressComponent_form_51_mat_error_16_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -32250,7 +32233,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    function DeliverAddressComponent_mat_error_71_Template(rf, ctx) {
+    function DeliverAddressComponent_form_51_mat_error_27_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -32260,7 +32243,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    function DeliverAddressComponent_mat_error_77_Template(rf, ctx) {
+    function DeliverAddressComponent_form_51_mat_error_33_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " phone is Required ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+    }
+
+    function DeliverAddressComponent_form_51_mat_error_39_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
@@ -32270,9 +32263,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    function DeliverAddressComponent_mat_option_83_Template(rf, ctx) {
+    function DeliverAddressComponent_form_51_mat_option_45_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 20);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-option", 22);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -32280,33 +32273,219 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       if (rf & 2) {
-        var lang_r13 = ctx.$implicit;
+        var lang_r18 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("value", lang_r13.id);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("value", lang_r18.id);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", lang_r13.name, " ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", lang_r18.name, " ");
       }
     }
 
-    function DeliverAddressComponent_mat_error_84_Template(rf, ctx) {
+    function DeliverAddressComponent_form_51_mat_error_46_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " country Is Required ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+    }
+
+    function DeliverAddressComponent_form_51_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "form", 3);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h3");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "innvoice Address");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 4);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-form-field", 6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-label");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "* Full Name ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "input", 7);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, DeliverAddressComponent_form_51_mat_error_10_Template, 2, 0, "mat-error", 8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-form-field", 6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-label");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, " * address1 ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](15, "input", 9);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, DeliverAddressComponent_form_51_mat_error_16_Template, 2, 0, "mat-error", 8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "mat-form-field", 6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-label");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, " address2 ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "input", 10);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-form-field", 6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "mat-label");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, " * postCode ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "input", 11);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](27, DeliverAddressComponent_form_51_mat_error_27_Template, 2, 0, "mat-error", 8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "mat-form-field", 6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "mat-label");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, " phone ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](32, "input", 12);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, DeliverAddressComponent_form_51_mat_error_33_Template, 2, 0, "mat-error", 8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "mat-form-field", 6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "mat-label");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, " * city");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](38, "input", 13);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](39, DeliverAddressComponent_form_51_mat_error_39_Template, 2, 0, "mat-error", 8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 14);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "mat-form-field", 6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "mat-select", 15);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "mat-option", 16);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, " Choose country ");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](45, DeliverAddressComponent_form_51_mat_option_45_Template, 2, 2, "mat-option", 17);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](46, DeliverAddressComponent_form_51_mat_error_46_Template, 2, 0, "mat-error", 8);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+
+      if (rf & 2) {
+        var ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r8.innvoiceForm);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r8.innvoiceForm.controls.fullName == null ? null : ctx_r8.innvoiceForm.controls.fullName.invalid) && (ctx_r8.innvoiceForm.controls.fullName == null ? null : ctx_r8.innvoiceForm.controls.fullName.errors) && ((ctx_r8.innvoiceForm.controls.fullName == null ? null : ctx_r8.innvoiceForm.controls.fullName.dirty) || (ctx_r8.innvoiceForm.controls.fullName == null ? null : ctx_r8.innvoiceForm.controls.fullName.touched)));
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r8.innvoiceForm.controls.address1 == null ? null : ctx_r8.innvoiceForm.controls.address1.invalid) && (ctx_r8.innvoiceForm.controls.address1 == null ? null : ctx_r8.innvoiceForm.controls.address1.errors) && ((ctx_r8.innvoiceForm.controls.address1 == null ? null : ctx_r8.innvoiceForm.controls.address1.dirty) || (ctx_r8.innvoiceForm.controls.address1 == null ? null : ctx_r8.innvoiceForm.controls.address1.touched)));
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r8.innvoiceForm.controls.postCode == null ? null : ctx_r8.innvoiceForm.controls.postCode.invalid) && (ctx_r8.innvoiceForm.controls.postCode == null ? null : ctx_r8.innvoiceForm.controls.postCode.errors) && ((ctx_r8.innvoiceForm.controls.postCode == null ? null : ctx_r8.innvoiceForm.controls.postCode.dirty) || (ctx_r8.innvoiceForm.controls.postCode == null ? null : ctx_r8.innvoiceForm.controls.postCode.touched)));
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r8.innvoiceForm.controls.phone == null ? null : ctx_r8.innvoiceForm.controls.phone.invalid) && (ctx_r8.innvoiceForm.controls.phone == null ? null : ctx_r8.innvoiceForm.controls.phone.errors) && ((ctx_r8.innvoiceForm.controls.phone == null ? null : ctx_r8.innvoiceForm.controls.phone.dirty) || (ctx_r8.innvoiceForm.controls.phone == null ? null : ctx_r8.innvoiceForm.controls.phone.touched)));
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r8.innvoiceForm.controls.city == null ? null : ctx_r8.innvoiceForm.controls.city.invalid) && (ctx_r8.innvoiceForm.controls.city == null ? null : ctx_r8.innvoiceForm.controls.city.errors) && ((ctx_r8.innvoiceForm.controls.city == null ? null : ctx_r8.innvoiceForm.controls.city.dirty) || (ctx_r8.innvoiceForm.controls.city == null ? null : ctx_r8.innvoiceForm.controls.city.touched)));
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r8.country);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx_r8.innvoiceForm.controls.country == null ? null : ctx_r8.innvoiceForm.controls.country.invalid) && (ctx_r8.innvoiceForm.controls.country == null ? null : ctx_r8.innvoiceForm.controls.country.errors.required) && ((ctx_r8.innvoiceForm.controls.country == null ? null : ctx_r8.innvoiceForm.controls.country.dirty) || (ctx_r8.innvoiceForm.controls.country == null ? null : ctx_r8.innvoiceForm.controls.country.touched)));
       }
     }
 
     var DeliverAddressComponent = /*#__PURE__*/function () {
-      function DeliverAddressComponent(fb, address_Serv, ProductCartService) {
+      function DeliverAddressComponent(fb, address_Serv, ProductCartService, ProfileService, AlertService) {
         _classCallCheck(this, DeliverAddressComponent);
 
         this.fb = fb;
         this.address_Serv = address_Serv;
         this.ProductCartService = ProductCartService;
+        this.ProfileService = ProfileService;
+        this.AlertService = AlertService;
         this.changeTap = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
         this.country = [{
           id: 1,
@@ -32319,25 +32498,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           name: 'GR'
         }];
         this.sameData = false;
+        this.useAddressInformation = false;
+        this.useDeliveryAddressAsInvoiceAddress = false;
+        this.innvoiceFormShow = true;
       }
 
       _createClass(DeliverAddressComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.createInnvoiceForm();
           this.createDilveryForm();
-        }
-      }, {
-        key: "createInnvoiceForm",
-        value: function createInnvoiceForm() {
-          this.innvoiceForm = this.fb.group({
-            fullName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
-            address1: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
-            address2: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', []),
-            postCode: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
-            city: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
-            country: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])
-          });
+          this.createInnvoiceForm();
+          this.getUserAddress();
         }
       }, {
         key: "createDilveryForm",
@@ -32347,60 +32518,163 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             address1: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
             address2: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', []),
             postCode: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+            phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', []),
             city: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
             country: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])
           });
         }
       }, {
-        key: "updateAddressData",
-        value: function updateAddressData() {
-          this.sameData = !this.sameData;
-          console.log(this.sameData, 'same');
+        key: "createInnvoiceForm",
+        value: function createInnvoiceForm() {
+          this.innvoiceForm = this.fb.group({
+            fullName: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+            address1: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+            address2: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', []),
+            postCode: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+            phone: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', []),
+            city: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]),
+            country: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required])
+          });
+        }
+      }, {
+        key: "getUserAddress",
+        value: function getUserAddress() {
+          var _this34 = this;
 
-          if (this.sameData) {
-            this.innvoiceForm.patchValue(this.deliveryForm.value);
-          } else {
-            this.innvoiceForm.reset();
+          this.ProfileService.getUserData(localStorage.getItem("id")).subscribe(function (data) {
+            _this34.deliveryAddressId = data.data.deliveryAddressId;
+            _this34.invoiceAddressId = data.data.invoiceAddressId;
+
+            if (data.data.invoiceAddressId !== 0 && data.data.deliveryAddressId !== 0) {
+              _this34.getdeliveryAddress(_this34.deliveryAddressId);
+
+              _this34.getinvoiceAddress(_this34.invoiceAddressId);
+
+              _this34.foundedTwoAddress();
+            } else if (data.data.deliveryAddressId !== 0) {
+              _this34.getdeliveryAddress(_this34.deliveryAddressId);
+
+              _this34.foundedOneAddressDelivery();
+            } else {
+              _this34.notFoundAddress();
+            }
+          });
+        }
+      }, {
+        key: "getdeliveryAddress",
+        value: function getdeliveryAddress(addressId) {
+          var _this35 = this;
+
+          this.address_Serv.getAddressById(addressId).subscribe(function (data) {
+            _this35.deliveryAddress = data.data;
+
+            _this35.deliveryForm.patchValue(_this35.deliveryAddress);
+          });
+        }
+      }, {
+        key: "getinvoiceAddress",
+        value: function getinvoiceAddress(addressId) {
+          var _this36 = this;
+
+          this.address_Serv.getAddressById(addressId).subscribe(function (data) {
+            _this36.invoiceAddress = data.data;
+
+            _this36.innvoiceForm.patchValue(_this36.invoiceAddress);
+          });
+        }
+      }, {
+        key: "foundedTwoAddress",
+        value: function foundedTwoAddress() {
+          this.defaultAddressCheckbox.checked = true;
+          this.sameDataCheckbox.disabled = true;
+          this.useAddressInformation = true;
+          this.deliveryForm.disable();
+          this.innvoiceForm.disable();
+        }
+      }, {
+        key: "foundedOneAddressDelivery",
+        value: function foundedOneAddressDelivery() {
+          this.defaultAddressCheckbox.checked = false;
+          this.defaultAddressCheckbox.disabled = true;
+          this.innvoiceFormShow = false;
+          this.sameDataCheckbox.checked = true;
+          this.useDeliveryAddressAsInvoiceAddress = true;
+        }
+      }, {
+        key: "notFoundAddress",
+        value: function notFoundAddress() {
+          this.defaultAddressCheckbox.checked = false;
+          this.defaultAddressCheckbox.disabled = true;
+        }
+      }, {
+        key: "useDefaultAddress",
+        value: function useDefaultAddress(event) {
+          if (!event.checked) {
+            this.useAddressInformation = false;
+            this.deliveryForm.enable();
+            this.innvoiceForm.enable();
+            this.sameDataCheckbox.disabled = false;
+          }
+
+          if (event.checked) {
+            this.foundedTwoAddress();
           }
         }
       }, {
+        key: "useSameAddress",
+        value: function useSameAddress(event) {
+          if (event.checked) {
+            if (this.deliveryForm.invalid) {
+              this.AlertService.error("complete required field in Delivery Address ");
+              this.sameDataCheckbox.checked = false;
+              return this.deliveryForm.markAllAsTouched();
+            }
+
+            this.sameData = true;
+            this.innvoiceFormShow = false;
+            this.useDeliveryAddressAsInvoiceAddress = true;
+            this.deliveryAddress = this.deliveryForm.value;
+            this.innvoiceForm.patchValue(this.deliveryAddress);
+          } else {
+            this.innvoiceFormShow = true;
+            this.useDeliveryAddressAsInvoiceAddress = false;
+            this.innvoiceForm.reset();
+          }
+        } // deliveryAddress: undefined
+        // invoiceAddress: undefined
+        // useAddressInformation: false
+        // useDeliveryAddressAsInvoiceAddress: false
+
+      }, {
         key: "saveAddress",
         value: function saveAddress() {
-          var _this34 = this;
+          var _this37 = this;
 
-          if (this.sameData) {
-            this.address_Serv.updateAddress(this.innvoiceForm.value).subscribe(function (res) {
-              console.log(res);
-              var address = _this34.innvoiceForm.value;
-              address['id'] = res.data;
+          this.deliveryAddress = this.deliveryForm.value;
+          this.invoiceAddress = this.innvoiceForm.value;
+          var OrderAddress = {
+            userId: localStorage.getItem("id"),
+            deliveryAddress: this.deliveryAddress,
+            invoiceAddress: this.invoiceAddress,
+            useAddressInformation: this.useAddressInformation,
+            useDeliveryAddressAsInvoiceAddress: this.useDeliveryAddressAsInvoiceAddress
+          };
 
-              _this34.ProductCartService.orderOverViewData$.next(Object.assign(_this34.ProductCartService.orderOverViewData$value, {
-                invoiceAddress: address,
-                deliveryAddress: address
-              }));
-
-              console.log(_this34.ProductCartService.orderOverViewData$value, 'after address');
-
-              _this34.changeTap.emit('next');
-            });
-          } else {
-            var innvoiceReq = this.address_Serv.updateAddress(this.innvoiceForm.value);
-            var deliveryReq = this.address_Serv.updateAddress(this.deliveryForm.value);
-            Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["forkJoin"])([innvoiceReq, deliveryReq]).subscribe(function (res) {
-              console.log(res);
-              var innvoiceAddress = _this34.innvoiceForm.value;
-              innvoiceAddress['id'] = res[0].data;
-              var deliveryAddress = _this34.deliveryForm.value;
-              deliveryAddress['id'] = res[1].data;
-
-              _this34.ProductCartService.orderOverViewData$.next(Object.assign(_this34.ProductCartService.orderOverViewData$value, {
-                invoiceAddress: innvoiceAddress,
-                deliveryAddress: deliveryAddress
-              }));
-
-              _this34.changeTap.emit('next');
-            });
+          if (!this.useAddressInformation && !this.useDeliveryAddressAsInvoiceAddress && (!this.innvoiceForm.valid || !this.deliveryForm.valid)) {
+            console.log(OrderAddress);
+            this.AlertService.error("please complete required Input ");
+            return [this.deliveryForm.markAllAsTouched(), this.innvoiceForm.markAllAsTouched()];
           }
+
+          this.ProductCartService.addOrder(OrderAddress).subscribe(function (data) {
+            _this37.ProductCartService.orderOverViewData$.next(Object.assign(_this37.ProductCartService.orderOverViewData$value, {
+              invoiceAddress: _this37.invoiceAddress,
+              deliveryAddress: _this37.deliveryAddress
+            })); // this.ProductCartService.getAllCartItem()
+
+
+            _this37.changeTap.emit('next');
+          });
         }
       }, {
         key: "addressData",
@@ -32416,301 +32690,219 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     DeliverAddressComponent.ɵfac = function DeliverAddressComponent_Factory(t) {
-      return new (t || DeliverAddressComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_address_service__WEBPACK_IMPORTED_MODULE_3__["AddressService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_ProductCart_service__WEBPACK_IMPORTED_MODULE_4__["ProductCartService"]));
+      return new (t || DeliverAddressComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_address_service__WEBPACK_IMPORTED_MODULE_2__["AddressService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_ProductCart_service__WEBPACK_IMPORTED_MODULE_3__["ProductCartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_modules_profile_services_profile_service__WEBPACK_IMPORTED_MODULE_4__["ProfileService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_5__["AlertService"]));
     };
 
     DeliverAddressComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: DeliverAddressComponent,
       selectors: [["app-deliver-address"]],
+      viewQuery: function DeliverAddressComponent_Query(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c1, true);
+        }
+
+        if (rf & 2) {
+          var _t;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.defaultAddressCheckbox = _t.first);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.sameDataCheckbox = _t.first);
+        }
+      },
       outputs: {
         changeTap: "changeTap"
       },
-      decls: 89,
-      vars: 14,
-      consts: [[1, "company_form", "_D_Flex", "deliver_Address"], [3, "formGroup"], [1, "_textHead"], [1, "row"], [1, "col-12"], ["appearance", "outline"], ["type", "text", "matInput", "", "name", "fullName", "formControlName", "fullName"], [4, "ngIf"], ["type", "text", "matInput", "", "name", "address1", "formControlName", "address1"], ["type", "text", "matInput", "", "name", "address2", "formControlName", "address2"], ["type", "text", "matInput", "", "name", "postCode", "formControlName", "postCode"], ["type", "text", "matInput", "", "name", "city", "formControlName", "city"], [1, "col-12", "col-md-6", "col-lg-6"], ["formControlName", "country"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [1, "_textHead", 2, "display", "block", "line-height", "2.4"], [1, "example-margin", 3, "click"], [1, "_mat_btn_small"], ["mat-flat-button", "", 3, "click"], [3, "value"]],
+      decls: 59,
+      vars: 9,
+      consts: [[3, "change"], ["defaultAddressCheckbox", ""], [1, "company_form", "_D_Flex", "deliver_Address"], [3, "formGroup"], [1, "row"], [1, "col-12"], ["appearance", "outline"], ["type", "text", "matInput", "", "name", "fullName", "formControlName", "fullName"], [4, "ngIf"], ["type", "text", "matInput", "", "name", "address1", "formControlName", "address1"], ["type", "text", "matInput", "", "name", "address2", "formControlName", "address2"], ["type", "text", "matInput", "", "name", "postCode", "formControlName", "postCode"], ["type", "number", "matInput", "", "name", "phone", "formControlName", "phone"], ["type", "text", "matInput", "", "name", "city", "formControlName", "city"], [1, "col-12", "col-md-6", "col-lg-6"], ["formControlName", "country"], ["value", ""], [3, "value", 4, "ngFor", "ngForOf"], [3, "formGroup", 4, "ngIf"], ["sameDataCheckbox", ""], [1, "_mat_btn_small"], ["mat-flat-button", "", 3, "click"], [3, "value"]],
       template: function DeliverAddressComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-checkbox", 0, 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "form", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "h3");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "Delivery Address");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-form-field", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "* Full Name ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "input", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, DeliverAddressComponent_mat_error_11_Template, 2, 0, "mat-error", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "mat-form-field", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, " * address1 ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "input", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, DeliverAddressComponent_mat_error_17_Template, 2, 0, "mat-error", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "mat-form-field", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, " address2 ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "input", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "mat-form-field", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](26, " * postCode ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](27, "input", 10);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](28, DeliverAddressComponent_mat_error_28_Template, 2, 0, "mat-error", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "mat-form-field", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, " * city");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "input", 11);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](34, DeliverAddressComponent_mat_error_34_Template, 2, 0, "mat-error", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div", 12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "mat-form-field", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "mat-select", 13);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "mat-option", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, " Choose country ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](40, DeliverAddressComponent_mat_option_40_Template, 2, 2, "mat-option", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](41, DeliverAddressComponent_mat_error_41_Template, 2, 0, "mat-error", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "form", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "div", 16);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "h3");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](45, "innvoice Address");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "mat-checkbox", 17);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DeliverAddressComponent_Template_mat_checkbox_click_46_listener() {
-            return ctx.updateAddressData();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function DeliverAddressComponent_Template_mat_checkbox_change_0_listener($event) {
+            return ctx.useDefaultAddress($event);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "Use Same Data ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Use default address information\n");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "form", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h3");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "Delivery Address");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "mat-form-field", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-form-field", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "* Full Name ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](53, "input", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](54, DeliverAddressComponent_mat_error_54_Template, 2, 0, "mat-error", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "* Full Name ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "input", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](55, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "mat-form-field", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](58, " * address1 ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](59, "input", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](60, DeliverAddressComponent_mat_error_60_Template, 2, 0, "mat-error", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, DeliverAddressComponent_mat_error_14_Template, 2, 0, "mat-error", 8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "div", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "mat-form-field", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "mat-form-field", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](63, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64, " address2 ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](65, "input", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, " * address1 ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "input", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "div", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "mat-form-field", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "mat-label");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, " * postCode ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](70, "input", 10);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](71, DeliverAddressComponent_mat_error_71_Template, 2, 0, "mat-error", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](20, DeliverAddressComponent_mat_error_20_Template, 2, 0, "mat-error", 8);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](72, "div", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](73, "mat-form-field", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "mat-form-field", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](74, "mat-label");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-label");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](75, " * city");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](76, "input", 11);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](77, DeliverAddressComponent_mat_error_77_Template, 2, 0, "mat-error", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, " address2 ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "div", 12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "mat-form-field", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "mat-select", 13);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](81, "mat-option", 14);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, " Choose country ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](83, DeliverAddressComponent_mat_option_83_Template, 2, 2, "mat-option", 15);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](84, DeliverAddressComponent_mat_error_84_Template, 2, 0, "mat-error", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "input", 10);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "mat-form-field", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, " * postCode ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](30, "input", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, DeliverAddressComponent_mat_error_31_Template, 2, 0, "mat-error", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "mat-form-field", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35, " phone ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](36, "input", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](37, DeliverAddressComponent_mat_error_37_Template, 2, 0, "mat-error", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "mat-form-field", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "mat-label");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](41, " * city");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](42, "input", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](43, DeliverAddressComponent_mat_error_43_Template, 2, 0, "mat-error", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "mat-form-field", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "mat-select", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "mat-option", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, " Choose country ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](49, DeliverAddressComponent_mat_option_49_Template, 2, 2, "mat-option", 17);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](50, DeliverAddressComponent_mat_error_50_Template, 2, 0, "mat-error", 8);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](85, "br");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](86, "div", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](51, DeliverAddressComponent_form_51_Template, 47, 8, "form", 18);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](87, "button", 19);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DeliverAddressComponent_Template_button_click_87_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "mat-checkbox", 0, 19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function DeliverAddressComponent_Template_mat_checkbox_change_53_listener($event) {
+            return ctx.useSameAddress($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "Use Same Address For Invoice ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](56, "div", 20);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "button", 21);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DeliverAddressComponent_Template_button_click_57_listener() {
             return ctx.saveAddress();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](88, " Next ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](58, " Next ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -32718,7 +32910,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.deliveryForm);
 
@@ -32736,6 +32928,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.deliveryForm.controls.phone == null ? null : ctx.deliveryForm.controls.phone.invalid) && (ctx.deliveryForm.controls.phone == null ? null : ctx.deliveryForm.controls.phone.errors) && ((ctx.deliveryForm.controls.phone == null ? null : ctx.deliveryForm.controls.phone.dirty) || (ctx.deliveryForm.controls.phone == null ? null : ctx.deliveryForm.controls.phone.touched)));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.deliveryForm.controls.city == null ? null : ctx.deliveryForm.controls.city.invalid) && (ctx.deliveryForm.controls.city == null ? null : ctx.deliveryForm.controls.city.errors) && ((ctx.deliveryForm.controls.city == null ? null : ctx.deliveryForm.controls.city.dirty) || (ctx.deliveryForm.controls.city == null ? null : ctx.deliveryForm.controls.city.touched)));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
@@ -32748,34 +32944,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.innvoiceForm);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.innvoiceForm.controls.fullName == null ? null : ctx.innvoiceForm.controls.fullName.invalid) && (ctx.innvoiceForm.controls.fullName == null ? null : ctx.innvoiceForm.controls.fullName.errors) && ((ctx.innvoiceForm.controls.fullName == null ? null : ctx.innvoiceForm.controls.fullName.dirty) || (ctx.innvoiceForm.controls.fullName == null ? null : ctx.innvoiceForm.controls.fullName.touched)));
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.innvoiceForm.controls.address1 == null ? null : ctx.innvoiceForm.controls.address1.invalid) && (ctx.innvoiceForm.controls.address1 == null ? null : ctx.innvoiceForm.controls.address1.errors) && ((ctx.innvoiceForm.controls.address1 == null ? null : ctx.innvoiceForm.controls.address1.dirty) || (ctx.innvoiceForm.controls.address1 == null ? null : ctx.innvoiceForm.controls.address1.touched)));
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](11);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.innvoiceForm.controls.postCode == null ? null : ctx.innvoiceForm.controls.postCode.invalid) && (ctx.innvoiceForm.controls.postCode == null ? null : ctx.innvoiceForm.controls.postCode.errors) && ((ctx.innvoiceForm.controls.postCode == null ? null : ctx.innvoiceForm.controls.postCode.dirty) || (ctx.innvoiceForm.controls.postCode == null ? null : ctx.innvoiceForm.controls.postCode.touched)));
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.innvoiceForm.controls.city == null ? null : ctx.innvoiceForm.controls.city.invalid) && (ctx.innvoiceForm.controls.city == null ? null : ctx.innvoiceForm.controls.city.errors) && ((ctx.innvoiceForm.controls.city == null ? null : ctx.innvoiceForm.controls.city.dirty) || (ctx.innvoiceForm.controls.city == null ? null : ctx.innvoiceForm.controls.city.touched)));
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.country);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.innvoiceForm.controls.country == null ? null : ctx.innvoiceForm.controls.country.invalid) && (ctx.innvoiceForm.controls.country == null ? null : ctx.innvoiceForm.controls.country.errors.required) && ((ctx.innvoiceForm.controls.country == null ? null : ctx.innvoiceForm.controls.country.dirty) || (ctx.innvoiceForm.controls.country == null ? null : ctx.innvoiceForm.controls.country.touched)));
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.innvoiceFormShow);
         }
       },
-      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatLabel"], _angular_material_Input__WEBPACK_IMPORTED_MODULE_6__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_material_select__WEBPACK_IMPORTED_MODULE_8__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_9__["MatOption"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_10__["MatCheckbox"], _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatError"]],
+      directives: [_angular_material_checkbox__WEBPACK_IMPORTED_MODULE_6__["MatCheckbox"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatLabel"], _angular_material_Input__WEBPACK_IMPORTED_MODULE_8__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NumberValueAccessor"], _angular_material_select__WEBPACK_IMPORTED_MODULE_10__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_11__["MatOption"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgForOf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_12__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatError"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcHJvZHVjdHMvY29tcG9uZW50cy9kZWxpdmVyLWFkZHJlc3MvZGVsaXZlci1hZGRyZXNzLmNvbXBvbmVudC5zY3NzIn0= */"]
     });
     /*@__PURE__*/
@@ -32792,13 +32964,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         return [{
           type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
         }, {
-          type: _services_address_service__WEBPACK_IMPORTED_MODULE_3__["AddressService"]
+          type: _services_address_service__WEBPACK_IMPORTED_MODULE_2__["AddressService"]
         }, {
-          type: _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_4__["ProductCartService"]
+          type: _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_3__["ProductCartService"]
+        }, {
+          type: src_app_modules_profile_services_profile_service__WEBPACK_IMPORTED_MODULE_4__["ProfileService"]
+        }, {
+          type: src_app_core_services__WEBPACK_IMPORTED_MODULE_5__["AlertService"]
         }];
       }, {
         changeTap: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }],
+        defaultAddressCheckbox: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+          args: ["defaultAddressCheckbox"]
+        }],
+        sameDataCheckbox: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+          args: ["sameDataCheckbox"]
         }]
       });
     })();
@@ -33953,61 +34137,61 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getMobileById",
         value: function getMobileById() {
-          var _this35 = this;
+          var _this38 = this;
 
           this._MobileService.getMobileByIdServer(this.mobileVersionId).subscribe(function (response) {
-            _this35.mobileProduct = response.data;
-            _this35.orignalPrice = response.data.price;
-            _this35.price = response.data.price;
-            _this35.discountPrice = response.data.discountPrice;
-            _this35.productVersions = response.data.mobilePhoneVersions;
-            _this35.colors = _toConsumableArray(new Set(_this35.productVersions.map(function (item) {
+            _this38.mobileProduct = response.data;
+            _this38.orignalPrice = response.data.price;
+            _this38.price = response.data.price;
+            _this38.discountPrice = response.data.discountPrice;
+            _this38.productVersions = response.data.mobilePhoneVersions;
+            _this38.colors = _toConsumableArray(new Set(_this38.productVersions.map(function (item) {
               return item.mobileColorName;
             })));
-            _this35.storages = _toConsumableArray(new Set(_this35.productVersions.map(function (item) {
+            _this38.storages = _toConsumableArray(new Set(_this38.productVersions.map(function (item) {
               return item.mobileStorageName;
             })));
-            _this35.color = _this35.productVersions.filter(function (product) {
-              return product.id === Number(_this35.mobileVersionId);
+            _this38.color = _this38.productVersions.filter(function (product) {
+              return product.id === Number(_this38.mobileVersionId);
             })[0].mobileColorName;
-            _this35.storage = _this35.productVersions.filter(function (product) {
-              return product.id === Number(_this35.mobileVersionId);
+            _this38.storage = _this38.productVersions.filter(function (product) {
+              return product.id === Number(_this38.mobileVersionId);
             })[0].mobileStorageName;
 
-            _this35.getPriceOfVersions();
+            _this38.getPriceOfVersions();
           });
         }
       }, {
         key: "getAccessoryById",
         value: function getAccessoryById() {
-          var _this36 = this;
+          var _this39 = this;
 
           this.AccessoryService.getAccessoryByIdServer(this.mobileVersionId).subscribe(function (response) {
-            _this36.accessoryProduct = response.data;
-            _this36.productVersions = response.data.accessoryVersions;
-            _this36.version = _this36.productVersions[0];
-            _this36.productImage = _this36.productVersions[0].productImage;
-            _this36.price = _this36.productVersions[0].price;
-            _this36.discountPrice = _this36.productVersions[0].discountPrice;
+            _this39.accessoryProduct = response.data;
+            _this39.productVersions = response.data.accessoryVersions;
+            _this39.version = _this39.productVersions[0];
+            _this39.productImage = _this39.productVersions[0].productImage;
+            _this39.price = _this39.productVersions[0].price;
+            _this39.discountPrice = _this39.productVersions[0].discountPrice;
           });
         }
       }, {
         key: "getHardwarePartById",
         value: function getHardwarePartById() {
-          var _this37 = this;
+          var _this40 = this;
 
           this.HardwarePartService.getHardwarePartByIdServer(this.mobileVersionId).subscribe(function (response) {
-            _this37.HardwarePartProduct = response.data;
-            _this37.version = _this37.HardwarePartProduct;
-            _this37.productImage = _this37.HardwarePartProduct.productImage;
-            _this37.price = _this37.HardwarePartProduct.price;
-            _this37.discountPrice = _this37.HardwarePartProduct.discountPrice;
+            _this40.HardwarePartProduct = response.data;
+            _this40.version = _this40.HardwarePartProduct;
+            _this40.productImage = _this40.HardwarePartProduct.productImage;
+            _this40.price = _this40.HardwarePartProduct.price;
+            _this40.discountPrice = _this40.HardwarePartProduct.discountPrice;
           });
         }
       }, {
         key: "addMobileToCart",
         value: function addMobileToCart() {
-          var _this38 = this;
+          var _this41 = this;
 
           if (!this.color) {
             return this.alertSrvc.error('Select Color of this version', true);
@@ -34019,26 +34203,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.data.versionId = this.version['id'];
           this.ProductCartService.addMobileToCart(this.data).subscribe(function (data) {
-            _this38.alertSrvc.success('Added successfully');
+            _this41.alertSrvc.success('Added successfully');
           });
         }
       }, {
         key: "addAccessoryToCart",
         value: function addAccessoryToCart() {
-          var _this39 = this;
+          var _this42 = this;
 
           this.data.versionId = this.version['id'];
           this.ProductCartService.addAccessoryToCart(this.data).subscribe(function (data) {
-            _this39.alertSrvc.success('Added successfully');
+            _this42.alertSrvc.success('Added successfully');
           });
         }
       }, {
         key: "addHardWarePart",
         value: function addHardWarePart() {
-          var _this40 = this;
+          var _this43 = this;
 
           this.ProductCartService.addHardWareToCart(this.data).subscribe(function (data) {
-            _this40.alertSrvc.success('Added successfully');
+            _this43.alertSrvc.success('Added successfully');
           });
         }
       }, {
@@ -34084,38 +34268,38 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addToFavorite",
         value: function addToFavorite(productItemData) {
-          var _this41 = this;
+          var _this44 = this;
 
           if (this.checkIfAlreadyFavourite(productItemData)) {
             var id = this.favouriteSrvc.favourites$value.filter(function (product) {
-              return product.versionId === _this41.version.id && product.categoryId === productItemData['categoryId'];
+              return product.versionId === _this44.version.id && product.categoryId === productItemData['categoryId'];
             })[0].id;
             this.favouriteSrvc.removeFromFavourites(id).subscribe(function (data) {
-              _this41.alertSrvc.warning('Deleted From Favorites');
+              _this44.alertSrvc.warning('Deleted From Favorites');
             });
           } else {
             this.favouriteSrvc.addToFavourites(productItemData).subscribe(function (data) {
-              _this41.alertSrvc.success('Added to Favorites');
+              _this44.alertSrvc.success('Added to Favorites');
             });
           }
         }
       }, {
         key: "selectColor",
         value: function selectColor(e) {
-          var _this42 = this;
+          var _this45 = this;
 
           this.color = e.target.innerText;
           var storageChildren = Array.from(this.allStorage.nativeElement.children);
           var filteredProducts = this.productVersions.filter(function (version) {
-            return version.mobileColorName === _this42.color;
+            return version.mobileColorName === _this45.color;
           });
           storageChildren.forEach(function (item) {
             var btnText = item['innerText'].trim();
 
             if (filteredProducts.filter(function (p) {
-              return p.mobileStorageName === _this42.storage;
+              return p.mobileStorageName === _this45.storage;
             }).length === 0) {
-              _this42.storage = null;
+              _this45.storage = null;
             }
 
             if (!filteredProducts.some(function (item) {
@@ -34131,18 +34315,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "selectStorage",
         value: function selectStorage(e) {
-          var _this43 = this;
+          var _this46 = this;
 
           this.storage = e.target.innerText;
           var colorChildren = Array.from(this.allColor.nativeElement.children);
           var filteredProducts = this.productVersions.filter(function (version) {
-            return version.mobileStorageName === _this43.storage;
+            return version.mobileStorageName === _this46.storage;
           });
           colorChildren.forEach(function (item) {
             if (filteredProducts.filter(function (p) {
-              return p.mobileColorName === _this43.color;
+              return p.mobileColorName === _this46.color;
             }).length === 0) {
-              _this43.color = null;
+              _this46.color = null;
             }
 
             var btnText = item['innerText'].trim();
@@ -34160,11 +34344,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getPriceOfVersions",
         value: function getPriceOfVersions() {
-          var _this44 = this;
+          var _this47 = this;
 
           if (this.colors.includes(this.color) && this.storages.includes(this.storage)) {
             this.version = this.productVersions.filter(function (item) {
-              return _this44.color == item.mobileColorName && _this44.storage === item.mobileStorageName;
+              return _this47.color == item.mobileColorName && _this47.storage === item.mobileStorageName;
             })[0];
 
             if (this.version) {
@@ -34177,7 +34361,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "ifValueRest",
         value: function ifValueRest() {
-          var _this45 = this;
+          var _this48 = this;
 
           var childrenAllStorage = Array.from(this.allStorage.nativeElement.children);
           var childrenAllColor = Array.from(this.allColor.nativeElement.children);
@@ -34188,10 +34372,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return item['children'][0].disabled = false;
           });
           this.color = this.productVersions.filter(function (product) {
-            return product.id === Number(_this45.mobileVersionId);
+            return product.id === Number(_this48.mobileVersionId);
           })[0].mobileColorName;
           this.storage = this.productVersions.filter(function (product) {
-            return product.id === Number(_this45.mobileVersionId);
+            return product.id === Number(_this48.mobileVersionId);
           })[0].mobileStorageName;
           this.getPriceOfVersions();
         }
@@ -34214,10 +34398,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkIfAlreadyFavourite",
         value: function checkIfAlreadyFavourite(item) {
-          var _this46 = this;
+          var _this49 = this;
 
           if (this.version) return this.favouriteSrvc.favourites$value.some(function (product) {
-            return product.versionId === _this46.version.id && product.categoryId === item['categoryId'];
+            return product.versionId === _this49.version.id && product.categoryId === item['categoryId'];
           });
         }
       }]);
@@ -34431,7 +34615,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", item_r2 == null ? null : item_r2.versionPrice, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", item_r2["productPrice"], "");
       }
     }
 
@@ -34478,13 +34662,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(OrderOverviewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this47 = this;
+          var _this50 = this;
 
           this.ProductCartService.orderOverViewData$.subscribe(function (data) {
-            _this47.deliveryAddress = data['deliveryAddress'];
-            _this47.invoiceAddress = data['invoiceAddress'];
-            _this47.paymentMethod = data['pymentMethod'];
-            _this47.orderItem = data['orderItem'];
+            _this50.deliveryAddress = data['deliveryAddress'];
+            _this50.invoiceAddress = data['invoiceAddress'];
+            _this50.paymentMethod = data['pymentMethod'];
+            _this50.orderItem = data['orderItem'];
           });
         }
       }, {
@@ -34504,7 +34688,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             try {
               for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
                 var prod = _step5.value;
-                this.productsTotalPrice += prod.versionPrice * prod.quantity;
+                this.productsTotalPrice += prod['productPrice'] * prod.quantity;
               }
             } catch (err) {
               _iterator5.e(err);
@@ -34523,10 +34707,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkIfAllDateExist",
         value: function checkIfAllDateExist() {
-          var _this48 = this;
+          var _this51 = this;
 
           this.checkNotEmptyField = Object.keys(this.ProductCartService.orderOverViewData$value).every(function (value) {
-            return _this48.ProductCartService.orderOverViewData$value[value] !== "" || _this48.ProductCartService.orderOverViewData$value[value] !== 0;
+            return _this51.ProductCartService.orderOverViewData$value[value] !== "" || _this51.ProductCartService.orderOverViewData$value[value] !== 0;
           });
           this.checkIfProductExist = this.ProductCartService.orderOverViewData$value['orderItem'].length > 0;
           return this.checkNotEmptyField && this.checkIfProductExist;
@@ -34534,7 +34718,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "confirmOrder",
         value: function confirmOrder() {
-          var _this49 = this;
+          var _this52 = this;
 
           var _a, _b;
 
@@ -34548,7 +34732,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               status: 1
             };
             this.ProductCartService.addOrder(order).subscribe(function (data) {
-              _this49.router.navigate(['products/thank-you', {
+              _this52.router.navigate(['products/thank-you', {
                 orderId: data['data']
               }]);
             });
@@ -35269,10 +35453,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addToCart",
         value: function addToCart(mobileData) {
-          var _this50 = this;
+          var _this53 = this;
 
           this.ProductCartService.addToCart(mobileData).subscribe(function (res) {
-            _this50.alertSrvc.success('Added to Cart');
+            _this53.alertSrvc.success('Added to Cart');
           });
         }
       }, {
@@ -35310,18 +35494,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addToFavourite",
         value: function addToFavourite(productItemData) {
-          var _this51 = this;
+          var _this54 = this;
 
           if (this.checkIfAlreadyFavourite(productItemData)) {
             var id = this.FavouriteService.favourites$value.filter(function (product) {
               return product.versionId === productItemData['versionId'] && product.categoryId === productItemData['categoryId'];
             })[0].id;
             this.FavouriteService.removeFromFavourites(id).subscribe(function (data) {
-              _this51.alertSrvc.warning('Deleted From Favorites');
+              _this54.alertSrvc.warning('Deleted From Favorites');
             });
           } else {
             this.FavouriteService.addToFavourites(productItemData).subscribe(function (data) {
-              _this51.alertSrvc.success('Added to Favorites');
+              _this54.alertSrvc.success('Added to Favorites');
             });
           }
         }
@@ -36438,88 +36622,88 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getBrands",
         value: function getBrands() {
-          var _this52 = this;
+          var _this55 = this;
 
           this._FilterSer.getAllBrands().subscribe(function (response) {
-            _this52.brands = response.data;
+            _this55.brands = response.data;
           });
         }
       }, {
         key: "getSlots",
         value: function getSlots() {
-          var _this53 = this;
+          var _this56 = this;
 
           this._FilterSer.getAllSlots().subscribe(function (response) {
-            _this53.slots = response.data;
+            _this56.slots = response.data;
           });
         }
       }, {
         key: "getRams",
         value: function getRams() {
-          var _this54 = this;
+          var _this57 = this;
 
           this._FilterSer.getAllRams().subscribe(function (response) {
-            _this54.rams = response.data;
+            _this57.rams = response.data;
           });
         }
       }, {
         key: "getStorages",
         value: function getStorages() {
-          var _this55 = this;
+          var _this58 = this;
 
           this._FilterSer.getAllStorages().subscribe(function (response) {
-            _this55.storages = response.data;
+            _this58.storages = response.data;
           });
         }
       }, {
         key: "getConnectivity",
         value: function getConnectivity() {
-          var _this56 = this;
+          var _this59 = this;
 
           this._FilterSer.getAllConnectivity().subscribe(function (response) {
-            _this56.connectivities = response.data;
+            _this59.connectivities = response.data;
           });
         }
       }, {
         key: "getColours",
         value: function getColours() {
-          var _this57 = this;
+          var _this60 = this;
 
           this._FilterSer.getAllColours().subscribe(function (response) {
-            _this57.colorsArr = response.data;
+            _this60.colorsArr = response.data;
           });
         }
       }, {
         key: "getAccessoryType",
         value: function getAccessoryType() {
-          var _this58 = this;
+          var _this61 = this;
 
           this._FilterSer.getAllAccessoryType().subscribe(function (response) {
-            _this58.AccessoryTypeArr = response.data;
+            _this61.AccessoryTypeArr = response.data;
           });
         }
       }, {
         key: "getMobileModel",
         value: function getMobileModel() {
-          var _this59 = this;
+          var _this62 = this;
 
           this._FilterSer.getAllMobileModel().subscribe(function (response) {
-            _this59.MobileModelArr = response.data;
+            _this62.MobileModelArr = response.data;
           });
         }
       }, {
         key: "getHardwarePartType",
         value: function getHardwarePartType() {
-          var _this60 = this;
+          var _this63 = this;
 
           this._FilterSer.getAllHardwarePartType().subscribe(function (response) {
-            _this60.HardwarePartTypeArr = response.data;
+            _this63.HardwarePartTypeArr = response.data;
           });
         }
       }, {
         key: "checkPriceValue",
         value: function checkPriceValue() {
-          var _this61 = this;
+          var _this64 = this;
 
           var lowPrice = this.priceForm.controls.fromPrice.value;
           var highPrice = this.priceForm.controls.toPrice.value;
@@ -36537,7 +36721,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               this._MobileService.getAllProducts(this.type, this.filter).subscribe(function (response) {
                 console.log('iam here in sidebar', response.data);
 
-                _this61._FilterSer.getData(response.data);
+                _this64._FilterSer.getData(response.data);
               });
             } else if (lowPrice == '' && highPrice != '') {
               if (!this.filter.FilterRange.Price) {
@@ -36549,7 +36733,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               this._MobileService.getAllProducts(this.type, this.filter).subscribe(function (response) {
                 console.log('iam here in sidebar', response.data);
 
-                _this61._FilterSer.getData(response.data);
+                _this64._FilterSer.getData(response.data);
               });
             } else if (lowPrice != '' && highPrice != '') {
               if (!this.filter.FilterRange.Price) {
@@ -37851,10 +38035,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ProductsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this62 = this;
+          var _this65 = this;
 
           this.activeRoute.params.subscribe(function (data) {
-            _this62.type = data['type'];
+            _this65.type = data['type'];
           });
           this.getUserData();
           this.getProductData();
@@ -37887,10 +38071,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getUserData",
         value: function getUserData() {
-          var _this63 = this;
+          var _this66 = this;
 
           this.authSrvc.userData$.subscribe(function (data) {
-            if (data) _this63.userData = data;
+            if (data) _this66.userData = data;
           });
         }
       }, {
@@ -37920,28 +38104,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllMobiles",
         value: function getAllMobiles() {
-          var _this64 = this;
+          var _this67 = this;
 
           this.mobileService.getAllProducts("MobilePhone", this.filters, this.sort).subscribe(function (res) {
-            _this64.mobiles = res.data;
+            _this67.mobiles = res.data;
           });
         }
       }, {
         key: "getAllAccessories",
         value: function getAllAccessories() {
-          var _this65 = this;
+          var _this68 = this;
 
           this.mobileService.getAllProducts("Accessory", this.filters, this.sort).subscribe(function (res) {
-            _this65.mobiles = res.data;
+            _this68.mobiles = res.data;
           });
         }
       }, {
         key: "getAllHardwarePart",
         value: function getAllHardwarePart() {
-          var _this66 = this;
+          var _this69 = this;
 
           this.mobileService.getAllProducts("HardwarePart", this.filters, this.sort).subscribe(function (res) {
-            _this66.mobiles = res.data;
+            _this69.mobiles = res.data;
           });
         }
       }, {
@@ -38650,6 +38834,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function updateAddress(userData) {
           return this.http.post("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl, "Address"), userData);
         }
+      }, {
+        key: "getAddressById",
+        value: function getAddressById(addressId) {
+          return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl, "Address/").concat(addressId));
+        }
       }]);
 
       return AddressService;
@@ -38998,7 +39187,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllProducts",
         value: function getAllProducts(type, filter, sort) {
-          var _this67 = this;
+          var _this70 = this;
 
           var searchParams = '';
           searchParams = "?pageSize=".concat(this.pageSize, "&PageNumber=").concat(this.pageNumber);
@@ -39043,14 +39232,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl).concat(type).concat(searchParams)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (res) {
               var count = res['count'];
 
-              _this67.setPagination(undefined, undefined, count);
+              _this70.setPagination(undefined, undefined, count);
             }));
           }
 
           return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl).concat(type, "/GetVersioned").concat(searchParams)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (res) {
             var count = res['count'];
 
-            _this67.setPagination(undefined, undefined, count);
+            _this70.setPagination(undefined, undefined, count);
           }));
         }
       }, {
