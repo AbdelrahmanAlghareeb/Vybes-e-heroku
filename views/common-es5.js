@@ -180,6 +180,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function getAllTrackOrderinfo(id) {
           return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl, "OrderInfo?FilterValue[orderNumber]=").concat(id));
         }
+      }, {
+        key: "getOrderByOrderNumber",
+        value: function getOrderByOrderNumber(orderNumber) {
+          return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl, "Order/byOrderNumber-").concat(orderNumber));
+        }
       }]);
 
       return ProfileService;
