@@ -26024,7 +26024,7 @@ function AppointmentInfoComponent_mat_option_28_Template(rf, ctx) { if (rf & 1) 
 } }
 function AppointmentInfoComponent_mat_error_29_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Branch Is Required ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Choose time Is Required ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 class AppointmentInfoComponent {
@@ -26118,9 +26118,8 @@ class AppointmentInfoComponent {
         let month = appoinetDate.getMonth() + 1;
         let day = appoinetDate.getDate();
         console.log(`${year}-${month}-${day}T${this.hours}:${this.min}:00.000Z`);
-        let DateCollection = `${year}-${month}-${day}T${this.hours}:${this.min}:17.615Z`;
-        // 2020-10-29T20:48:17.615Z
-        // 2020-9-31T05:45:00.000Z
+        // let DateCollection = `${year}-${month}-${day}T${this.hours}:${this.min}:17.615Z`
+        let DateCollection = appoinetDate.toISOString();
         if (this.ApppointmentForm.valid) {
             let userData = {
                 "userId": this.userid,
@@ -26131,10 +26130,7 @@ class AppointmentInfoComponent {
                 "deviceProblemClassificationId": Number(this.problemId),
                 "amount": 1 // still = 1
             };
-            // let formValue = this.ApppointmentForm.value
-            // console.log(userData);
             this._fixServ.checkAppointment(userData).subscribe((response) => {
-                console.log('post data', response);
                 if (response.succeeded) {
                     let requestId = response.data;
                     setTimeout(() => {

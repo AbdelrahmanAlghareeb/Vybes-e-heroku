@@ -28436,7 +28436,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-error");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Branch Is Required ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Choose time Is Required ");
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
@@ -28568,9 +28568,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var year = appoinetDate.getFullYear();
           var month = appoinetDate.getMonth() + 1;
           var day = appoinetDate.getDate();
-          console.log("".concat(year, "-").concat(month, "-").concat(day, "T").concat(this.hours, ":").concat(this.min, ":00.000Z"));
-          var DateCollection = "".concat(year, "-").concat(month, "-").concat(day, "T").concat(this.hours, ":").concat(this.min, ":17.615Z"); // 2020-10-29T20:48:17.615Z
-          // 2020-9-31T05:45:00.000Z
+          console.log("".concat(year, "-").concat(month, "-").concat(day, "T").concat(this.hours, ":").concat(this.min, ":00.000Z")); // let DateCollection = `${year}-${month}-${day}T${this.hours}:${this.min}:17.615Z`
+
+          var DateCollection = appoinetDate.toISOString();
 
           if (this.ApppointmentForm.valid) {
             var userData = {
@@ -28582,12 +28582,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               "deviceProblemClassificationId": Number(this.problemId),
               "amount": 1 // still = 1
 
-            }; // let formValue = this.ApppointmentForm.value
-            // console.log(userData);
+            };
 
             this._fixServ.checkAppointment(userData).subscribe(function (response) {
-              console.log('post data', response);
-
               if (response.succeeded) {
                 var requestId = response.data;
                 setTimeout(function () {
