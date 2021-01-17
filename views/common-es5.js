@@ -6,111 +6,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"], {
   /***/
-  "./src/app/modules/auth/services/api/auth-api.service.ts":
-  /*!***************************************************************!*\
-    !*** ./src/app/modules/auth/services/api/auth-api.service.ts ***!
-    \***************************************************************/
-
-  /*! exports provided: AuthApiService */
-
-  /***/
-  function srcAppModulesAuthServicesApiAuthApiServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "AuthApiService", function () {
-      return AuthApiService;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-
-    var AuthApiService = /*#__PURE__*/function () {
-      function AuthApiService(http) {
-        _classCallCheck(this, AuthApiService);
-
-        this.http = http;
-        this.baseUrl = 'http://mazenebada-001-site1.itempurl.com/api';
-        this.prefix = 'Account';
-      }
-
-      _createClass(AuthApiService, [{
-        key: "login",
-        value: function login(requestBody) {
-          return this.http.post("".concat(this.baseUrl, "/").concat(this.prefix, "/authenticate"), requestBody, {
-            observe: 'body'
-          });
-        }
-      }, {
-        key: "forgetPassword",
-        value: function forgetPassword(requestBody) {
-          return this.http.post("".concat(this.baseUrl, "/").concat(this.prefix, "/forgot-password"), requestBody);
-        }
-      }, {
-        key: "resetPassword",
-        value: function resetPassword(requestBody) {
-          return this.http.post("".concat(this.baseUrl, "/").concat(this.prefix, "/reset-password"), requestBody);
-        }
-      }, {
-        key: "register",
-        value: function register(requestBody) {
-          return this.http.post("".concat(this.baseUrl, "/").concat(this.prefix, "/register"), requestBody);
-        }
-      }, {
-        key: "registerBusiness",
-        value: function registerBusiness(requestBody) {
-          return this.http.post("".concat(this.baseUrl, "/").concat(this.prefix, "/register-business"), requestBody);
-        }
-      }, {
-        key: "confirmEmail",
-        value: function confirmEmail(requestParams) {
-          return this.http.get("".concat(this.baseUrl, "/").concat(this.prefix, "/confirm-email?userId=").concat(requestParams.userId, "&code=").concat(requestParams.code));
-        }
-      }]);
-
-      return AuthApiService;
-    }();
-
-    AuthApiService.ɵfac = function AuthApiService_Factory(t) {
-      return new (t || AuthApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
-    };
-
-    AuthApiService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: AuthApiService,
-      factory: AuthApiService.ɵfac,
-      providedIn: 'root'
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AuthApiService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-        args: [{
-          providedIn: 'root'
-        }]
-      }], function () {
-        return [{
-          type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
-        }];
-      }, null);
-    })();
-    /***/
-
-  },
-
-  /***/
   "./src/app/modules/profile/services/profile.service.ts":
   /*!*************************************************************!*\
     !*** ./src/app/modules/profile/services/profile.service.ts ***!
@@ -185,6 +80,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function getOrderByOrderNumber(orderNumber) {
           return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl, "Order/byOrderNumber-").concat(orderNumber));
         }
+      }, {
+        key: "resetPassword",
+        value: function resetPassword(data) {
+          return this.http.post("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrlWithoutVersion, "Account/reset-password"), data);
+        }
+      }, {
+        key: "addAddress",
+        value: function addAddress(data) {
+          return this.http.post("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl, "Address"), data);
+        }
+      }, {
+        key: "updateAddress",
+        value: function updateAddress(addressId, data) {
+          return this.http.put("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl, "Address/").concat(addressId), data);
+        }
       }]);
 
       return ProfileService;
@@ -213,6 +123,51 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }];
       }, null);
     })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/shared/validations/custom-validation.ts":
+  /*!*********************************************************!*\
+    !*** ./src/app/shared/validations/custom-validation.ts ***!
+    \*********************************************************/
+
+  /*! exports provided: MustMatch */
+
+  /***/
+  function srcAppSharedValidationsCustomValidationTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "MustMatch", function () {
+      return MustMatch;
+    }); // custom validator to check that two fields match
+
+
+    function MustMatch(controlName, matchingControlName) {
+      return function (formGroup) {
+        var control = formGroup.controls[controlName];
+        var matchingControl = formGroup.controls[matchingControlName];
+
+        if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+          // return if another validator has already found an error on the matchingControl
+          return;
+        } // set error on matchingControl if validation fails
+
+
+        if (control.value !== matchingControl.value) {
+          matchingControl.setErrors({
+            mustMatch: true
+          });
+        } else {
+          matchingControl.setErrors(null);
+        }
+      };
+    }
     /***/
 
   }
