@@ -1,4 +1,4 @@
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
@@ -34503,7 +34503,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", ctx_r0.ProductCartService.productsTotalPrice + ctx_r0.ShippingFee, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", ctx_r0.ProductCartService.productsTotalPrice, "");
       }
     }
 
@@ -35667,16 +35667,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.useDeliveryAddressAsInvoiceAddress = false;
             this.innvoiceForm.reset();
           }
-        } // deliveryAddress: undefined
-        // invoiceAddress: undefined
-        // useAddressInformation: false
-        // useDeliveryAddressAsInvoiceAddress: false
-
+        }
       }, {
         key: "saveAddress",
         value: function saveAddress() {
-          var _this51 = this;
-
           this.deliveryAddress = this.deliveryForm.value;
           this.invoiceAddress = this.innvoiceForm.value;
           var OrderAddress = {
@@ -35685,7 +35679,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             invoiceAddress: this.invoiceAddress,
             useAddressInformation: this.useAddressInformation,
             useDeliveryAddressAsInvoiceAddress: this.useDeliveryAddressAsInvoiceAddress
-          };
+          }; // this.changeTap.emit('next');
 
           if (!this.useAddressInformation && !this.useDeliveryAddressAsInvoiceAddress && (!this.innvoiceForm.valid || !this.deliveryForm.valid)) {
             console.log(OrderAddress);
@@ -35693,15 +35687,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return [this.deliveryForm.markAllAsTouched(), this.innvoiceForm.markAllAsTouched()];
           }
 
-          this.ProductCartService.addOrder(OrderAddress).subscribe(function (data) {
-            _this51.ProductCartService.orderOverViewData$.next(Object.assign(_this51.ProductCartService.orderOverViewData$value, {
-              invoiceAddress: _this51.invoiceAddress,
-              deliveryAddress: _this51.deliveryAddress
-            })); // this.ProductCartService.getAllCartItem()
-
-
-            _this51.changeTap.emit('next');
-          });
+          this.ProductCartService.orderOverViewData$.next(Object.assign(this.ProductCartService.orderOverViewData$value, {
+            OrderAddress: OrderAddress
+          }));
+          this.changeTap.emit('next'); // this.ProductCartService.addOrder(OrderAddress).subscribe(data => {
+          // })
         }
       }, {
         key: "addressData",
@@ -35860,6 +35850,96 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       });
     })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/modules/products/components/deliver-address/order.paypal.ts":
+  /*!*****************************************************************************!*\
+    !*** ./src/app/modules/products/components/deliver-address/order.paypal.ts ***!
+    \*****************************************************************************/
+
+  /*! exports provided: OrderPaypal, UnitAmount, PurchaseUnits, Amount */
+
+  /***/
+  function srcAppModulesProductsComponentsDeliverAddressOrderPaypalTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "OrderPaypal", function () {
+      return OrderPaypal;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "UnitAmount", function () {
+      return UnitAmount;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PurchaseUnits", function () {
+      return PurchaseUnits;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "Amount", function () {
+      return Amount;
+    }); // {
+    //   category: 'PHYSICAL_GOODS',
+    //   name: 'itemNames1',
+    //   quantity: "1",
+    //   unit_amount: {
+    //     value: "10",
+    //     currency_code: 'USD',
+    //   },
+    //   description: 'mobile phone',
+    //   sku: "11111"
+    // },
+
+
+    var OrderPaypal = function OrderPaypal(name, quantity, description, sku, unit_amount) {
+      _classCallCheck(this, OrderPaypal);
+
+      this.name = name;
+      this.quantity = quantity; // this.category = "PHYSICAL_GOODS" || "DIGITAL_GOODS";
+
+      this.category = "PHYSICAL_GOODS";
+      this.description = description;
+      this.sku = sku; //details
+
+      this.unit_amount = unit_amount;
+    };
+
+    var UnitAmount = function UnitAmount(value) {
+      var currency_code = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'USD';
+
+      _classCallCheck(this, UnitAmount);
+
+      this.value = value;
+      this.currency_code = currency_code;
+    };
+
+    var PurchaseUnits = function PurchaseUnits(description, amount) {
+      _classCallCheck(this, PurchaseUnits);
+
+      this.description = description;
+      this.amount = amount;
+    };
+
+    var Amount = function Amount(value) {
+      var currency_code = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'USD';
+
+      _classCallCheck(this, Amount);
+
+      this.value = value;
+      this.currency_code = currency_code;
+    };
     /***/
 
   },
@@ -37419,61 +37499,61 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getMobileById",
         value: function getMobileById() {
-          var _this52 = this;
+          var _this51 = this;
 
           this._MobileService.getMobileByIdServer(this.mobileVersionId).subscribe(function (response) {
-            _this52.mobileProduct = response.data;
-            _this52.orignalPrice = response.data.price;
-            _this52.price = response.data.price;
-            _this52.discountPrice = response.data.discountPrice;
-            _this52.productVersions = response.data.mobilePhoneVersions;
-            _this52.colors = _toConsumableArray(new Set(_this52.productVersions.map(function (item) {
+            _this51.mobileProduct = response.data;
+            _this51.orignalPrice = response.data.price;
+            _this51.price = response.data.price;
+            _this51.discountPrice = response.data.discountPrice;
+            _this51.productVersions = response.data.mobilePhoneVersions;
+            _this51.colors = _toConsumableArray(new Set(_this51.productVersions.map(function (item) {
               return item.mobileColorName;
             })));
-            _this52.storages = _toConsumableArray(new Set(_this52.productVersions.map(function (item) {
+            _this51.storages = _toConsumableArray(new Set(_this51.productVersions.map(function (item) {
               return item.mobileStorageName;
             })));
-            _this52.color = _this52.productVersions.filter(function (product) {
-              return product.id === Number(_this52.mobileVersionId);
+            _this51.color = _this51.productVersions.filter(function (product) {
+              return product.id === Number(_this51.mobileVersionId);
             })[0].mobileColorName;
-            _this52.storage = _this52.productVersions.filter(function (product) {
-              return product.id === Number(_this52.mobileVersionId);
+            _this51.storage = _this51.productVersions.filter(function (product) {
+              return product.id === Number(_this51.mobileVersionId);
             })[0].mobileStorageName;
 
-            _this52.getPriceOfVersions();
+            _this51.getPriceOfVersions();
           });
         }
       }, {
         key: "getAccessoryById",
         value: function getAccessoryById() {
-          var _this53 = this;
+          var _this52 = this;
 
           this.AccessoryService.getAccessoryByIdServer(this.mobileVersionId).subscribe(function (response) {
-            _this53.accessoryProduct = response.data;
-            _this53.productVersions = response.data.accessoryVersions;
-            _this53.version = _this53.productVersions[0];
-            _this53.productImage = _this53.productVersions[0].productImage;
-            _this53.price = _this53.productVersions[0].price;
-            _this53.discountPrice = _this53.productVersions[0].discountPrice;
+            _this52.accessoryProduct = response.data;
+            _this52.productVersions = response.data.accessoryVersions;
+            _this52.version = _this52.productVersions[0];
+            _this52.productImage = _this52.productVersions[0].productImage;
+            _this52.price = _this52.productVersions[0].price;
+            _this52.discountPrice = _this52.productVersions[0].discountPrice;
           });
         }
       }, {
         key: "getHardwarePartById",
         value: function getHardwarePartById() {
-          var _this54 = this;
+          var _this53 = this;
 
           this.HardwarePartService.getHardwarePartByIdServer(this.mobileVersionId).subscribe(function (response) {
-            _this54.HardwarePartProduct = response.data;
-            _this54.version = _this54.HardwarePartProduct;
-            _this54.productImage = _this54.HardwarePartProduct.productImage;
-            _this54.price = _this54.HardwarePartProduct.price;
-            _this54.discountPrice = _this54.HardwarePartProduct.discountPrice;
+            _this53.HardwarePartProduct = response.data;
+            _this53.version = _this53.HardwarePartProduct;
+            _this53.productImage = _this53.HardwarePartProduct.productImage;
+            _this53.price = _this53.HardwarePartProduct.price;
+            _this53.discountPrice = _this53.HardwarePartProduct.discountPrice;
           });
         }
       }, {
         key: "addMobileToCart",
         value: function addMobileToCart() {
-          var _this55 = this;
+          var _this54 = this;
 
           if (!this.color) {
             return this.alertSrvc.error('Select Color of this version', true);
@@ -37485,26 +37565,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           this.data.versionId = this.version['id'];
           this.ProductCartService.addMobileToCart(this.data).subscribe(function (data) {
-            _this55.alertSrvc.success('Added successfully');
+            _this54.alertSrvc.success('Added successfully');
           });
         }
       }, {
         key: "addAccessoryToCart",
         value: function addAccessoryToCart() {
-          var _this56 = this;
+          var _this55 = this;
 
           this.data.versionId = this.version['id'];
           this.ProductCartService.addAccessoryToCart(this.data).subscribe(function (data) {
-            _this56.alertSrvc.success('Added successfully');
+            _this55.alertSrvc.success('Added successfully');
           });
         }
       }, {
         key: "addHardWarePart",
         value: function addHardWarePart() {
-          var _this57 = this;
+          var _this56 = this;
 
           this.ProductCartService.addHardWareToCart(this.data).subscribe(function (data) {
-            _this57.alertSrvc.success('Added successfully');
+            _this56.alertSrvc.success('Added successfully');
           });
         }
       }, {
@@ -37550,38 +37630,38 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addToFavorite",
         value: function addToFavorite(productItemData) {
-          var _this58 = this;
+          var _this57 = this;
 
           if (this.checkIfAlreadyFavourite(productItemData)) {
             var id = this.favouriteSrvc.favourites$value.filter(function (product) {
-              return product.versionId === _this58.version.id && product.categoryId === productItemData['categoryId'];
+              return product.versionId === _this57.version.id && product.categoryId === productItemData['categoryId'];
             })[0].id;
             this.favouriteSrvc.removeFromFavourites(id).subscribe(function (data) {
-              _this58.alertSrvc.warning('Deleted From Favorites');
+              _this57.alertSrvc.warning('Deleted From Favorites');
             });
           } else {
             this.favouriteSrvc.addToFavourites(productItemData).subscribe(function (data) {
-              _this58.alertSrvc.success('Added to Favorites');
+              _this57.alertSrvc.success('Added to Favorites');
             });
           }
         }
       }, {
         key: "selectColor",
         value: function selectColor(e) {
-          var _this59 = this;
+          var _this58 = this;
 
           this.color = e.target.innerText;
           var storageChildren = Array.from(this.allStorage.nativeElement.children);
           var filteredProducts = this.productVersions.filter(function (version) {
-            return version.mobileColorName === _this59.color;
+            return version.mobileColorName === _this58.color;
           });
           storageChildren.forEach(function (item) {
             var btnText = item['innerText'].trim();
 
             if (filteredProducts.filter(function (p) {
-              return p.mobileStorageName === _this59.storage;
+              return p.mobileStorageName === _this58.storage;
             }).length === 0) {
-              _this59.storage = null;
+              _this58.storage = null;
             }
 
             if (!filteredProducts.some(function (item) {
@@ -37597,18 +37677,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "selectStorage",
         value: function selectStorage(e) {
-          var _this60 = this;
+          var _this59 = this;
 
           this.storage = e.target.innerText;
           var colorChildren = Array.from(this.allColor.nativeElement.children);
           var filteredProducts = this.productVersions.filter(function (version) {
-            return version.mobileStorageName === _this60.storage;
+            return version.mobileStorageName === _this59.storage;
           });
           colorChildren.forEach(function (item) {
             if (filteredProducts.filter(function (p) {
-              return p.mobileColorName === _this60.color;
+              return p.mobileColorName === _this59.color;
             }).length === 0) {
-              _this60.color = null;
+              _this59.color = null;
             }
 
             var btnText = item['innerText'].trim();
@@ -37626,11 +37706,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getPriceOfVersions",
         value: function getPriceOfVersions() {
-          var _this61 = this;
+          var _this60 = this;
 
           if (this.colors.includes(this.color) && this.storages.includes(this.storage)) {
             this.version = this.productVersions.filter(function (item) {
-              return _this61.color == item.mobileColorName && _this61.storage === item.mobileStorageName;
+              return _this60.color == item.mobileColorName && _this60.storage === item.mobileStorageName;
             })[0];
 
             if (this.version) {
@@ -37643,7 +37723,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "ifValueRest",
         value: function ifValueRest() {
-          var _this62 = this;
+          var _this61 = this;
 
           var childrenAllStorage = Array.from(this.allStorage.nativeElement.children);
           var childrenAllColor = Array.from(this.allColor.nativeElement.children);
@@ -37654,10 +37734,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return item['children'][0].disabled = false;
           });
           this.color = this.productVersions.filter(function (product) {
-            return product.id === Number(_this62.mobileVersionId);
+            return product.id === Number(_this61.mobileVersionId);
           })[0].mobileColorName;
           this.storage = this.productVersions.filter(function (product) {
-            return product.id === Number(_this62.mobileVersionId);
+            return product.id === Number(_this61.mobileVersionId);
           })[0].mobileStorageName;
           this.getPriceOfVersions();
         }
@@ -37680,27 +37760,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "checkIfAlreadyFavourite",
         value: function checkIfAlreadyFavourite(item) {
-          var _this63 = this;
+          var _this62 = this;
 
           if (this.version) return this.favouriteSrvc.favourites$value.some(function (product) {
-            return product.versionId === _this63.version.id && product.categoryId === item['categoryId'];
+            return product.versionId === _this62.version.id && product.categoryId === item['categoryId'];
           });
         }
       }, {
         key: "getReviews",
         value: function getReviews() {
-          var _this64 = this;
+          var _this63 = this;
 
           this.ReviewsService.getReviewsForProduct(this.categoryId, Number(this.mobileVersionId), localStorage.getItem("id")).subscribe(function (data) {
-            _this64.reviews = data.data;
-            _this64.reviewsCount = data['count'];
-            _this64.canReview = data['canReview'];
+            _this63.reviews = data.data;
+            _this63.reviewsCount = data['count'];
+            _this63.canReview = data['canReview'];
           });
         }
       }, {
         key: "addReview",
         value: function addReview() {
-          var _this65 = this;
+          var _this64 = this;
 
           var dialogRef = this.dialog.open(_add_review_add_review_component__WEBPACK_IMPORTED_MODULE_2__["AddReviewComponent"], {
             data: {
@@ -37710,7 +37790,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
           dialogRef.afterClosed().subscribe(function (result) {
             if (result) {
-              _this65.getReviews();
+              _this64.getReviews();
             }
           });
         }
@@ -37851,113 +37931,121 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _deliver_address_deliver_address_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ../deliver-address/deliver-address.component */
-    "./src/app/modules/products/components/deliver-address/deliver-address.component.ts");
+    var _deliver_address_order_paypal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../deliver-address/order.paypal */
+    "./src/app/modules/products/components/deliver-address/order.paypal.ts");
     /* harmony import */
 
 
-    var _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../services/ProductCart.service */
     "./src/app/modules/products/services/ProductCart.service.ts");
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var src_app_core_services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var src_app_core_services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! src/app/core/services */
     "./src/app/core/services/index.ts");
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
 
-    function OrderOverviewComponent_div_73_Template(rf, ctx) {
+    var _c0 = ["paypal"];
+
+    function OrderOverviewComponent_div_61_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "span");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "strong");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "p");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var item_r2 = ctx.$implicit;
+        var item_r3 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", item_r2 == null ? null : item_r2.quantity, "X");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("", item_r3 == null ? null : item_r3.quantity, "X");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r2 == null ? null : item_r2.productName);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](item_r3 == null ? null : item_r3.productName);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", item_r2["productPrice"], "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("$", item_r3["productPrice"], "");
       }
     }
 
-    function OrderOverviewComponent_span_74_Template(rf, ctx) {
+    function OrderOverviewComponent_span_62_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "strong");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "strong");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Total");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Total");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "p");
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+        var ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("$", ctx_r1.getTotal(ctx_r1.orderItem), "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("$", ctx_r1.getTotal(ctx_r1.orderItem), "");
       }
     }
 
@@ -37967,24 +38055,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         this.ProductCartService = ProductCartService;
         this.router = router;
-        this.alertService = alertService;
-        this.changeTap = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.alertService = alertService; // @ViewChild(DeliverAddressComponent) addressInfo: DeliverAddressComponent;
+
+        this.changeTap = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.checkNotEmptyField = false;
         this.checkIfProductExist = false;
         this.productsTotalPrice = 0;
+        this.payPalItems = [];
+        this.paidFor = false;
+        this.paypalButton = 0;
       }
 
       _createClass(OrderOverviewComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this66 = this;
-
-          this.ProductCartService.orderOverViewData$.subscribe(function (data) {
-            _this66.deliveryAddress = data['deliveryAddress'];
-            _this66.invoiceAddress = data['invoiceAddress'];
-            _this66.paymentMethod = data['pymentMethod'];
-            _this66.orderItem = data['orderItem'];
-          });
+          this.getAllData();
         }
       }, {
         key: "ngAfterViewInit",
@@ -38011,47 +38096,166 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               _iterator5.f();
             }
 
-            return this.productsTotalPrice + 18;
+            return this.productsTotalPrice;
           }
+        }
+      }, {
+        key: "getAllData",
+        value: function getAllData() {
+          var _this65 = this;
+
+          this.ProductCartService.orderOverViewData$.subscribe(function (data) {
+            var _a, _b, _c, _d, _e;
+
+            _this65.deliveryAddress = (_a = data === null || data === void 0 ? void 0 : data['OrderAddress']) === null || _a === void 0 ? void 0 : _a['deliveryAddress'];
+            _this65.invoiceAddress = (_b = data === null || data === void 0 ? void 0 : data['OrderAddress']) === null || _b === void 0 ? void 0 : _b['invoiceAddress'];
+            _this65.useAddressInformation = (_c = data === null || data === void 0 ? void 0 : data['OrderAddress']) === null || _c === void 0 ? void 0 : _c['useAddressInformation'];
+            _this65.useDeliveryAddressAsInvoiceAddress = (_d = data === null || data === void 0 ? void 0 : data['OrderAddress']) === null || _d === void 0 ? void 0 : _d['useDeliveryAddressAsInvoiceAddress'];
+            _this65.userId = (_e = data === null || data === void 0 ? void 0 : data['OrderAddress']) === null || _e === void 0 ? void 0 : _e['userId'];
+            _this65.paymentMethod = data === null || data === void 0 ? void 0 : data['paymentMethod'];
+            _this65.orderItem = data === null || data === void 0 ? void 0 : data['orderItem'];
+          });
         }
       }, {
         key: "checkIfAllFeildExist",
         value: function checkIfAllFeildExist() {
-          return this.deliveryAddress !== undefined && this.invoiceAddress !== undefined && this.paymentMethod !== undefined && this.orderItem.length > 0;
+          return this.deliveryAddress !== undefined && this.invoiceAddress !== undefined && this.useAddressInformation !== undefined && this.useDeliveryAddressAsInvoiceAddress !== undefined && this.paymentMethod !== undefined && this.orderItem.length > 0;
         }
       }, {
         key: "checkIfAllDateExist",
         value: function checkIfAllDateExist() {
-          var _this67 = this;
+          var _this66 = this;
 
           this.checkNotEmptyField = Object.keys(this.ProductCartService.orderOverViewData$value).every(function (value) {
-            return _this67.ProductCartService.orderOverViewData$value[value] !== "" || _this67.ProductCartService.orderOverViewData$value[value] !== 0;
+            return _this66.ProductCartService.orderOverViewData$value[value] !== "" || _this66.ProductCartService.orderOverViewData$value[value] !== 0;
           });
           this.checkIfProductExist = this.ProductCartService.orderOverViewData$value['orderItem'].length > 0;
           return this.checkNotEmptyField && this.checkIfProductExist;
         }
       }, {
-        key: "confirmOrder",
-        value: function confirmOrder() {
+        key: "prepareOrdersToPayPal",
+        value: function prepareOrdersToPayPal() {
+          var _this67 = this;
+
+          this.ProductCartService.orderOverViewData$value['orderItem'].map(function (order) {
+            _this67.payPalItems.push(new _deliver_address_order_paypal__WEBPACK_IMPORTED_MODULE_2__["OrderPaypal"](order.productName, order.quantity, order.categoryName + " " + order.productName, order.userId + " " + order.categoryName + " " + order.productName, new _deliver_address_order_paypal__WEBPACK_IMPORTED_MODULE_2__["UnitAmount"](order.productPrice)));
+          });
+        }
+      }, {
+        key: "payPalFun",
+        value: function payPalFun() {
           var _this68 = this;
 
-          var _a, _b;
+          var element = this.paypalElement.nativeElement;
+          this.prepareOrdersToPayPal();
+          paypal.Buttons({
+            style: {
+              color: 'blue',
+              height: 40,
+              label: 'paypal',
+              layout: 'vertical',
+              shape: 'pill'
+            },
+            createOrder: function createOrder(data, actions) {
+              return actions.order.create({
+                purchase_units: [{
+                  amount: {
+                    value: "".concat(_this68.ProductCartService.productsTotalPrice),
+                    breakdown: {
+                      item_total: {
+                        value: "".concat(_this68.ProductCartService.productsTotalPrice),
+                        currency_code: 'USD'
+                      },
+                      discount: {
+                        value: '0',
+                        currency_code: 'USD'
+                      },
+                      handling: {
+                        value: '0',
+                        currency_code: 'USD'
+                      },
+                      insurance: {
+                        value: '0',
+                        currency_code: 'USD'
+                      },
+                      shipping: {
+                        value: '0',
+                        currency_code: 'USD'
+                      },
+                      shipping_discount: {
+                        value: '0',
+                        currency_code: 'USD'
+                      },
+                      tax_total: {
+                        value: '0',
+                        currency_code: 'USD'
+                      }
+                    }
+                  },
+                  description: "order from vybes",
+                  items: _this68.payPalItems
+                }]
+              });
+            },
+            onInit: function onInit(data, actions) {},
+            onApprove: function onApprove(data, actions) {
+              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this68, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                var order;
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                  while (1) {
+                    switch (_context.prev = _context.next) {
+                      case 0:
+                        _context.next = 2;
+                        return actions.order.capture();
 
+                      case 2:
+                        order = _context.sent;
+                        this.comfirmOrderWithBack();
+                        this.paidFor = true;
+
+                      case 5:
+                      case "end":
+                        return _context.stop();
+                    }
+                  }
+                }, _callee, this);
+              }));
+            },
+            onError: function onError(err) {
+              console.log(err);
+              _this68.paidFor = true;
+              return _this68.alertService.error('please contact with manger to solve this issue');
+            },
+            onCancel: function onCancel(data) {
+              console.log('onCancel');
+              _this68.paidFor = true;
+            }
+          }).render(this.paypalElement.nativeElement);
+        }
+      }, {
+        key: "confirmOrder",
+        value: function confirmOrder() {
           if (!this.checkIfAllDateExist() || !this.checkIfAllFeildExist()) {
             return this.alertService.error('please fill missing data', true);
-          } else {
-            var order = {
-              userId: localStorage.getItem("id"),
-              invoiceAddressId: (_a = this.invoiceAddress) === null || _a === void 0 ? void 0 : _a.id,
-              deliveryAddressId: (_b = this.deliveryAddress) === null || _b === void 0 ? void 0 : _b.id,
-              status: 1
-            };
-            this.ProductCartService.addOrder(order).subscribe(function (data) {
-              _this68.router.navigate(['products/thank-you', {
-                orderId: data['data']
-              }]);
-            });
           }
+
+          if (this.paymentMethod === 'paypal') {
+            this.payPalFun();
+          }
+        }
+      }, {
+        key: "comfirmOrderWithBack",
+        value: function comfirmOrderWithBack() {
+          var _this69 = this;
+
+          var order = this.ProductCartService.orderOverViewData$value['OrderAddress'];
+          this.ProductCartService.addOrder(order).subscribe(function (data) {
+            return _this69.router.navigate(['products/thank-you', {
+              orderId: data['data']
+            }]);
+          }, function (err) {
+            return _this69.alertService.error('please contact with manger to solve this issue');
+          });
         }
       }, {
         key: "back",
@@ -38064,370 +38268,328 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     OrderOverviewComponent.ɵfac = function OrderOverviewComponent_Factory(t) {
-      return new (t || OrderOverviewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_ProductCart_service__WEBPACK_IMPORTED_MODULE_2__["ProductCartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_4__["AlertService"]));
+      return new (t || OrderOverviewComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_services_ProductCart_service__WEBPACK_IMPORTED_MODULE_3__["ProductCartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_5__["AlertService"]));
     };
 
-    OrderOverviewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+    OrderOverviewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
       type: OrderOverviewComponent,
       selectors: [["app-order-overview"]],
       viewQuery: function OrderOverviewComponent_Query(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_deliver_address_deliver_address_component__WEBPACK_IMPORTED_MODULE_1__["DeliverAddressComponent"], true);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵstaticViewQuery"](_c0, true);
         }
 
         if (rf & 2) {
           var _t;
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.addressInfo = _t.first);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵloadQuery"]()) && (ctx.paypalElement = _t.first);
         }
       },
       outputs: {
         changeTap: "changeTap"
       },
-      decls: 81,
-      vars: 16,
-      consts: [[1, "order_overview"], [1, "box-left"], [1, "delivery_info", "s_style"], [1, "_textHead"], [1, "invoice_info", "s_style"], [1, "box-right"], [1, "invoise_info", "s_style"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "_mat_btn_small"], ["mat-flat-button", "", 3, "click"]],
+      decls: 71,
+      vars: 14,
+      consts: [[1, "order_overview"], [1, "box-left"], [1, "delivery_info", "s_style"], [1, "_textHead"], [1, "invoice_info", "s_style"], [1, "box-right"], [1, "invoise_info", "s_style"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "_mat_btn_small"], ["mat-flat-button", "", 3, "click"], [3, "hidden"], ["paypal", ""]],
       template: function OrderOverviewComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "section", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "div", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "div", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "h3");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "delivery Address");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](5, "delivery Address");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "address2 : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "address2 : ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Post Code : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Post Code : ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](17, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "City : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "City : ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](20);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Country : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, "Country : ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](24);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "div", 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "div", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "h3");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](28, "invoice Address");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](28, "invoice Address");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](31);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "address2 : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](34, "address2 : ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](35);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "Post Code : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](38, "Post Code : ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](41, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "City : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](42, "City : ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](43);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](44, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](45, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](46, "Country : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](46, "Country : ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](47);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](48, "div", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](48, "div", 5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](49, "div", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](49, "div", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "div", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](50, "div", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "h3");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](51, "h3");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "payment method");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](52, "payment method");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](54, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](54, "strong");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](55, "payment : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](55, "payment : ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](56);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](56);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](57, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](58, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](57, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](59, "Card Nom : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "div", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](59, "h3");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](60);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](60, "Your Order");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](61, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](62, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](61, OrderOverviewComponent_div_61_Template, 7, 3, "div", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](63, "Code : ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](62, OrderOverviewComponent_span_62_Template, 5, 1, "span", 8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](64);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](65, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](63, "div", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](66, "strong");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](64, "button", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](67, "Expired Date : ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](68);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](69, "div", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](70, "div", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](71, "h3");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](72, "Your Order");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](73, OrderOverviewComponent_div_73_Template, 7, 3, "div", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](74, OrderOverviewComponent_span_74_Template, 5, 1, "span", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](75, "div", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](76, "button", 10);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OrderOverviewComponent_Template_button_click_76_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function OrderOverviewComponent_Template_button_click_64_listener() {
             return ctx.back();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, " Previous ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](65, " Previous ");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](78, "div", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](66, "div", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](79, "button", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](67, "button", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OrderOverviewComponent_Template_button_click_79_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function OrderOverviewComponent_Template_button_click_67_listener() {
             return ctx.confirmOrder();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](80, "Confirm");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](68, "Confirm");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](69, "div", 11, 12);
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("address1 : ", ctx.deliveryAddress == null ? null : ctx.deliveryAddress.address1, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("address1 : ", ctx.deliveryAddress == null ? null : ctx.deliveryAddress.address1, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.deliveryAddress == null ? null : ctx.deliveryAddress.address2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.deliveryAddress == null ? null : ctx.deliveryAddress.address2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.deliveryAddress == null ? null : ctx.deliveryAddress.postCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.deliveryAddress == null ? null : ctx.deliveryAddress.postCode);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.deliveryAddress == null ? null : ctx.deliveryAddress.city);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.deliveryAddress == null ? null : ctx.deliveryAddress.city);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.deliveryAddress == null ? null : ctx.deliveryAddress.country);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.deliveryAddress == null ? null : ctx.deliveryAddress.country);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("address1 : ", ctx.invoiceAddress == null ? null : ctx.invoiceAddress.address1, "");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("address1 : ", ctx.invoiceAddress == null ? null : ctx.invoiceAddress.address1, "");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.invoiceAddress == null ? null : ctx.invoiceAddress.address2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.invoiceAddress == null ? null : ctx.invoiceAddress.address2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.invoiceAddress == null ? null : ctx.invoiceAddress.postCode);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.invoiceAddress == null ? null : ctx.invoiceAddress.postCode);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.invoiceAddress == null ? null : ctx.invoiceAddress.city);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.invoiceAddress == null ? null : ctx.invoiceAddress.city);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.invoiceAddress == null ? null : ctx.invoiceAddress.country);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.invoiceAddress == null ? null : ctx.invoiceAddress.country);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.paymentMethod == null ? null : ctx.paymentMethod.PAYMENT);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](ctx.paymentMethod);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](5);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.paymentMethod == null ? null : ctx.paymentMethod.CARDNOM);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.orderItem);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.paymentMethod == null ? null : ctx.paymentMethod.CODE);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", (ctx.orderItem == null ? null : ctx.orderItem.length) > 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.paymentMethod == null ? null : ctx.paymentMethod.EXPIRED_DATE);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.orderItem);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.orderItem == null ? null : ctx.orderItem.length) > 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("hidden", ctx.paidFor);
         }
       },
-      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_6__["MatButton"]],
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButton"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcHJvZHVjdHMvY29tcG9uZW50cy9vcmRlci1vdmVydmlldy9vcmRlci1vdmVydmlldy5jb21wb25lbnQuc2NzcyJ9 */"]
     });
     /*@__PURE__*/
 
     (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](OrderOverviewComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+      _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](OrderOverviewComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
           selector: 'app-order-overview',
           templateUrl: './order-overview.component.html',
@@ -38435,19 +38597,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_2__["ProductCartService"]
+          type: _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_3__["ProductCartService"]
         }, {
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
         }, {
-          type: src_app_core_services__WEBPACK_IMPORTED_MODULE_4__["AlertService"]
+          type: src_app_core_services__WEBPACK_IMPORTED_MODULE_5__["AlertService"]
         }];
       }, {
-        addressInfo: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-          args: [_deliver_address_deliver_address_component__WEBPACK_IMPORTED_MODULE_1__["DeliverAddressComponent"]]
-        }],
         changeTap: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"]
+        }],
+        paypalElement: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"],
+          args: ['paypal', {
+            "static": true
+          }]
         }]
       });
     })();
@@ -38495,17 +38659,37 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var src_app_core_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! src/app/core/services */
+    "./src/app/core/services/index.ts");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
 
+    var _c0 = function _c0(a0) {
+      return {
+        "opacity": a0
+      };
+    };
+
     var PaymentInformationComponent = /*#__PURE__*/function () {
-      function PaymentInformationComponent(ProductCartService, fb) {
+      function PaymentInformationComponent(ProductCartService, fb, AlertService) {
         _classCallCheck(this, PaymentInformationComponent);
 
         this.ProductCartService = ProductCartService;
         this.fb = fb;
+        this.AlertService = AlertService;
         this.changeTap = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.visaFormShow = true;
       }
 
       _createClass(PaymentInformationComponent, [{
@@ -38517,30 +38701,46 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "createPymentMethodForm",
         value: function createPymentMethodForm() {
           this.pymentMethodForm = this.fb.group({
-            PAYMENT: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]({
-              value: '',
-              disabled: true
-            }, []),
-            CARDNOM: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]({
-              value: '',
-              disabled: true
-            }, []),
-            CODE: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]({
-              value: '',
-              disabled: true
-            }, []),
-            EXPIRED_DATE: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]({
-              value: '',
-              disabled: true
-            }, [])
-          });
+            PAYMENT: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('visa', []),
+            CARDNOM: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', []),
+            CODE: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', []),
+            EXPIRED_DATE: new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"]('', [])
+          }); // this.pymentMethodForm.disable()
+        }
+      }, {
+        key: "selectPaymentMenthod",
+        value: function selectPaymentMenthod(paymentMethod) {
+          this.paymentMethod = paymentMethod;
+
+          if (paymentMethod === 'visa') {
+            this.visaFormShow = false;
+          }
+
+          if (paymentMethod === 'paypal') {
+            this.visaFormShow = true;
+            this.ProductCartService.orderOverViewData$.next(Object.assign(this.ProductCartService.orderOverViewData$value, {
+              paymentMethod: 'paypal'
+            }));
+          }
         }
       }, {
         key: "orderView",
         value: function orderView() {
-          this.ProductCartService.orderOverViewData$.next(Object.assign(this.ProductCartService.orderOverViewData$value, {
-            pymentMethod: this.pymentMethodForm.value
-          }));
+          if (!this.paymentMethod) {
+            return this.AlertService.error('please select payment method');
+          }
+
+          if (this.pymentMethodForm.invalid) {
+            return this.pymentMethodForm.markAllAsTouched();
+          }
+
+          if (this.paymentMethod === 'visa') {
+            this.ProductCartService.orderOverViewData$.next(Object.assign(this.ProductCartService.orderOverViewData$value, {
+              paymentMethod: this.pymentMethodForm.value
+            }));
+          } // console.log(this.ProductCartService.orderOverViewData$value, 'value')
+
+
           this.changeTap.emit('next');
         }
       }, {
@@ -38554,7 +38754,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     PaymentInformationComponent.ɵfac = function PaymentInformationComponent_Factory(t) {
-      return new (t || PaymentInformationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_ProductCart_service__WEBPACK_IMPORTED_MODULE_2__["ProductCartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]));
+      return new (t || PaymentInformationComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_ProductCart_service__WEBPACK_IMPORTED_MODULE_2__["ProductCartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_3__["AlertService"]));
     };
 
     PaymentInformationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -38563,9 +38763,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       outputs: {
         changeTap: "changeTap"
       },
-      decls: 33,
-      vars: 1,
-      consts: [[1, "payment_Information"], [1, "_textHead"], [3, "formGroup"], [1, "payment_option"], ["src", "../../../../../assets/images/Visa_Inc._logo.svg.png", "alt", ""], ["src", "../../../../../assets/images/PayPal_logo.png", "alt", ""], [1, "payment_details"], [1, "Item_row"], [1, "input-group"], ["formControlName", "CARDNOM", "type", "text", "placeholder", "Type Your Card Number", 1, "form-control"], [1, "input-group", "CVC"], ["formControlName", "CODE", "type", "text", "placeholder", "CVV", 1, "form-control"], [1, "input-group", "exp_date"], ["formControlName", "EXPIRED_DATE", "type", "text", "placeholder", "01\\2024", 1, "form-control"], [1, "_mat_btn_small"], ["mat-flat-button", "", 3, "click"]],
+      decls: 34,
+      vars: 8,
+      consts: [[1, "payment_Information"], [1, "_textHead"], [1, "payment_option"], [3, "ngStyle", "click"], ["src", "../../../../../assets/images/Visa_Inc._logo.svg.png", "alt", ""], ["src", "../../../../../assets/images/PayPal_logo.png", "alt", ""], [3, "formGroup", "hidden"], [1, "payment_details"], [1, "Item_row"], [1, "input-group"], ["formControlName", "CARDNOM", "type", "text", "placeholder", "Type Your Card Number", 1, "form-control"], [1, "input-group", "CVC"], ["formControlName", "CODE", "type", "text", "placeholder", "CVV", 1, "form-control"], [1, "input-group", "exp_date"], ["formControlName", "EXPIRED_DATE", "type", "text", "placeholder", "01\\2024", 1, "form-control"], [1, "_mat_btn_small"], ["mat-flat-button", "", 3, "click"]],
       template: function PaymentInformationComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 0);
@@ -38580,105 +38780,117 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "form", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "ul");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "ul");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "li", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "li");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PaymentInformationComponent_Template_li_click_6_listener() {
+            return ctx.selectPaymentMenthod("visa");
+          });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "img", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "li");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "img", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "img", 4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "li", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PaymentInformationComponent_Template_li_click_8_listener() {
+            return ctx.selectPaymentMenthod("paypal");
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "img", 5);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "form", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Card Number");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](16, "input", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Card Number");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "div", 7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "span");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "C V C");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "div", 10);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "input", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "input", 10);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "span");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "span");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "expiry date");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](25, "div", 12);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "input", 13);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "C V C");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "div", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](22, "input", 12);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 8);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "span");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "expiry date");
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](27, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "div", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "button", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](27, "input", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PaymentInformationComponent_Template_button_click_28_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "div", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "button", 16);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PaymentInformationComponent_Template_button_click_29_listener() {
             return ctx.back();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, " Previous ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](30, " Previous ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "div", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](31, "button", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "button", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PaymentInformationComponent_Template_button_click_31_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function PaymentInformationComponent_Template_button_click_32_listener() {
             return ctx.orderView();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](32, " next ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](33, " next ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -38688,12 +38900,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
 
         if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.pymentMethodForm);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](4, _c0, ctx.paymentMethod === "visa" ? 1 : 0.5));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngStyle", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpureFunction1"](6, _c0, ctx.paymentMethod === "paypal" ? 1 : 0.5));
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx.pymentMethodForm)("hidden", ctx.visaFormShow);
         }
       },
-      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_button__WEBPACK_IMPORTED_MODULE_3__["MatButton"]],
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgStyle"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_button__WEBPACK_IMPORTED_MODULE_5__["MatButton"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcHJvZHVjdHMvY29tcG9uZW50cy9wYXltZW50LWluZm9ybWF0aW9uL3BheW1lbnQtaW5mb3JtYXRpb24uY29tcG9uZW50LnNjc3MifQ== */"]
     });
     /*@__PURE__*/
@@ -38711,6 +38931,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           type: _services_ProductCart_service__WEBPACK_IMPORTED_MODULE_2__["ProductCartService"]
         }, {
           type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
+        }, {
+          type: src_app_core_services__WEBPACK_IMPORTED_MODULE_3__["AlertService"]
         }];
       }, {
         changeTap: [{
@@ -38809,10 +39031,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addToCart",
         value: function addToCart(mobileData) {
-          var _this69 = this;
+          var _this70 = this;
 
           this.ProductCartService.addToCart(mobileData).subscribe(function (res) {
-            _this69.alertSrvc.success('Added to Cart');
+            _this70.alertSrvc.success('Added to Cart');
           });
         }
       }, {
@@ -38850,18 +39072,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "addToFavourite",
         value: function addToFavourite(productItemData) {
-          var _this70 = this;
+          var _this71 = this;
 
           if (this.checkIfAlreadyFavourite(productItemData)) {
             var id = this.FavouriteService.favourites$value.filter(function (product) {
               return product.versionId === productItemData['versionId'] && product.categoryId === productItemData['categoryId'];
             })[0].id;
             this.FavouriteService.removeFromFavourites(id).subscribe(function (data) {
-              _this70.alertSrvc.warning('Deleted From Favorites');
+              _this71.alertSrvc.warning('Deleted From Favorites');
             });
           } else {
             this.FavouriteService.addToFavourites(productItemData).subscribe(function (data) {
-              _this70.alertSrvc.success('Added to Favorites');
+              _this71.alertSrvc.success('Added to Favorites');
             });
           }
         }
@@ -39978,88 +40200,88 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getBrands",
         value: function getBrands() {
-          var _this71 = this;
+          var _this72 = this;
 
           this._FilterSer.getAllBrands().subscribe(function (response) {
-            _this71.brands = response.data;
+            _this72.brands = response.data;
           });
         }
       }, {
         key: "getSlots",
         value: function getSlots() {
-          var _this72 = this;
+          var _this73 = this;
 
           this._FilterSer.getAllSlots().subscribe(function (response) {
-            _this72.slots = response.data;
+            _this73.slots = response.data;
           });
         }
       }, {
         key: "getRams",
         value: function getRams() {
-          var _this73 = this;
+          var _this74 = this;
 
           this._FilterSer.getAllRams().subscribe(function (response) {
-            _this73.rams = response.data;
+            _this74.rams = response.data;
           });
         }
       }, {
         key: "getStorages",
         value: function getStorages() {
-          var _this74 = this;
+          var _this75 = this;
 
           this._FilterSer.getAllStorages().subscribe(function (response) {
-            _this74.storages = response.data;
+            _this75.storages = response.data;
           });
         }
       }, {
         key: "getConnectivity",
         value: function getConnectivity() {
-          var _this75 = this;
+          var _this76 = this;
 
           this._FilterSer.getAllConnectivity().subscribe(function (response) {
-            _this75.connectivities = response.data;
+            _this76.connectivities = response.data;
           });
         }
       }, {
         key: "getColours",
         value: function getColours() {
-          var _this76 = this;
+          var _this77 = this;
 
           this._FilterSer.getAllColours().subscribe(function (response) {
-            _this76.colorsArr = response.data;
+            _this77.colorsArr = response.data;
           });
         }
       }, {
         key: "getAccessoryType",
         value: function getAccessoryType() {
-          var _this77 = this;
+          var _this78 = this;
 
           this._FilterSer.getAllAccessoryType().subscribe(function (response) {
-            _this77.AccessoryTypeArr = response.data;
+            _this78.AccessoryTypeArr = response.data;
           });
         }
       }, {
         key: "getMobileModel",
         value: function getMobileModel() {
-          var _this78 = this;
+          var _this79 = this;
 
           this._FilterSer.getAllMobileModel().subscribe(function (response) {
-            _this78.MobileModelArr = response.data;
+            _this79.MobileModelArr = response.data;
           });
         }
       }, {
         key: "getHardwarePartType",
         value: function getHardwarePartType() {
-          var _this79 = this;
+          var _this80 = this;
 
           this._FilterSer.getAllHardwarePartType().subscribe(function (response) {
-            _this79.HardwarePartTypeArr = response.data;
+            _this80.HardwarePartTypeArr = response.data;
           });
         }
       }, {
         key: "checkPriceValue",
         value: function checkPriceValue() {
-          var _this80 = this;
+          var _this81 = this;
 
           var lowPrice = this.priceForm.controls.fromPrice.value;
           var highPrice = this.priceForm.controls.toPrice.value;
@@ -40077,7 +40299,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               this._MobileService.getAllProducts(this.type, this.filter).subscribe(function (response) {
                 console.log('iam here in sidebar', response.data);
 
-                _this80._FilterSer.getData(response.data);
+                _this81._FilterSer.getData(response.data);
               });
             } else if (lowPrice == '' && highPrice != '') {
               if (!this.filter.FilterRange.Price) {
@@ -40089,7 +40311,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               this._MobileService.getAllProducts(this.type, this.filter).subscribe(function (response) {
                 console.log('iam here in sidebar', response.data);
 
-                _this80._FilterSer.getData(response.data);
+                _this81._FilterSer.getData(response.data);
               });
             } else if (lowPrice != '' && highPrice != '') {
               if (!this.filter.FilterRange.Price) {
@@ -41391,10 +41613,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ProductsComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this81 = this;
+          var _this82 = this;
 
           this.activeRoute.params.subscribe(function (data) {
-            _this81.type = data['type'];
+            _this82.type = data['type'];
           });
           this.getUserData();
           this.getProductData();
@@ -41427,10 +41649,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getUserData",
         value: function getUserData() {
-          var _this82 = this;
+          var _this83 = this;
 
           this.authSrvc.userData$.subscribe(function (data) {
-            if (data) _this82.userData = data;
+            if (data) _this83.userData = data;
           });
         }
       }, {
@@ -41460,28 +41682,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllMobiles",
         value: function getAllMobiles() {
-          var _this83 = this;
+          var _this84 = this;
 
           this.mobileService.getAllProducts("MobilePhone", this.filters, this.sort).subscribe(function (res) {
-            _this83.mobiles = res.data;
+            _this84.mobiles = res.data;
           });
         }
       }, {
         key: "getAllAccessories",
         value: function getAllAccessories() {
-          var _this84 = this;
+          var _this85 = this;
 
           this.mobileService.getAllProducts("Accessory", this.filters, this.sort).subscribe(function (res) {
-            _this84.mobiles = res.data;
+            _this85.mobiles = res.data;
           });
         }
       }, {
         key: "getAllHardwarePart",
         value: function getAllHardwarePart() {
-          var _this85 = this;
+          var _this86 = this;
 
           this.mobileService.getAllProducts("HardwarePart", this.filters, this.sort).subscribe(function (res) {
-            _this85.mobiles = res.data;
+            _this86.mobiles = res.data;
           });
         }
       }, {
@@ -42574,7 +42796,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getAllProducts",
         value: function getAllProducts(type, filter, sort) {
-          var _this86 = this;
+          var _this87 = this;
 
           var searchParams = '';
           searchParams = "?pageSize=".concat(this.pageSize, "&PageNumber=").concat(this.pageNumber);
@@ -42619,14 +42841,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl).concat(type).concat(searchParams)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (res) {
               var count = res['count'];
 
-              _this86.setPagination(undefined, undefined, count);
+              _this87.setPagination(undefined, undefined, count);
             }));
           }
 
           return this.http.get("".concat(src_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].baseUrl).concat(type, "/GetVersioned").concat(searchParams)).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["tap"])(function (res) {
             var count = res['count'];
 
-            _this86.setPagination(undefined, undefined, count);
+            _this87.setPagination(undefined, undefined, count);
           }));
         }
       }, {
