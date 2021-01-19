@@ -123,7 +123,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | modules-products-products-module */
-          [__webpack_require__.e("default~modules-auth-auth-module~modules-fix-request-modules-fix-request-module~modules-products-pro~51c17185"), __webpack_require__.e("default~modules-auth-auth-module~modules-products-products-module~modules-profile-profile-module"), __webpack_require__.e("default~modules-fix-request-modules-fix-request-module~modules-products-products-module~modules-prof~27d98af7"), __webpack_require__.e("common"), __webpack_require__.e("modules-products-products-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~modules-auth-auth-module~modules-fix-request-modules-fix-request-module~modules-products-pro~51c17185"), __webpack_require__.e("default~modules-auth-auth-module~modules-products-products-module~modules-profile-profile-module"), __webpack_require__.e("default~modules-fix-request-modules-fix-request-module~modules-products-products-module~modules-prof~27d98af7"), __webpack_require__.e("modules-products-products-module")]).then(__webpack_require__.bind(null,
           /*! ./modules/products/products.module */
           "./src/app/modules/products/products.module.ts")).then(function (m) {
             return m.ProductsModule;
