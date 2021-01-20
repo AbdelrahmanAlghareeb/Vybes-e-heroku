@@ -28833,31 +28833,37 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var src_app_core_services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! src/app/core/services */
+    "./src/app/core/services/index.ts");
+    /* harmony import */
+
+
+    var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @angular/material/form-field */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
     /* harmony import */
 
 
-    var _angular_material_select__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _angular_material_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/material/select */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/select.js");
     /* harmony import */
 
 
-    var _angular_material_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _angular_material_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @angular/material/core */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
 
@@ -28922,17 +28928,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }
 
     var ChooseDivceComponent = /*#__PURE__*/function () {
-      function ChooseDivceComponent(_fixServ, _fixServData, fb, router) {
+      function ChooseDivceComponent(_fixServ, _fixServData, fb, router, authSrvc) {
         _classCallCheck(this, ChooseDivceComponent);
 
         this._fixServ = _fixServ;
         this._fixServData = _fixServData;
         this.fb = fb;
         this.router = router;
+        this.authSrvc = authSrvc;
         this.brandFirstTime = true;
         this.modelFirstTime = true;
         this.fixBrands = [];
-        this.fixModels = [];
+        this.fixModels = []; // *ngIf="(role==='bussiness' && IsVerified)"
+
+        this.role = "";
       }
 
       _createClass(ChooseDivceComponent, [{
@@ -28940,6 +28949,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function ngOnInit() {
           this.createChooseDeviceForm();
           this.getFixBrands();
+          this.getRole();
+          this.getIsVerified();
         }
       }, {
         key: "createChooseDeviceForm",
@@ -28955,7 +28966,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var _this26 = this;
 
           this._fixServ.getAllBrands().subscribe(function (response) {
-            console.log('brands', response.data);
+            // console.log('brands', response.data);
             _this26.fixBrands = response.data; // debugger
 
             if (_this26._fixServData.fixRequestData.brandId && _this26.brandFirstTime) {
@@ -29007,6 +29018,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "nextStep",
         value: function nextStep() {
           // debugger;
+          if (!this.role && !this.IsVerified) {
+            this.authSrvc.removeUserData();
+            return this.router.navigate(['register'], {
+              replaceUrl: true
+            });
+          }
+
           var modelDeviceId = this.chooseDeviceForm.controls.deviceModel.value;
           var BrandDeviceId = this.chooseDeviceForm.controls.deviceBrand.value;
           this._fixServData.fixRequestData.modelId = modelDeviceId;
@@ -29026,13 +29044,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "getModelValues",
         value: function getModelValues(e) {// console.log('e', e);
         }
+      }, {
+        key: "getRole",
+        value: function getRole() {
+          this.role = this.authSrvc.role;
+        }
+      }, {
+        key: "getIsVerified",
+        value: function getIsVerified() {
+          this.IsVerified = this.authSrvc.isVerified;
+        }
       }]);
 
       return ChooseDivceComponent;
     }();
 
     ChooseDivceComponent.ɵfac = function ChooseDivceComponent_Factory(t) {
-      return new (t || ChooseDivceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_fix_request_service__WEBPACK_IMPORTED_MODULE_2__["FixRequestService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_fix_request_data_service__WEBPACK_IMPORTED_MODULE_3__["FixRequestDataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]));
+      return new (t || ChooseDivceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_fix_request_service__WEBPACK_IMPORTED_MODULE_2__["FixRequestService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_fix_request_data_service__WEBPACK_IMPORTED_MODULE_3__["FixRequestDataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_5__["AuthService"]));
     };
 
     ChooseDivceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -29154,7 +29182,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.chooseDeviceForm.controls.deviceModel == null ? null : ctx.chooseDeviceForm.controls.deviceModel.invalid) && (ctx.chooseDeviceForm.controls.deviceModel == null ? null : ctx.chooseDeviceForm.controls.deviceModel.errors.required) && ((ctx.chooseDeviceForm.controls.deviceModel == null ? null : ctx.chooseDeviceForm.controls.deviceModel.dirty) || (ctx.chooseDeviceForm.controls.deviceModel == null ? null : ctx.chooseDeviceForm.controls.deviceModel.touched)));
         }
       },
-      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatFormField"], _angular_material_select__WEBPACK_IMPORTED_MODULE_6__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_core__WEBPACK_IMPORTED_MODULE_7__["MatOption"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_9__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatError"]],
+      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormField"], _angular_material_select__WEBPACK_IMPORTED_MODULE_7__["MatSelect"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_material_core__WEBPACK_IMPORTED_MODULE_8__["MatOption"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatError"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvZml4LXJlcXVlc3QvY29tcG9uZW50cy9jaG9vc2UtZGl2Y2UvY2hvb3NlLWRpdmNlLmNvbXBvbmVudC5zY3NzIn0= */"]
     });
     /*@__PURE__*/
@@ -29176,6 +29204,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           type: _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]
         }, {
           type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+        }, {
+          type: src_app_core_services__WEBPACK_IMPORTED_MODULE_5__["AuthService"]
         }];
       }, null);
     })();
