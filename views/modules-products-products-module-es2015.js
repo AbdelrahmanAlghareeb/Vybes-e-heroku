@@ -22385,7 +22385,7 @@ AddressDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("label", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](14, 13, "Payment Information"));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", !_r3.isActive);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("label", "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](18, 15, "Overview"), "}");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("label", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](18, 15, "Overview"));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", !_r4.isActive);
     } }, directives: [_angular_material_tabs__WEBPACK_IMPORTED_MODULE_1__["MatTabGroup"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_1__["MatTab"], _checkout_checkout_component__WEBPACK_IMPORTED_MODULE_3__["CheckoutComponent"], _deliver_address_deliver_address_component__WEBPACK_IMPORTED_MODULE_2__["DeliverAddressComponent"], _payment_information_payment_information_component__WEBPACK_IMPORTED_MODULE_4__["PaymentInformationComponent"], _order_overview_order_overview_component__WEBPACK_IMPORTED_MODULE_5__["OrderOverviewComponent"]], pipes: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_6__["TranslatePipe"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcHJvZHVjdHMvY29tcG9uZW50cy9hZGRyZXNzLWRldGFpbHMvYWRkcmVzcy1kZXRhaWxzLmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AddressDetailsComponent, [{
@@ -25900,15 +25900,15 @@ class OrderOverviewComponent {
         });
     }
     payPalFun() {
-        let element = this.paypalElement.nativeElement;
         this.prepareOrdersToPayPal();
         paypal
             .Buttons({
             style: {
-                color: 'blue',
+                color: 'gold',
                 height: 40,
                 label: 'paypal',
                 layout: 'vertical',
+                // layout: 'horizontal',
                 shape: 'pill',
             },
             createOrder: (data, actions) => {
@@ -25963,12 +25963,12 @@ class OrderOverviewComponent {
             }),
             onError: err => {
                 console.log(err);
-                this.paidFor = true;
+                // this.paidFor = true
                 return this.alertService.error('please contact with manger to solve this issue');
             },
             onCancel: (data) => {
                 console.log('onCancel');
-                this.paidFor = true;
+                // this.paidFor = true
             }
         })
             .render(this.paypalElement.nativeElement);
@@ -25986,7 +25986,7 @@ class OrderOverviewComponent {
         this.ProductCartService.addOrder(order).subscribe(data => {
             return this.router.navigate(['products/thank-you', { orderId: data['data'] }]);
         }, (err) => {
-            return this.alertService.error('please contact with manger to solve this issue');
+            return this.alertService.error('please contact with manager to solve this issue');
         });
     }
     back() {

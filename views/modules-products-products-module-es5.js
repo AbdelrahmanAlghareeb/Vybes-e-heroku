@@ -31741,7 +31741,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("label", "", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](18, 15, "Overview"), "}");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("label", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](18, 15, "Overview"));
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("disabled", !_r4.isActive);
         }
@@ -38811,14 +38811,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function payPalFun() {
           var _this68 = this;
 
-          var element = this.paypalElement.nativeElement;
           this.prepareOrdersToPayPal();
           paypal.Buttons({
             style: {
-              color: 'blue',
+              color: 'gold',
               height: 40,
               label: 'paypal',
               layout: 'vertical',
+              // layout: 'horizontal',
               shape: 'pill'
             },
             createOrder: function createOrder(data, actions) {
@@ -38887,13 +38887,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               }));
             },
             onError: function onError(err) {
-              console.log(err);
-              _this68.paidFor = true;
+              console.log(err); // this.paidFor = true
+
               return _this68.alertService.error('please contact with manger to solve this issue');
             },
             onCancel: function onCancel(data) {
-              console.log('onCancel');
-              _this68.paidFor = true;
+              console.log('onCancel'); // this.paidFor = true
             }
           }).render(this.paypalElement.nativeElement);
         }
@@ -38919,7 +38918,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               orderId: data['data']
             }]);
           }, function (err) {
-            return _this69.alertService.error('please contact with manger to solve this issue');
+            return _this69.alertService.error('please contact with manager to solve this issue');
           });
         }
       }, {
