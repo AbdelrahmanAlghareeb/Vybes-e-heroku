@@ -1528,6 +1528,7 @@ class InfoPersonalComponent {
         this.personalRoles = [];
         this.isBasicUser = true;
         this.role = "";
+        this.businessStatus = "";
     }
     ngOnInit() {
         this.authSrvc.userData$.subscribe((data) => {
@@ -1537,6 +1538,7 @@ class InfoPersonalComponent {
         this.getDataUser();
         this.getRole();
         this.getIsVerified();
+        this.getBusinessStatus();
     }
     ngAfterViewInit() {
         if (this.tabgroup) {
@@ -1637,6 +1639,9 @@ class InfoPersonalComponent {
     getIsVerified() {
         this.IsVerified = this.authSrvc.isVerified;
     }
+    getBusinessStatus() {
+        this.businessStatus = this.authSrvc.businessStatus;
+    }
 }
 InfoPersonalComponent.ɵfac = function InfoPersonalComponent_Factory(t) { return new (t || InfoPersonalComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_4__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_profile_service__WEBPACK_IMPORTED_MODULE_5__["ProfileService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_7__["MatDialog"])); };
 InfoPersonalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: InfoPersonalComponent, selectors: [["app-info-personal"]], viewQuery: function InfoPersonalComponent_Query(rf, ctx) { if (rf & 1) {
@@ -1661,9 +1666,9 @@ InfoPersonalComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.isBasicUser);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
     } }, directives: [_angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__["MatTabGroup"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__["MatTab"], _my_requests_my_requests_component__WEBPACK_IMPORTED_MODULE_10__["MyRequestsComponent"], _my_orders_my_orders_component__WEBPACK_IMPORTED_MODULE_11__["MyOrdersComponent"]], pipes: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_12__["TranslatePipe"]], styles: [".cardAddress[_ngcontent-%COMP%] {\n  background-color: none;\n  background-clip: none;\n  border: none;\n  border-radius: none;\n}\n\n.cardBody[_ngcontent-%COMP%] {\n  padding: 0;\n}\n\n.cardButton[_ngcontent-%COMP%] {\n  background-color: #ef8216;\n  border-color: #ef8216;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wcm9maWxlL2NvbXBvbmVudHMvaW5mby1wZXJzb25hbC9DOlxcZnJlZWxhbmNlclxcVnliZXNcXFZ5YmVzLUFuZ3VsYXIvc3JjXFxhcHBcXG1vZHVsZXNcXHByb2ZpbGVcXGNvbXBvbmVudHNcXGluZm8tcGVyc29uYWxcXGluZm8tcGVyc29uYWwuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvcHJvZmlsZS9jb21wb25lbnRzL2luZm8tcGVyc29uYWwvaW5mby1wZXJzb25hbC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHNCQUFBO0VBQ0EscUJBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7QUNDRjs7QURFQTtFQUNFLFVBQUE7QUNDRjs7QURFQTtFQUNFLHlCQUFBO0VBQ0EscUJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcHJvZmlsZS9jb21wb25lbnRzL2luZm8tcGVyc29uYWwvaW5mby1wZXJzb25hbC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5jYXJkQWRkcmVzcyB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogbm9uZTtcclxuICBiYWNrZ3JvdW5kLWNsaXA6IG5vbmU7XHJcbiAgYm9yZGVyOiBub25lO1xyXG4gIGJvcmRlci1yYWRpdXM6IG5vbmU7XHJcbn1cclxuXHJcbi5jYXJkQm9keSB7XHJcbiAgcGFkZGluZzogMDtcclxufVxyXG5cclxuLmNhcmRCdXR0b24ge1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICNlZjgyMTY7XHJcbiAgYm9yZGVyLWNvbG9yOiAjZWY4MjE2O1xyXG59XHJcbiIsIi5jYXJkQWRkcmVzcyB7XG4gIGJhY2tncm91bmQtY29sb3I6IG5vbmU7XG4gIGJhY2tncm91bmQtY2xpcDogbm9uZTtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItcmFkaXVzOiBub25lO1xufVxuXG4uY2FyZEJvZHkge1xuICBwYWRkaW5nOiAwO1xufVxuXG4uY2FyZEJ1dHRvbiB7XG4gIGJhY2tncm91bmQtY29sb3I6ICNlZjgyMTY7XG4gIGJvcmRlci1jb2xvcjogI2VmODIxNjtcbn0iXX0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](InfoPersonalComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],

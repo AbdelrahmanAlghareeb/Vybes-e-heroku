@@ -143,8 +143,6 @@ class AppComponent {
         // }
         translate.setDefaultLang(lang);
         translate.use(lang);
-        console.log(translate.currentLang, 'current');
-        // translate.use(lang)
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services__WEBPACK_IMPORTED_MODULE_2__["LoaderService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services__WEBPACK_IMPORTED_MODULE_2__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngx_translate_core__WEBPACK_IMPORTED_MODULE_3__["TranslateService"])); };
@@ -1061,10 +1059,10 @@ __webpack_require__.r(__webpack_exports__);
  */
 class AuthService {
     constructor(router) {
-        var _a, _b;
+        var _a, _b, _c;
         this.router = router;
         // the name of the keys to be stored on local storage
-        this.localStorageKeys = { jwToken: 'jwToken', userName: 'userName', id: 'id', roles: "roles", email: 'email', isVerified: 'isVerified' };
+        this.localStorageKeys = { jwToken: 'jwToken', userName: 'userName', id: 'id', roles: "roles", email: 'email', isVerified: 'isVerified', businessStatus: "businessStatus" };
         // if the user open a url on the webiste and he is not logged in this variable hold this value and after success login redirect the user to the targeted page
         this.returnUrl = null;
         // flag that indicate that is it the first call of a afucntion or not
@@ -1073,6 +1071,8 @@ class AuthService {
         this._role = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]((_a = JSON.parse(localStorage.getItem(this.localStorageKeys.roles))) === null || _a === void 0 ? void 0 : _a[0]);
         // a behavior subject that hold _isVerified the user
         this._isVerified = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](Boolean(localStorage.getItem((_b = this.localStorageKeys) === null || _b === void 0 ? void 0 : _b.isVerified)));
+        // a behavior subject that hold _isVerified the user
+        this._businessStatus = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](localStorage.getItem((_c = this.localStorageKeys) === null || _c === void 0 ? void 0 : _c.businessStatus));
     }
     /**
      * save user data on localstorage
@@ -1083,13 +1083,15 @@ class AuthService {
     saveUserData(UserData) {
         this._isVerified.next(UserData.isVerified);
         this._role.next(UserData.roles[0]);
+        this._businessStatus.next(UserData.businessStatus);
         // save user data on localstorage
         localStorage.setItem(this.localStorageKeys.email, UserData.email);
-        localStorage.setItem(this.localStorageKeys.jwToken, UserData.jwToken);
+        localStorage.setItem(this.localStorageKeys.jwToken, UserData.jwToken); //
         localStorage.setItem(this.localStorageKeys.id, String(UserData.id));
         localStorage.setItem(this.localStorageKeys.userName, `${UserData.userName}`);
         localStorage.setItem(this.localStorageKeys.roles, JSON.stringify(UserData.roles));
-        localStorage.setItem(this.localStorageKeys.isVerified, `${UserData.isVerified}`);
+        localStorage.setItem(this.localStorageKeys.isVerified, `${UserData.isVerified}`); ///
+        localStorage.setItem(this.localStorageKeys.businessStatus, `${UserData.businessStatus}`);
         // save user data on the app instance
         this.userData = {
             jwToken: UserData.jwToken,
@@ -1097,7 +1099,8 @@ class AuthService {
             id: UserData.id,
             userName: `${UserData.userName}`,
             email: UserData.email,
-            roles: UserData.roles
+            roles: UserData.roles,
+            businessStatus: UserData.businessStatus
         };
         // change authentication status
         this.loggedIn.next(true);
@@ -1132,8 +1135,9 @@ class AuthService {
         const roles = JSON.parse(localStorage.getItem(this.localStorageKeys.roles));
         const email = localStorage.getItem(this.localStorageKeys.email);
         const isVerified = Boolean(localStorage.getItem(this.localStorageKeys.isVerified));
+        const businessStatus = localStorage.getItem(this.localStorageKeys.businessStatus);
         if (jwToken && roles && roles.length && id && userName)
-            this.userData = { jwToken, id, isVerified, userName, roles, email };
+            this.userData = { jwToken, id, isVerified, userName, roles, email, businessStatus };
         else
             this.userData = null;
     }
@@ -1172,6 +1176,11 @@ class AuthService {
     set isVerified(isVerified) {
         if (this._isVerified)
             this._isVerified.next(isVerified);
+    }
+    get businessStatus() { return this._businessStatus.value; }
+    set businessStatus(businessStatus) {
+        if (this._businessStatus)
+            this._businessStatus.next(businessStatus);
     }
     /**
     * remove user data and redirect to login page
@@ -1280,11 +1289,13 @@ class PermissionGuard {
         this.authSrvc = authSrvc;
         this.router = router;
         this.role = "";
+        this.businessStatus = "";
         this.getRole();
         this.getIsVerified();
+        this.getBusinessStatus();
     }
     canActivate(next, state) {
-        if (this.role === 'Business' && this.IsVerified) {
+        if (this.role === 'Business' && this.businessStatus === 'approved') {
             return true;
         }
         else {
@@ -1297,6 +1308,9 @@ class PermissionGuard {
     }
     getIsVerified() {
         this.IsVerified = this.authSrvc.isVerified;
+    }
+    getBusinessStatus() {
+        this.businessStatus = this.authSrvc.businessStatus;
     }
 }
 PermissionGuard.ɵfac = function PermissionGuard_Factory(t) { return new (t || PermissionGuard)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_auth_auth_service__WEBPACK_IMPORTED_MODULE_1__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
@@ -2070,6 +2084,8 @@ class HeaderComponent {
         this.translate = translate;
         this.productsTotalPrice = 0;
         this.role = "";
+        // businessStatus: "approved"
+        this.businessStatus = "";
     }
     ngOnInit() {
         this.authSrvc.userData$.subscribe((data) => {
@@ -2078,6 +2094,7 @@ class HeaderComponent {
         });
         this.getRole();
         this.getIsVerified();
+        this.getBusinessStatus();
     }
     get cartProduct() {
         this.productsTotalPrice = this.ProductCartService.productsTotalPrice;
@@ -2091,6 +2108,9 @@ class HeaderComponent {
     }
     getIsVerified() {
         this.IsVerified = this.authSrvc.isVerified;
+    }
+    getBusinessStatus() {
+        this.businessStatus = this.authSrvc.businessStatus;
     }
     goTo(item) {
         this.router.navigate([`products/${src_app_modules_products_components_favourites_favourites_component__WEBPACK_IMPORTED_MODULE_1__["Type"][item['categoryName']]}/${item['versionId']}`]);
@@ -2215,9 +2235,9 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.translate.getLangs());
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.userData == null ? null : ctx.userData.userName);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -2229,9 +2249,9 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](46, 30, "Profile setting"));
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.userData);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);

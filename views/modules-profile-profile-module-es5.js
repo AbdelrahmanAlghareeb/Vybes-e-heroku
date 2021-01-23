@@ -3155,6 +3155,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.personalRoles = [];
         this.isBasicUser = true;
         this.role = "";
+        this.businessStatus = "";
       }
 
       _createClass(InfoPersonalComponent, [{
@@ -3168,6 +3169,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.getDataUser();
           this.getRole();
           this.getIsVerified();
+          this.getBusinessStatus();
         }
       }, {
         key: "ngAfterViewInit",
@@ -3296,6 +3298,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function getIsVerified() {
           this.IsVerified = this.authSrvc.isVerified;
         }
+      }, {
+        key: "getBusinessStatus",
+        value: function getBusinessStatus() {
+          this.businessStatus = this.authSrvc.businessStatus;
+        }
       }]);
 
       return InfoPersonalComponent;
@@ -3356,11 +3363,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
         }
       },
       directives: [_angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__["MatTabGroup"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__["MatTab"], _my_requests_my_requests_component__WEBPACK_IMPORTED_MODULE_10__["MyRequestsComponent"], _my_orders_my_orders_component__WEBPACK_IMPORTED_MODULE_11__["MyOrdersComponent"]],

@@ -297,7 +297,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
       translate.setDefaultLang(lang);
       translate.use(lang);
-      console.log(translate.currentLang, 'current'); // translate.use(lang)
     };
 
     AppComponent.ɵfac = function AppComponent_Factory(t) {
@@ -2065,7 +2064,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       function AuthService(router) {
         _classCallCheck(this, AuthService);
 
-        var _a, _b;
+        var _a, _b, _c;
 
         this.router = router; // the name of the keys to be stored on local storage
 
@@ -2075,7 +2074,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           id: 'id',
           roles: "roles",
           email: 'email',
-          isVerified: 'isVerified'
+          isVerified: 'isVerified',
+          businessStatus: "businessStatus"
         }; // if the user open a url on the webiste and he is not logged in this variable hold this value and after success login redirect the user to the targeted page
 
         this.returnUrl = null; // flag that indicate that is it the first call of a afucntion or not
@@ -2084,7 +2084,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this._role = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"]((_a = JSON.parse(localStorage.getItem(this.localStorageKeys.roles))) === null || _a === void 0 ? void 0 : _a[0]); // a behavior subject that hold _isVerified the user
 
-        this._isVerified = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](Boolean(localStorage.getItem((_b = this.localStorageKeys) === null || _b === void 0 ? void 0 : _b.isVerified)));
+        this._isVerified = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](Boolean(localStorage.getItem((_b = this.localStorageKeys) === null || _b === void 0 ? void 0 : _b.isVerified))); // a behavior subject that hold _isVerified the user
+
+        this._businessStatus = new rxjs__WEBPACK_IMPORTED_MODULE_1__["BehaviorSubject"](localStorage.getItem((_c = this.localStorageKeys) === null || _c === void 0 ? void 0 : _c.businessStatus));
       }
       /**
        * save user data on localstorage
@@ -2099,15 +2101,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function saveUserData(UserData) {
           this._isVerified.next(UserData.isVerified);
 
-          this._role.next(UserData.roles[0]); // save user data on localstorage
+          this._role.next(UserData.roles[0]);
+
+          this._businessStatus.next(UserData.businessStatus); // save user data on localstorage
 
 
           localStorage.setItem(this.localStorageKeys.email, UserData.email);
-          localStorage.setItem(this.localStorageKeys.jwToken, UserData.jwToken);
+          localStorage.setItem(this.localStorageKeys.jwToken, UserData.jwToken); //
+
           localStorage.setItem(this.localStorageKeys.id, String(UserData.id));
           localStorage.setItem(this.localStorageKeys.userName, "".concat(UserData.userName));
           localStorage.setItem(this.localStorageKeys.roles, JSON.stringify(UserData.roles));
-          localStorage.setItem(this.localStorageKeys.isVerified, "".concat(UserData.isVerified)); // save user data on the app instance
+          localStorage.setItem(this.localStorageKeys.isVerified, "".concat(UserData.isVerified)); ///
+
+          localStorage.setItem(this.localStorageKeys.businessStatus, "".concat(UserData.businessStatus)); // save user data on the app instance
 
           this.userData = {
             jwToken: UserData.jwToken,
@@ -2115,7 +2122,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             id: UserData.id,
             userName: "".concat(UserData.userName),
             email: UserData.email,
-            roles: UserData.roles
+            roles: UserData.roles,
+            businessStatus: UserData.businessStatus
           }; // change authentication status
 
           this.loggedIn.next(true);
@@ -2159,13 +2167,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var roles = JSON.parse(localStorage.getItem(this.localStorageKeys.roles));
           var email = localStorage.getItem(this.localStorageKeys.email);
           var isVerified = Boolean(localStorage.getItem(this.localStorageKeys.isVerified));
+          var businessStatus = localStorage.getItem(this.localStorageKeys.businessStatus);
           if (jwToken && roles && roles.length && id && userName) this.userData = {
             jwToken: jwToken,
             id: id,
             isVerified: isVerified,
             userName: userName,
             roles: roles,
-            email: email
+            email: email,
+            businessStatus: businessStatus
           };else this.userData = null;
         }
         /**
@@ -2236,6 +2246,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         },
         set: function set(isVerified) {
           if (this._isVerified) this._isVerified.next(isVerified);
+        }
+      }, {
+        key: "businessStatus",
+        get: function get() {
+          return this._businessStatus.value;
+        },
+        set: function set(businessStatus) {
+          if (this._businessStatus) this._businessStatus.next(businessStatus);
         }
       }]);
 
@@ -2419,14 +2437,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.authSrvc = authSrvc;
         this.router = router;
         this.role = "";
+        this.businessStatus = "";
         this.getRole();
         this.getIsVerified();
+        this.getBusinessStatus();
       }
 
       _createClass(PermissionGuard, [{
         key: "canActivate",
         value: function canActivate(next, state) {
-          if (this.role === 'Business' && this.IsVerified) {
+          if (this.role === 'Business' && this.businessStatus === 'approved') {
             return true;
           } else {
             this.router.navigate(['/login']);
@@ -2442,6 +2462,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getIsVerified",
         value: function getIsVerified() {
           this.IsVerified = this.authSrvc.isVerified;
+        }
+      }, {
+        key: "getBusinessStatus",
+        value: function getBusinessStatus() {
+          this.businessStatus = this.authSrvc.businessStatus;
         }
       }]);
 
@@ -4068,7 +4093,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.router = router;
         this.translate = translate;
         this.productsTotalPrice = 0;
-        this.role = "";
+        this.role = ""; // businessStatus: "approved"
+
+        this.businessStatus = "";
       }
 
       _createClass(HeaderComponent, [{
@@ -4081,6 +4108,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           });
           this.getRole();
           this.getIsVerified();
+          this.getBusinessStatus();
         }
       }, {
         key: "logout",
@@ -4096,6 +4124,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "getIsVerified",
         value: function getIsVerified() {
           this.IsVerified = this.authSrvc.isVerified;
+        }
+      }, {
+        key: "getBusinessStatus",
+        value: function getBusinessStatus() {
+          this.businessStatus = this.authSrvc.businessStatus;
         }
       }, {
         key: "goTo",
@@ -4365,11 +4398,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -4393,11 +4426,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.IsVerified);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.role === "Business" && ctx.businessStatus === "approved");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](6);
 

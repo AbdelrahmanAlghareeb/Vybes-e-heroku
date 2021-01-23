@@ -826,37 +826,43 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var src_app_modules_profile_services_profile_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! src/app/modules/profile/services/profile.service */
+    "./src/app/modules/profile/services/profile.service.ts");
+    /* harmony import */
+
+
+    var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! @angular/material/form-field */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/form-field.js");
     /* harmony import */
 
 
-    var _angular_material_Input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _angular_material_Input__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! @angular/material/Input */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/input.js");
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
-    var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! @angular/material/checkbox */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/checkbox.js");
     /* harmony import */
 
 
-    var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
     /*! @angular/material/button */
     "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
     /* harmony import */
 
 
-    var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
     /*! @ngx-translate/core */
     "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm2015/ngx-translate-core.js");
 
@@ -909,13 +915,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     var LoginComponent = /*#__PURE__*/function () {
-      function LoginComponent(_AuthApiService, alertSrvc, authSrvc, router) {
+      function LoginComponent(_AuthApiService, alertSrvc, authSrvc, router, ProfileService) {
         _classCallCheck(this, LoginComponent);
 
         this._AuthApiService = _AuthApiService;
         this.alertSrvc = alertSrvc;
         this.authSrvc = authSrvc;
         this.router = router;
+        this.ProfileService = ProfileService;
         this.errorMsg = '';
         this.myform = new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroup"]({
           'email': new _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControl"](null, [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].email]),
@@ -937,20 +944,45 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             return this.alertSrvc.error('Complete all the fields');
           }
 
-          var requestBody = new _models_login_request_model__WEBPACK_IMPORTED_MODULE_2__["LoginRequest"]();
-          console.log(requestBody);
+          var requestBody = new _models_login_request_model__WEBPACK_IMPORTED_MODULE_2__["LoginRequest"](); // console.log (requestBody)
+
           var myformValue = this.myform.value;
           requestBody.email = myformValue.email;
           requestBody.password = myformValue.password;
 
           this._AuthApiService.login(requestBody).subscribe(function (res) {
-            _this2.alertSrvc.success('Logged In successfully');
+            var _a; //get user data
 
-            _this2.authSrvc.saveUserData(res.data);
 
-            _this2.router.navigate(['/']);
+            var isVerified = res.data.isVerified;
+            var jwToken = res.data.jwToken;
+
+            _this2.getUserById((_a = res === null || res === void 0 ? void 0 : res.data) === null || _a === void 0 ? void 0 : _a.id, isVerified, jwToken);
           }, function (err) {
             _this2.alertSrvc.error(err.error.Message);
+          });
+        }
+      }, {
+        key: "getUserById",
+        value: function getUserById(userId, isVerified, jwToken) {
+          var _this3 = this;
+
+          this.ProfileService.getUserData(userId).subscribe(function (data) {
+            _this3.alertSrvc.success('Logged In successfully');
+
+            var userData = {
+              businessStatus: data.data.businessStatus,
+              email: data.data.email,
+              id: data.data.id,
+              isVerified: isVerified,
+              jwToken: jwToken,
+              roles: data.data.roles,
+              userName: data.data.userName
+            };
+
+            _this3.authSrvc.saveUserData(userData);
+
+            _this3.router.navigate(['/']);
           });
         }
       }, {
@@ -974,7 +1006,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }();
 
     LoginComponent.ɵfac = function LoginComponent_Factory(t) {
-      return new (t || LoginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_api_auth_api_service__WEBPACK_IMPORTED_MODULE_3__["AuthApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_4__["AlertService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_4__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]));
+      return new (t || LoginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_api_auth_api_service__WEBPACK_IMPORTED_MODULE_3__["AuthApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_4__["AlertService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_core_services__WEBPACK_IMPORTED_MODULE_4__["AuthService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_modules_profile_services_profile_service__WEBPACK_IMPORTED_MODULE_6__["ProfileService"]));
     };
 
     LoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -1141,8 +1173,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](33, 24, "Register"));
         }
       },
-      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatLabel"], _angular_material_Input__WEBPACK_IMPORTED_MODULE_7__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_8__["NgIf"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_9__["MatCheckbox"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatError"]],
-      pipes: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_11__["TranslatePipe"]],
+      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormGroupDirective"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatLabel"], _angular_material_Input__WEBPACK_IMPORTED_MODULE_8__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlName"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _angular_material_checkbox__WEBPACK_IMPORTED_MODULE_10__["MatCheckbox"], _angular_material_button__WEBPACK_IMPORTED_MODULE_11__["MatButton"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatError"]],
+      pipes: [_ngx_translate_core__WEBPACK_IMPORTED_MODULE_12__["TranslatePipe"]],
       styles: [".alert.alert-danger[_ngcontent-%COMP%] {\n  background-color: white !important;\n}\n\n.alert-danger[_ngcontent-%COMP%] {\n  color: red !important;\n  font-size: 16px;\n  font-weight: 10;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9hdXRoL2NvbXBvbmVudHMvbG9naW4vQzpcXGZyZWVsYW5jZXJcXFZ5YmVzXFxWeWJlcy1Bbmd1bGFyL3NyY1xcYXBwXFxtb2R1bGVzXFxhdXRoXFxjb21wb25lbnRzXFxsb2dpblxcbG9naW4uY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL21vZHVsZXMvYXV0aC9jb21wb25lbnRzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0NBQUE7QUNDRjs7QURDQTtFQUNFLHFCQUFBO0VBQ0EsZUFBQTtFQUNBLGVBQUE7QUNFRiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvYXV0aC9jb21wb25lbnRzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFsZXJ0LmFsZXJ0LWRhbmdlciB7XHJcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGUgIWltcG9ydGFudDtcclxufVxyXG4uYWxlcnQtZGFuZ2VyICB7XHJcbiAgY29sb3I6IHJlZCAhaW1wb3J0YW50O1xyXG4gIGZvbnQtc2l6ZTogMTZweDtcclxuICBmb250LXdlaWdodDogMTA7XHJcbn1cclxuXHJcbiIsIi5hbGVydC5hbGVydC1kYW5nZXIge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZSAhaW1wb3J0YW50O1xufVxuXG4uYWxlcnQtZGFuZ2VyIHtcbiAgY29sb3I6IHJlZCAhaW1wb3J0YW50O1xuICBmb250LXNpemU6IDE2cHg7XG4gIGZvbnQtd2VpZ2h0OiAxMDtcbn0iXX0= */"]
     });
     /*@__PURE__*/
@@ -1165,6 +1197,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           type: src_app_core_services__WEBPACK_IMPORTED_MODULE_4__["AuthService"]
         }, {
           type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+        }, {
+          type: src_app_modules_profile_services_profile_service__WEBPACK_IMPORTED_MODULE_6__["ProfileService"]
         }];
       }, null);
     })();
@@ -3759,7 +3793,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "saveAllData",
         value: function saveAllData() {
-          var _this3 = this;
+          var _this4 = this;
 
           debugger;
 
@@ -3794,11 +3828,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.authService.registerBusiness(userData).subscribe(function (res) {
               console.log('res from server', res);
 
-              _this3.alertSrvc.success('Registered Successfully');
+              _this4.alertSrvc.success('Registered Successfully');
 
-              _this3.router.navigate(['/login']);
+              _this4.router.navigate(['/login']);
             }, function (err) {
-              _this3.alertSrvc.error(err.error.Message);
+              _this4.alertSrvc.error(err.error.Message);
             });
           }
         }
@@ -4525,7 +4559,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "register",
         value: function register(mydata) {
-          var _this4 = this;
+          var _this5 = this;
 
           debugger;
 
@@ -4545,11 +4579,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           requestBody.userName = myformValue.userName;
           requestBody.userType = _models_userType_enum__WEBPACK_IMPORTED_MODULE_4__["UserType"].basic;
           this.authApiService.register(requestBody).subscribe(function (res) {
-            _this4.alertSrvc.success('Registered Successfully');
+            _this5.alertSrvc.success('Registered Successfully');
 
-            _this4.router.navigate(['/login']);
+            _this5.router.navigate(['/login']);
           }, function (err) {
-            _this4.alertSrvc.error(err.error.Message);
+            _this5.alertSrvc.error(err.error.Message);
           });
         }
       }, {
